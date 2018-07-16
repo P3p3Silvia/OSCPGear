@@ -1,0 +1,28 @@
+date
+whoami
+id
+hostname
+/sbin/ifconfig
+pwd
+ls -l
+cat proof.txt
+cat network-secret.txt
+cat /etc/issue
+uname -a
+cat /etc/passwd
+cat /etc/group
+cat /etc/shadow
+cat /etc/sudoers
+ls -alh /var/mail/
+ls -ahlR /root/
+ls -ahlR /home/
+who
+w
+last
+/sbin/ifconfig -a
+cat /etc/network/interfaces (or cat /etc/sysconfig/network)
+arp -e
+/sbin/route -nee
+ps aux
+ps -ef
+cat /etc/services
