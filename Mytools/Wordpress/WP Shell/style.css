@@ -1,0 +1,12 @@
+STYLE.CSS
+Code: [Select]
+/*   
+   Theme Name:        FAKE WordPress Theme
+   Description:       A theme to be installed to allow execution of a shell using Theme Live Preview.
+   Author:            TAPE
+   Version:           1.0
+   License:           Ours Not Yours
+   License URI:       Ours
+   Tags:              edit IP and PORT in header.php as required, run netcat listener, click on live preview, check for shell
+   Text Domain:       fake-theme
+*/

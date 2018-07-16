@@ -1,0 +1,8 @@
+administrator
+guest
+krbtgt
+domain admins
+root
+bin
+none
+
