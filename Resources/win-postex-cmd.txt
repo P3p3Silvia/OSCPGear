@@ -1,0 +1,34 @@
+date /t
+time/t
+hostname
+whoami /all(or echo %username%)
+set
+ipconfig
+ipconfig /displaydns
+dir
+type proof.txt
+type network-secret.txt
+systeminfo
+net users
+net localgroup administrators
+ipconfig -all
+route print
+arp -a
+netstat -ano
+tasklist /svc
+net view /domain
+net view /domain:otherdomain
+net user %USERNAME% /domain
+net user /domain
+net accounts
+net accounts /domain
+net localgroup administrators
+net localgroup administrators /domain
+net group "Domain Admins" /domain
+net group "Enterprise Admins" /domain
+net start
+net share
+net use
+net session | find / "\\"
+at
+gpresult /z
