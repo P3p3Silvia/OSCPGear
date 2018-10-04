@@ -1,0 +1,1466 @@
+<!DOCTYPE html>
+<!-- saved from url=(0028)https://guif.re/riskanalysis -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Risk analysis</title>
+        
+        <link rel="stylesheet" type="text/css" href="./Risk analysis_files/main.css">
+        <link rel="icon" type="image/png" sizes="32x32" href="https://guif.re/assets/favicon.png">
+        <script async="" src="./Risk analysis_files/analytics.js.download"></script><script src="./Risk analysis_files/syntaxhighlighter.js.download"></script>
+    <style>@-webkit-keyframes swal2-show {
+  0% {
+    -webkit-transform: scale(0.7);
+            transform: scale(0.7); }
+  45% {
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05); }
+  80% {
+    -webkit-transform: scale(0.95);
+            transform: scale(0.95); }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1); } }
+
+@keyframes swal2-show {
+  0% {
+    -webkit-transform: scale(0.7);
+            transform: scale(0.7); }
+  45% {
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05); }
+  80% {
+    -webkit-transform: scale(0.95);
+            transform: scale(0.95); }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1); } }
+
+@-webkit-keyframes swal2-hide {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1; }
+  100% {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+    opacity: 0; } }
+
+@keyframes swal2-hide {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1; }
+  100% {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+    opacity: 0; } }
+
+@-webkit-keyframes swal2-animate-success-line-tip {
+  0% {
+    top: 1.1875em;
+    left: .0625em;
+    width: 0; }
+  54% {
+    top: 1.0625em;
+    left: .125em;
+    width: 0; }
+  70% {
+    top: 2.1875em;
+    left: -.375em;
+    width: 3.125em; }
+  84% {
+    top: 3em;
+    left: 1.3125em;
+    width: 1.0625em; }
+  100% {
+    top: 2.8125em;
+    left: .875em;
+    width: 1.5625em; } }
+
+@keyframes swal2-animate-success-line-tip {
+  0% {
+    top: 1.1875em;
+    left: .0625em;
+    width: 0; }
+  54% {
+    top: 1.0625em;
+    left: .125em;
+    width: 0; }
+  70% {
+    top: 2.1875em;
+    left: -.375em;
+    width: 3.125em; }
+  84% {
+    top: 3em;
+    left: 1.3125em;
+    width: 1.0625em; }
+  100% {
+    top: 2.8125em;
+    left: .875em;
+    width: 1.5625em; } }
+
+@-webkit-keyframes swal2-animate-success-line-long {
+  0% {
+    top: 3.375em;
+    right: 2.875em;
+    width: 0; }
+  65% {
+    top: 3.375em;
+    right: 2.875em;
+    width: 0; }
+  84% {
+    top: 2.1875em;
+    right: 0;
+    width: 3.4375em; }
+  100% {
+    top: 2.375em;
+    right: .5em;
+    width: 2.9375em; } }
+
+@keyframes swal2-animate-success-line-long {
+  0% {
+    top: 3.375em;
+    right: 2.875em;
+    width: 0; }
+  65% {
+    top: 3.375em;
+    right: 2.875em;
+    width: 0; }
+  84% {
+    top: 2.1875em;
+    right: 0;
+    width: 3.4375em; }
+  100% {
+    top: 2.375em;
+    right: .5em;
+    width: 2.9375em; } }
+
+@-webkit-keyframes swal2-rotate-success-circular-line {
+  0% {
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg); }
+  5% {
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg); }
+  12% {
+    -webkit-transform: rotate(-405deg);
+            transform: rotate(-405deg); }
+  100% {
+    -webkit-transform: rotate(-405deg);
+            transform: rotate(-405deg); } }
+
+@keyframes swal2-rotate-success-circular-line {
+  0% {
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg); }
+  5% {
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg); }
+  12% {
+    -webkit-transform: rotate(-405deg);
+            transform: rotate(-405deg); }
+  100% {
+    -webkit-transform: rotate(-405deg);
+            transform: rotate(-405deg); } }
+
+@-webkit-keyframes swal2-animate-error-x-mark {
+  0% {
+    margin-top: 1.625em;
+    -webkit-transform: scale(0.4);
+            transform: scale(0.4);
+    opacity: 0; }
+  50% {
+    margin-top: 1.625em;
+    -webkit-transform: scale(0.4);
+            transform: scale(0.4);
+    opacity: 0; }
+  80% {
+    margin-top: -.375em;
+    -webkit-transform: scale(1.15);
+            transform: scale(1.15); }
+  100% {
+    margin-top: 0;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1; } }
+
+@keyframes swal2-animate-error-x-mark {
+  0% {
+    margin-top: 1.625em;
+    -webkit-transform: scale(0.4);
+            transform: scale(0.4);
+    opacity: 0; }
+  50% {
+    margin-top: 1.625em;
+    -webkit-transform: scale(0.4);
+            transform: scale(0.4);
+    opacity: 0; }
+  80% {
+    margin-top: -.375em;
+    -webkit-transform: scale(1.15);
+            transform: scale(1.15); }
+  100% {
+    margin-top: 0;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1; } }
+
+@-webkit-keyframes swal2-animate-error-icon {
+  0% {
+    -webkit-transform: rotateX(100deg);
+            transform: rotateX(100deg);
+    opacity: 0; }
+  100% {
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+    opacity: 1; } }
+
+@keyframes swal2-animate-error-icon {
+  0% {
+    -webkit-transform: rotateX(100deg);
+            transform: rotateX(100deg);
+    opacity: 0; }
+  100% {
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+    opacity: 1; } }
+
+body.swal2-toast-shown.swal2-has-input > .swal2-container > .swal2-toast {
+  flex-direction: column;
+  align-items: stretch; }
+  body.swal2-toast-shown.swal2-has-input > .swal2-container > .swal2-toast .swal2-actions {
+    flex: 1;
+    align-self: stretch;
+    justify-content: flex-end;
+    height: 2.2em; }
+  body.swal2-toast-shown.swal2-has-input > .swal2-container > .swal2-toast .swal2-loading {
+    justify-content: center; }
+  body.swal2-toast-shown.swal2-has-input > .swal2-container > .swal2-toast .swal2-input {
+    height: 2em;
+    margin: .3125em auto;
+    font-size: 1em; }
+  body.swal2-toast-shown.swal2-has-input > .swal2-container > .swal2-toast .swal2-validationerror {
+    font-size: 1em; }
+
+body.swal2-toast-shown > .swal2-container {
+  position: fixed;
+  background-color: transparent; }
+  body.swal2-toast-shown > .swal2-container.swal2-shown {
+    background-color: transparent; }
+  body.swal2-toast-shown > .swal2-container.swal2-top {
+    top: 0;
+    right: auto;
+    bottom: auto;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%); }
+  body.swal2-toast-shown > .swal2-container.swal2-top-end, body.swal2-toast-shown > .swal2-container.swal2-top-right {
+    top: 0;
+    right: 0;
+    bottom: auto;
+    left: auto; }
+  body.swal2-toast-shown > .swal2-container.swal2-top-start, body.swal2-toast-shown > .swal2-container.swal2-top-left {
+    top: 0;
+    right: auto;
+    bottom: auto;
+    left: 0; }
+  body.swal2-toast-shown > .swal2-container.swal2-center-start, body.swal2-toast-shown > .swal2-container.swal2-center-left {
+    top: 50%;
+    right: auto;
+    bottom: auto;
+    left: 0;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%); }
+  body.swal2-toast-shown > .swal2-container.swal2-center {
+    top: 50%;
+    right: auto;
+    bottom: auto;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%); }
+  body.swal2-toast-shown > .swal2-container.swal2-center-end, body.swal2-toast-shown > .swal2-container.swal2-center-right {
+    top: 50%;
+    right: 0;
+    bottom: auto;
+    left: auto;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%); }
+  body.swal2-toast-shown > .swal2-container.swal2-bottom-start, body.swal2-toast-shown > .swal2-container.swal2-bottom-left {
+    top: auto;
+    right: auto;
+    bottom: 0;
+    left: 0; }
+  body.swal2-toast-shown > .swal2-container.swal2-bottom {
+    top: auto;
+    right: auto;
+    bottom: 0;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%); }
+  body.swal2-toast-shown > .swal2-container.swal2-bottom-end, body.swal2-toast-shown > .swal2-container.swal2-bottom-right {
+    top: auto;
+    right: 0;
+    bottom: 0;
+    left: auto; }
+
+.swal2-popup.swal2-toast {
+  flex-direction: row;
+  align-items: center;
+  width: auto;
+  padding: 0.625em;
+  box-shadow: 0 0 0.625em #d9d9d9;
+  overflow-y: hidden; }
+  .swal2-popup.swal2-toast .swal2-header {
+    flex-direction: row; }
+  .swal2-popup.swal2-toast .swal2-title {
+    justify-content: flex-start;
+    margin: 0 .6em;
+    font-size: 1em; }
+  .swal2-popup.swal2-toast .swal2-close {
+    position: initial; }
+  .swal2-popup.swal2-toast .swal2-content {
+    justify-content: flex-start;
+    font-size: 1em; }
+  .swal2-popup.swal2-toast .swal2-icon {
+    width: 2em;
+    min-width: 2em;
+    height: 2em;
+    margin: 0; }
+    .swal2-popup.swal2-toast .swal2-icon-text {
+      font-size: 2em;
+      font-weight: bold;
+      line-height: 1em; }
+    .swal2-popup.swal2-toast .swal2-icon.swal2-success .swal2-success-ring {
+      width: 2em;
+      height: 2em; }
+    .swal2-popup.swal2-toast .swal2-icon.swal2-error [class^='swal2-x-mark-line'] {
+      top: .875em;
+      width: 1.375em; }
+      .swal2-popup.swal2-toast .swal2-icon.swal2-error [class^='swal2-x-mark-line'][class$='left'] {
+        left: .3125em; }
+      .swal2-popup.swal2-toast .swal2-icon.swal2-error [class^='swal2-x-mark-line'][class$='right'] {
+        right: .3125em; }
+  .swal2-popup.swal2-toast .swal2-actions {
+    height: auto;
+    margin: 0 .3125em; }
+  .swal2-popup.swal2-toast .swal2-styled {
+    margin: 0 .3125em;
+    padding: .3125em .625em;
+    font-size: 1em; }
+    .swal2-popup.swal2-toast .swal2-styled:focus {
+      box-shadow: 0 0 0 0.0625em #fff, 0 0 0 0.125em rgba(50, 100, 150, 0.4); }
+  .swal2-popup.swal2-toast .swal2-success {
+    border-color: #a5dc86; }
+    .swal2-popup.swal2-toast .swal2-success [class^='swal2-success-circular-line'] {
+      position: absolute;
+      width: 2em;
+      height: 2.8125em;
+      -webkit-transform: rotate(45deg);
+              transform: rotate(45deg);
+      border-radius: 50%; }
+      .swal2-popup.swal2-toast .swal2-success [class^='swal2-success-circular-line'][class$='left'] {
+        top: -.25em;
+        left: -.9375em;
+        -webkit-transform: rotate(-45deg);
+                transform: rotate(-45deg);
+        -webkit-transform-origin: 2em 2em;
+                transform-origin: 2em 2em;
+        border-radius: 4em 0 0 4em; }
+      .swal2-popup.swal2-toast .swal2-success [class^='swal2-success-circular-line'][class$='right'] {
+        top: -.25em;
+        left: .9375em;
+        -webkit-transform-origin: 0 2em;
+                transform-origin: 0 2em;
+        border-radius: 0 4em 4em 0; }
+    .swal2-popup.swal2-toast .swal2-success .swal2-success-ring {
+      width: 2em;
+      height: 2em; }
+    .swal2-popup.swal2-toast .swal2-success .swal2-success-fix {
+      top: 0;
+      left: .4375em;
+      width: .4375em;
+      height: 2.6875em; }
+    .swal2-popup.swal2-toast .swal2-success [class^='swal2-success-line'] {
+      height: .3125em; }
+      .swal2-popup.swal2-toast .swal2-success [class^='swal2-success-line'][class$='tip'] {
+        top: 1.125em;
+        left: .1875em;
+        width: .75em; }
+      .swal2-popup.swal2-toast .swal2-success [class^='swal2-success-line'][class$='long'] {
+        top: .9375em;
+        right: .1875em;
+        width: 1.375em; }
+  .swal2-popup.swal2-toast.swal2-show {
+    -webkit-animation: showSweetToast .5s;
+            animation: showSweetToast .5s; }
+  .swal2-popup.swal2-toast.swal2-hide {
+    -webkit-animation: hideSweetToast .2s forwards;
+            animation: hideSweetToast .2s forwards; }
+  .swal2-popup.swal2-toast .swal2-animate-success-icon .swal2-success-line-tip {
+    -webkit-animation: animate-toast-success-tip .75s;
+            animation: animate-toast-success-tip .75s; }
+  .swal2-popup.swal2-toast .swal2-animate-success-icon .swal2-success-line-long {
+    -webkit-animation: animate-toast-success-long .75s;
+            animation: animate-toast-success-long .75s; }
+
+@-webkit-keyframes showSweetToast {
+  0% {
+    -webkit-transform: translateY(-0.625em) rotateZ(2deg);
+            transform: translateY(-0.625em) rotateZ(2deg);
+    opacity: 0; }
+  33% {
+    -webkit-transform: translateY(0) rotateZ(-2deg);
+            transform: translateY(0) rotateZ(-2deg);
+    opacity: .5; }
+  66% {
+    -webkit-transform: translateY(0.3125em) rotateZ(2deg);
+            transform: translateY(0.3125em) rotateZ(2deg);
+    opacity: .7; }
+  100% {
+    -webkit-transform: translateY(0) rotateZ(0);
+            transform: translateY(0) rotateZ(0);
+    opacity: 1; } }
+
+@keyframes showSweetToast {
+  0% {
+    -webkit-transform: translateY(-0.625em) rotateZ(2deg);
+            transform: translateY(-0.625em) rotateZ(2deg);
+    opacity: 0; }
+  33% {
+    -webkit-transform: translateY(0) rotateZ(-2deg);
+            transform: translateY(0) rotateZ(-2deg);
+    opacity: .5; }
+  66% {
+    -webkit-transform: translateY(0.3125em) rotateZ(2deg);
+            transform: translateY(0.3125em) rotateZ(2deg);
+    opacity: .7; }
+  100% {
+    -webkit-transform: translateY(0) rotateZ(0);
+            transform: translateY(0) rotateZ(0);
+    opacity: 1; } }
+
+@-webkit-keyframes hideSweetToast {
+  0% {
+    opacity: 1; }
+  33% {
+    opacity: .5; }
+  100% {
+    -webkit-transform: rotateZ(1deg);
+            transform: rotateZ(1deg);
+    opacity: 0; } }
+
+@keyframes hideSweetToast {
+  0% {
+    opacity: 1; }
+  33% {
+    opacity: .5; }
+  100% {
+    -webkit-transform: rotateZ(1deg);
+            transform: rotateZ(1deg);
+    opacity: 0; } }
+
+@-webkit-keyframes animate-toast-success-tip {
+  0% {
+    top: .5625em;
+    left: .0625em;
+    width: 0; }
+  54% {
+    top: .125em;
+    left: .125em;
+    width: 0; }
+  70% {
+    top: .625em;
+    left: -.25em;
+    width: 1.625em; }
+  84% {
+    top: 1.0625em;
+    left: .75em;
+    width: .5em; }
+  100% {
+    top: 1.125em;
+    left: .1875em;
+    width: .75em; } }
+
+@keyframes animate-toast-success-tip {
+  0% {
+    top: .5625em;
+    left: .0625em;
+    width: 0; }
+  54% {
+    top: .125em;
+    left: .125em;
+    width: 0; }
+  70% {
+    top: .625em;
+    left: -.25em;
+    width: 1.625em; }
+  84% {
+    top: 1.0625em;
+    left: .75em;
+    width: .5em; }
+  100% {
+    top: 1.125em;
+    left: .1875em;
+    width: .75em; } }
+
+@-webkit-keyframes animate-toast-success-long {
+  0% {
+    top: 1.625em;
+    right: 1.375em;
+    width: 0; }
+  65% {
+    top: 1.25em;
+    right: .9375em;
+    width: 0; }
+  84% {
+    top: .9375em;
+    right: 0;
+    width: 1.125em; }
+  100% {
+    top: .9375em;
+    right: .1875em;
+    width: 1.375em; } }
+
+@keyframes animate-toast-success-long {
+  0% {
+    top: 1.625em;
+    right: 1.375em;
+    width: 0; }
+  65% {
+    top: 1.25em;
+    right: .9375em;
+    width: 0; }
+  84% {
+    top: .9375em;
+    right: 0;
+    width: 1.125em; }
+  100% {
+    top: .9375em;
+    right: .1875em;
+    width: 1.375em; } }
+
+html.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown),
+body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown) {
+  height: auto;
+  overflow-y: hidden; }
+
+body.swal2-no-backdrop .swal2-shown {
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
+  background-color: transparent; }
+  body.swal2-no-backdrop .swal2-shown > .swal2-modal {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4); }
+  body.swal2-no-backdrop .swal2-shown.swal2-top {
+    top: 0;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%); }
+  body.swal2-no-backdrop .swal2-shown.swal2-top-start, body.swal2-no-backdrop .swal2-shown.swal2-top-left {
+    top: 0;
+    left: 0; }
+  body.swal2-no-backdrop .swal2-shown.swal2-top-end, body.swal2-no-backdrop .swal2-shown.swal2-top-right {
+    top: 0;
+    right: 0; }
+  body.swal2-no-backdrop .swal2-shown.swal2-center {
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%); }
+  body.swal2-no-backdrop .swal2-shown.swal2-center-start, body.swal2-no-backdrop .swal2-shown.swal2-center-left {
+    top: 50%;
+    left: 0;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%); }
+  body.swal2-no-backdrop .swal2-shown.swal2-center-end, body.swal2-no-backdrop .swal2-shown.swal2-center-right {
+    top: 50%;
+    right: 0;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%); }
+  body.swal2-no-backdrop .swal2-shown.swal2-bottom {
+    bottom: 0;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%); }
+  body.swal2-no-backdrop .swal2-shown.swal2-bottom-start, body.swal2-no-backdrop .swal2-shown.swal2-bottom-left {
+    bottom: 0;
+    left: 0; }
+  body.swal2-no-backdrop .swal2-shown.swal2-bottom-end, body.swal2-no-backdrop .swal2-shown.swal2-bottom-right {
+    right: 0;
+    bottom: 0; }
+
+.swal2-container {
+  display: flex;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  background-color: transparent;
+  z-index: 1060;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch; }
+  .swal2-container.swal2-top {
+    align-items: flex-start; }
+  .swal2-container.swal2-top-start, .swal2-container.swal2-top-left {
+    align-items: flex-start;
+    justify-content: flex-start; }
+  .swal2-container.swal2-top-end, .swal2-container.swal2-top-right {
+    align-items: flex-start;
+    justify-content: flex-end; }
+  .swal2-container.swal2-center {
+    align-items: center; }
+  .swal2-container.swal2-center-start, .swal2-container.swal2-center-left {
+    align-items: center;
+    justify-content: flex-start; }
+  .swal2-container.swal2-center-end, .swal2-container.swal2-center-right {
+    align-items: center;
+    justify-content: flex-end; }
+  .swal2-container.swal2-bottom {
+    align-items: flex-end; }
+  .swal2-container.swal2-bottom-start, .swal2-container.swal2-bottom-left {
+    align-items: flex-end;
+    justify-content: flex-start; }
+  .swal2-container.swal2-bottom-end, .swal2-container.swal2-bottom-right {
+    align-items: flex-end;
+    justify-content: flex-end; }
+  .swal2-container.swal2-grow-fullscreen > .swal2-modal {
+    display: flex !important;
+    flex: 1;
+    align-self: stretch;
+    justify-content: center; }
+  .swal2-container.swal2-grow-row > .swal2-modal {
+    display: flex !important;
+    flex: 1;
+    align-content: center;
+    justify-content: center; }
+  .swal2-container.swal2-grow-column {
+    flex: 1;
+    flex-direction: column; }
+    .swal2-container.swal2-grow-column.swal2-top, .swal2-container.swal2-grow-column.swal2-center, .swal2-container.swal2-grow-column.swal2-bottom {
+      align-items: center; }
+    .swal2-container.swal2-grow-column.swal2-top-start, .swal2-container.swal2-grow-column.swal2-center-start, .swal2-container.swal2-grow-column.swal2-bottom-start, .swal2-container.swal2-grow-column.swal2-top-left, .swal2-container.swal2-grow-column.swal2-center-left, .swal2-container.swal2-grow-column.swal2-bottom-left {
+      align-items: flex-start; }
+    .swal2-container.swal2-grow-column.swal2-top-end, .swal2-container.swal2-grow-column.swal2-center-end, .swal2-container.swal2-grow-column.swal2-bottom-end, .swal2-container.swal2-grow-column.swal2-top-right, .swal2-container.swal2-grow-column.swal2-center-right, .swal2-container.swal2-grow-column.swal2-bottom-right {
+      align-items: flex-end; }
+    .swal2-container.swal2-grow-column > .swal2-modal {
+      display: flex !important;
+      flex: 1;
+      align-content: center;
+      justify-content: center; }
+  .swal2-container:not(.swal2-top):not(.swal2-top-start):not(.swal2-top-end):not(.swal2-top-left):not(.swal2-top-right):not(.swal2-center-start):not(.swal2-center-end):not(.swal2-center-left):not(.swal2-center-right):not(.swal2-bottom):not(.swal2-bottom-start):not(.swal2-bottom-end):not(.swal2-bottom-left):not(.swal2-bottom-right) > .swal2-modal {
+    margin: auto; }
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    .swal2-container .swal2-modal {
+      margin: 0 !important; } }
+  .swal2-container.swal2-fade {
+    transition: background-color .1s; }
+  .swal2-container.swal2-shown {
+    background-color: rgba(0, 0, 0, 0.4); }
+
+.swal2-popup {
+  display: none;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  width: 32em;
+  max-width: 100%;
+  padding: 1.25em;
+  border-radius: 0.3125em;
+  background: #fff;
+  font-family: inherit;
+  font-size: 1rem;
+  box-sizing: border-box; }
+  .swal2-popup:focus {
+    outline: none; }
+  .swal2-popup.swal2-loading {
+    overflow-y: hidden; }
+  .swal2-popup .swal2-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+  .swal2-popup .swal2-title {
+    display: block;
+    position: relative;
+    max-width: 100%;
+    margin: 0 0 0.4em;
+    padding: 0;
+    color: #595959;
+    font-size: 1.875em;
+    font-weight: 600;
+    text-align: center;
+    text-transform: none;
+    word-wrap: break-word; }
+  .swal2-popup .swal2-actions {
+    align-items: center;
+    justify-content: center;
+    margin: 1.25em auto 0; }
+    .swal2-popup .swal2-actions:not(.swal2-loading) .swal2-styled[disabled] {
+      opacity: .4; }
+    .swal2-popup .swal2-actions:not(.swal2-loading) .swal2-styled:hover {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)); }
+    .swal2-popup .swal2-actions:not(.swal2-loading) .swal2-styled:active {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)); }
+    .swal2-popup .swal2-actions.swal2-loading .swal2-styled.swal2-confirm {
+      width: 2.5em;
+      height: 2.5em;
+      margin: .46875em;
+      padding: 0;
+      border: .25em solid transparent;
+      border-radius: 100%;
+      border-color: transparent;
+      background-color: transparent !important;
+      color: transparent;
+      cursor: default;
+      box-sizing: border-box;
+      -webkit-animation: swal2-rotate-loading 1.5s linear 0s infinite normal;
+              animation: swal2-rotate-loading 1.5s linear 0s infinite normal;
+      -webkit-user-select: none;
+         -moz-user-select: none;
+          -ms-user-select: none;
+              user-select: none; }
+    .swal2-popup .swal2-actions.swal2-loading .swal2-styled.swal2-cancel {
+      margin-right: 30px;
+      margin-left: 30px; }
+    .swal2-popup .swal2-actions.swal2-loading :not(.swal2-styled).swal2-confirm::after {
+      display: inline-block;
+      width: 15px;
+      height: 15px;
+      margin-left: 5px;
+      border: 3px solid #999999;
+      border-radius: 50%;
+      border-right-color: transparent;
+      box-shadow: 1px 1px 1px #fff;
+      content: '';
+      -webkit-animation: swal2-rotate-loading 1.5s linear 0s infinite normal;
+              animation: swal2-rotate-loading 1.5s linear 0s infinite normal; }
+  .swal2-popup .swal2-styled {
+    margin: 0 .3125em;
+    padding: .625em 2em;
+    font-weight: 500;
+    box-shadow: none; }
+    .swal2-popup .swal2-styled:not([disabled]) {
+      cursor: pointer; }
+    .swal2-popup .swal2-styled.swal2-confirm {
+      border: 0;
+      border-radius: 0.25em;
+      background: initial;
+      background-color: #3085d6;
+      color: #fff;
+      font-size: 1.0625em; }
+    .swal2-popup .swal2-styled.swal2-cancel {
+      border: 0;
+      border-radius: 0.25em;
+      background: initial;
+      background-color: #aaa;
+      color: #fff;
+      font-size: 1.0625em; }
+    .swal2-popup .swal2-styled:focus {
+      outline: none;
+      box-shadow: 0 0 0 2px #fff, 0 0 0 4px rgba(50, 100, 150, 0.4); }
+    .swal2-popup .swal2-styled::-moz-focus-inner {
+      border: 0; }
+  .swal2-popup .swal2-footer {
+    justify-content: center;
+    margin: 1.25em 0 0;
+    padding-top: 1em;
+    border-top: 1px solid #eee;
+    color: #545454;
+    font-size: 1em; }
+  .swal2-popup .swal2-image {
+    max-width: 100%;
+    margin: 1.25em auto; }
+  .swal2-popup .swal2-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    justify-content: center;
+    width: 1.2em;
+    min-width: 1.2em;
+    height: 1.2em;
+    margin: 0;
+    padding: 0;
+    transition: color 0.1s ease-out;
+    border: none;
+    border-radius: 0;
+    background: transparent;
+    color: #cccccc;
+    font-family: serif;
+    font-size: calc(2.5em - 0.25em);
+    line-height: 1.2em;
+    cursor: pointer; }
+    .swal2-popup .swal2-close:hover {
+      -webkit-transform: none;
+              transform: none;
+      color: #f27474; }
+  .swal2-popup > .swal2-input,
+  .swal2-popup > .swal2-file,
+  .swal2-popup > .swal2-textarea,
+  .swal2-popup > .swal2-select,
+  .swal2-popup > .swal2-radio,
+  .swal2-popup > .swal2-checkbox {
+    display: none; }
+  .swal2-popup .swal2-content {
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    color: #545454;
+    font-size: 1.125em;
+    font-weight: 300;
+    line-height: normal;
+    word-wrap: break-word; }
+  .swal2-popup #swal2-content {
+    text-align: center; }
+  .swal2-popup .swal2-input,
+  .swal2-popup .swal2-file,
+  .swal2-popup .swal2-textarea,
+  .swal2-popup .swal2-select,
+  .swal2-popup .swal2-radio,
+  .swal2-popup .swal2-checkbox {
+    margin: 1em auto; }
+  .swal2-popup .swal2-input,
+  .swal2-popup .swal2-file,
+  .swal2-popup .swal2-textarea {
+    width: 100%;
+    transition: border-color .3s, box-shadow .3s;
+    border: 1px solid #d9d9d9;
+    border-radius: 0.1875em;
+    font-size: 1.125em;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.06);
+    box-sizing: border-box; }
+    .swal2-popup .swal2-input.swal2-inputerror,
+    .swal2-popup .swal2-file.swal2-inputerror,
+    .swal2-popup .swal2-textarea.swal2-inputerror {
+      border-color: #f27474 !important;
+      box-shadow: 0 0 2px #f27474 !important; }
+    .swal2-popup .swal2-input:focus,
+    .swal2-popup .swal2-file:focus,
+    .swal2-popup .swal2-textarea:focus {
+      border: 1px solid #b4dbed;
+      outline: none;
+      box-shadow: 0 0 3px #c4e6f5; }
+    .swal2-popup .swal2-input::-webkit-input-placeholder,
+    .swal2-popup .swal2-file::-webkit-input-placeholder,
+    .swal2-popup .swal2-textarea::-webkit-input-placeholder {
+      color: #cccccc; }
+    .swal2-popup .swal2-input:-ms-input-placeholder,
+    .swal2-popup .swal2-file:-ms-input-placeholder,
+    .swal2-popup .swal2-textarea:-ms-input-placeholder {
+      color: #cccccc; }
+    .swal2-popup .swal2-input::-ms-input-placeholder,
+    .swal2-popup .swal2-file::-ms-input-placeholder,
+    .swal2-popup .swal2-textarea::-ms-input-placeholder {
+      color: #cccccc; }
+    .swal2-popup .swal2-input::placeholder,
+    .swal2-popup .swal2-file::placeholder,
+    .swal2-popup .swal2-textarea::placeholder {
+      color: #cccccc; }
+  .swal2-popup .swal2-range input {
+    width: 80%; }
+  .swal2-popup .swal2-range output {
+    width: 20%;
+    font-weight: 600;
+    text-align: center; }
+  .swal2-popup .swal2-range input,
+  .swal2-popup .swal2-range output {
+    height: 2.625em;
+    margin: 1em auto;
+    padding: 0;
+    font-size: 1.125em;
+    line-height: 2.625em; }
+  .swal2-popup .swal2-input {
+    height: 2.625em;
+    padding: 0.75em; }
+    .swal2-popup .swal2-input[type='number'] {
+      max-width: 10em; }
+  .swal2-popup .swal2-file {
+    font-size: 1.125em; }
+  .swal2-popup .swal2-textarea {
+    height: 6.75em;
+    padding: 0.75em; }
+  .swal2-popup .swal2-select {
+    min-width: 50%;
+    max-width: 100%;
+    padding: .375em .625em;
+    color: #545454;
+    font-size: 1.125em; }
+  .swal2-popup .swal2-radio,
+  .swal2-popup .swal2-checkbox {
+    align-items: center;
+    justify-content: center; }
+    .swal2-popup .swal2-radio label,
+    .swal2-popup .swal2-checkbox label {
+      margin: 0 .6em;
+      font-size: 1.125em; }
+    .swal2-popup .swal2-radio input,
+    .swal2-popup .swal2-checkbox input {
+      margin: 0 .4em; }
+  .swal2-popup .swal2-validationerror {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 0.625em;
+    background: #f0f0f0;
+    color: #666666;
+    font-size: 1em;
+    font-weight: 300;
+    overflow: hidden; }
+    .swal2-popup .swal2-validationerror::before {
+      display: inline-block;
+      width: 1.5em;
+      height: 1.5em;
+      margin: 0 .625em;
+      border-radius: 50%;
+      background-color: #f27474;
+      color: #fff;
+      font-weight: 600;
+      line-height: 1.5em;
+      text-align: center;
+      content: '!';
+      zoom: normal; }
+
+@supports (-ms-accelerator: true) {
+  .swal2-range input {
+    width: 100% !important; }
+  .swal2-range output {
+    display: none; } }
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .swal2-range input {
+    width: 100% !important; }
+  .swal2-range output {
+    display: none; } }
+
+.swal2-icon {
+  position: relative;
+  justify-content: center;
+  width: 5em;
+  height: 5em;
+  margin: 1.25em auto 1.875em;
+  border: .25em solid transparent;
+  border-radius: 50%;
+  line-height: 5em;
+  cursor: default;
+  box-sizing: content-box;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  zoom: normal; }
+  .swal2-icon-text {
+    font-size: 3.75em; }
+  .swal2-icon.swal2-error {
+    border-color: #f27474; }
+    .swal2-icon.swal2-error .swal2-x-mark {
+      position: relative;
+      flex-grow: 1; }
+    .swal2-icon.swal2-error [class^='swal2-x-mark-line'] {
+      display: block;
+      position: absolute;
+      top: 2.3125em;
+      width: 2.9375em;
+      height: .3125em;
+      border-radius: .125em;
+      background-color: #f27474; }
+      .swal2-icon.swal2-error [class^='swal2-x-mark-line'][class$='left'] {
+        left: 1.0625em;
+        -webkit-transform: rotate(45deg);
+                transform: rotate(45deg); }
+      .swal2-icon.swal2-error [class^='swal2-x-mark-line'][class$='right'] {
+        right: 1em;
+        -webkit-transform: rotate(-45deg);
+                transform: rotate(-45deg); }
+  .swal2-icon.swal2-warning {
+    border-color: #facea8;
+    color: #f8bb86; }
+  .swal2-icon.swal2-info {
+    border-color: #9de0f6;
+    color: #3fc3ee; }
+  .swal2-icon.swal2-question {
+    border-color: #c9dae1;
+    color: #87adbd; }
+  .swal2-icon.swal2-success {
+    border-color: #a5dc86; }
+    .swal2-icon.swal2-success [class^='swal2-success-circular-line'] {
+      position: absolute;
+      width: 3.75em;
+      height: 7.5em;
+      -webkit-transform: rotate(45deg);
+              transform: rotate(45deg);
+      border-radius: 50%; }
+      .swal2-icon.swal2-success [class^='swal2-success-circular-line'][class$='left'] {
+        top: -.4375em;
+        left: -2.0635em;
+        -webkit-transform: rotate(-45deg);
+                transform: rotate(-45deg);
+        -webkit-transform-origin: 3.75em 3.75em;
+                transform-origin: 3.75em 3.75em;
+        border-radius: 7.5em 0 0 7.5em; }
+      .swal2-icon.swal2-success [class^='swal2-success-circular-line'][class$='right'] {
+        top: -.6875em;
+        left: 1.875em;
+        -webkit-transform: rotate(-45deg);
+                transform: rotate(-45deg);
+        -webkit-transform-origin: 0 3.75em;
+                transform-origin: 0 3.75em;
+        border-radius: 0 7.5em 7.5em 0; }
+    .swal2-icon.swal2-success .swal2-success-ring {
+      position: absolute;
+      top: -.25em;
+      left: -.25em;
+      width: 100%;
+      height: 100%;
+      border: 0.25em solid rgba(165, 220, 134, 0.3);
+      border-radius: 50%;
+      z-index: 2;
+      box-sizing: content-box; }
+    .swal2-icon.swal2-success .swal2-success-fix {
+      position: absolute;
+      top: .5em;
+      left: 1.625em;
+      width: .4375em;
+      height: 5.625em;
+      -webkit-transform: rotate(-45deg);
+              transform: rotate(-45deg);
+      z-index: 1; }
+    .swal2-icon.swal2-success [class^='swal2-success-line'] {
+      display: block;
+      position: absolute;
+      height: .3125em;
+      border-radius: .125em;
+      background-color: #a5dc86;
+      z-index: 2; }
+      .swal2-icon.swal2-success [class^='swal2-success-line'][class$='tip'] {
+        top: 2.875em;
+        left: .875em;
+        width: 1.5625em;
+        -webkit-transform: rotate(45deg);
+                transform: rotate(45deg); }
+      .swal2-icon.swal2-success [class^='swal2-success-line'][class$='long'] {
+        top: 2.375em;
+        right: .5em;
+        width: 2.9375em;
+        -webkit-transform: rotate(-45deg);
+                transform: rotate(-45deg); }
+
+.swal2-progresssteps {
+  align-items: center;
+  margin: 0 0 1.25em;
+  padding: 0;
+  font-weight: 600; }
+  .swal2-progresssteps li {
+    display: inline-block;
+    position: relative; }
+  .swal2-progresssteps .swal2-progresscircle {
+    width: 2em;
+    height: 2em;
+    border-radius: 2em;
+    background: #3085d6;
+    color: #fff;
+    line-height: 2em;
+    text-align: center;
+    z-index: 20; }
+    .swal2-progresssteps .swal2-progresscircle:first-child {
+      margin-left: 0; }
+    .swal2-progresssteps .swal2-progresscircle:last-child {
+      margin-right: 0; }
+    .swal2-progresssteps .swal2-progresscircle.swal2-activeprogressstep {
+      background: #3085d6; }
+      .swal2-progresssteps .swal2-progresscircle.swal2-activeprogressstep ~ .swal2-progresscircle {
+        background: #add8e6; }
+      .swal2-progresssteps .swal2-progresscircle.swal2-activeprogressstep ~ .swal2-progressline {
+        background: #add8e6; }
+  .swal2-progresssteps .swal2-progressline {
+    width: 2.5em;
+    height: .4em;
+    margin: 0 -1px;
+    background: #3085d6;
+    z-index: 10; }
+
+[class^='swal2'] {
+  -webkit-tap-highlight-color: transparent; }
+
+.swal2-show {
+  -webkit-animation: swal2-show 0.3s;
+          animation: swal2-show 0.3s; }
+  .swal2-show.swal2-noanimation {
+    -webkit-animation: none;
+            animation: none; }
+
+.swal2-hide {
+  -webkit-animation: swal2-hide 0.15s forwards;
+          animation: swal2-hide 0.15s forwards; }
+  .swal2-hide.swal2-noanimation {
+    -webkit-animation: none;
+            animation: none; }
+
+[dir='rtl'] .swal2-close {
+  right: auto;
+  left: 0; }
+
+.swal2-animate-success-icon .swal2-success-line-tip {
+  -webkit-animation: swal2-animate-success-line-tip 0.75s;
+          animation: swal2-animate-success-line-tip 0.75s; }
+
+.swal2-animate-success-icon .swal2-success-line-long {
+  -webkit-animation: swal2-animate-success-line-long 0.75s;
+          animation: swal2-animate-success-line-long 0.75s; }
+
+.swal2-animate-success-icon .swal2-success-circular-line-right {
+  -webkit-animation: swal2-rotate-success-circular-line 4.25s ease-in;
+          animation: swal2-rotate-success-circular-line 4.25s ease-in; }
+
+.swal2-animate-error-icon {
+  -webkit-animation: swal2-animate-error-icon 0.5s;
+          animation: swal2-animate-error-icon 0.5s; }
+  .swal2-animate-error-icon .swal2-x-mark {
+    -webkit-animation: swal2-animate-error-x-mark 0.5s;
+            animation: swal2-animate-error-x-mark 0.5s; }
+
+@-webkit-keyframes swal2-rotate-loading {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); } }
+
+@keyframes swal2-rotate-loading {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); } }</style></head>
+    <body>
+        <fieldset class="box">
+            <legend>Terminology</legend>
+                <ul>
+                    <li><span><strong>Asset</strong> is valuable resources for the business to protect.</span></li>
+                    <li><span><strong>Threat</strong> is an action or inaction that could cause harmful occurrence to assets (accidental or deliberate).</span></li>
+                    <li><span><strong>Threat agents</strong> intentionally exploit vulnerabilities.</span></li>
+                    <li><span><strong>Threat events</strong> are accidental exploitations of vulnerabilities (fire, earthquake).</span></li>
+                    <li><span><strong>Impact</strong> is the result of having a vulnerability exploited by a threat.</span></li>
+                    <li><span><strong>Risk</strong> is the possibility that a threat will exploit a vulnerability to cause harm to an asset.</span></li>
+                    <li><span><strong>Exposure</strong> is being susceptible to asset loss due to a threat; there is the possibility that a vulnerability can or will be exploited by a threat agent or event.</span></li>
+                    <li><span><strong>Safeguard/countermeasure</strong> is anything that removes a vulnerability or protects against one or more specific threats.</span></li>
+                    <li><span><strong>Attack</strong> is the exploitation of a vulnerability by a threat agent.</span></li>
+                    <li><span><strong>Breach</strong> is the occurrence of a security mechanism being bypassed or thwarted by a threat agent.</span></li>
+                    <li><span><strong>Vulnerability</strong> is a weakness that allows a threat to cause harm or to gain access to an asset.</span></li>
+                    <li><span><strong>Exploit</strong> program/script used to exploit a vulnerability and compromise an asset</span></li>
+                    <li><span><strong>Risk</strong> impact resulting from compromising an asset</span></li>
+                    <li><span><strong>Risk =Threat * Vulnerability * Impact</strong></span></li>
+                    <li><span><strong>Vulnerabiliy assessment</strong> Process of finding all the vulnerabilities</span></li>
+                    <li><span><strong>Penetration test</strong> exploit all the vulnerabilities</span></li>
+                    <li><span><strong>Non-repudiation</strong> It means a user cannot deny (repudiate) having performed a transaction. It combines authentication and integrity: non-repudiation authenticates the identity of a user who performs a transaction, and ensures the integrity of that transaction</span></li>
+                </ul>
+        </fieldset>
+        <fieldset class="box">
+            <legend>Risk analysis models</legend>
+                <ul>
+                    <li><span>CIA (Confidentiality, Integrity, Availability)</span></li>
+                    <li><span>Disclosure Alteration and Destruction (DAD) is its opposite.</span></li>
+                    <li><span>Identity and Authentication, Authorization, and Accountability</span></li>
+                        <ul>
+                            <li><span><strong>Identity and Authentication</strong> Proving an identity claim</span></li>
+                        </ul>
+                        <ul>
+                            <li><span><strong>Authorization</strong> Describes the actions you can perform on a system once you have identified and authenticated.</span></li>
+                        </ul>
+                        <ul>
+                            <li><span><strong>Accountability</strong> holds users accountable for their actions. This is typically done by logging and analyzing audit data.</span></li>
+                        </ul>
+                </ul>
+        </fieldset>
+        <fieldset class="box">
+            <legend>Security Design Principles</legend>
+                <ul>
+                    <li><span>(My security keeps failing during annual degree exams, lol)</span></li>
+                    <li><span><strong>Minimize attack surface area</strong>: Remove unnecessary functionality or make it work authenticated users are possible reductions.</span></li>
+                    <li><span><strong>Separation of duties</strong>: To control fraud; Who requests a computer can not sign having received it; I.e. administrators of a shop should not be users who can buy.</span></li>
+                    <li><span><strong>Keep security simple</strong>: avoid double negatives and complex architectures when simple and faster approaches work.</span></li>
+                    <li><span><strong>Fail securely</strong>: If unexpected events occur the application should make sure security can not be bypassed.</span></li>
+                    <li><span><strong>Defense in depth</strong>:  applies multiple safeguards (also called controls: measures taken to reduce risk) to protect an asset. Any one security control may fail; by deploying multiple controls, you improve the confidentiality, integrity, and availability of your data. Avoid single point of failure.</span></li>
+                    <li><span><strong>Fix security issues correctly</strong>: Make sure the root cause is identified and the correct fix applied; Similar bugs can be across the company's products.</span></li>
+                    <li><span><strong>Avoid security by obscurity</strong>: nearly always fails when it is the only control. Do not hardcoded passwords etc..</span></li>
+                    <li><span><strong>Don't trust services</strong>: If you integrate with third party services you increase your attack surface and your security is as bad as theirs.</span></li>
+                    <li><span><strong>Security by default</strong>: Enable security controls by default, require strong password but user might change it for an insecure one if they want.</span></li>
+                    <li><span><strong>Least privilege</strong>: Users should be granted the minimum amount of access (authorization) required to do their jobs, but no more.</span></li>
+                    <li><span><strong>Use patterns</strong>: Each bug should be fixed introducing a pattern (template approach) so that it does not happen again.</span></li>
+                    <li><span><strong>Trust on first use (TOFU)</strong> is a security model used by client software which needs to establish a trust relationship with an unknown or not-yet-trusted endpoint. In a TOFU model, the client will try to look up the identifier, usually some kind of public key, in its local trust database. (certificate pinning, ssh fingerprints).</span></li>
+                </ul>
+        </fieldset>
+        <fieldset class="box">
+            <legend>Threat modeling</legend>
+                <ul>
+                    <li><span>Think about attackers or the assets you want to protect</span></li>
+                    <li><span>What are you building?  What can go wrong?</span></li>
+                    <li><span>Step 1: Decompose the application into use-cases (DFD) of how the application interacts with external entities to understand attack surface.</span></li>
+                    <li><span>Step 2: Determine and rank threats to those DFD, using STRIDE or Attack trees, etc..</span></li>
+                    <li><span>Step 3: Determine countermeasures and mitigation</span></li>
+                    <li><span>DREAD is a classification scheme for quantifying, comparing and prioritizing the amount of risk presented by each evaluated threat. The DREAD acronym is formed from the first letter of each category below.</span></li>
+                    <li><span>DREAD modeling influences the thinking behind setting the risk rating, and is also used directly to sort the risks. The DREAD algorithm, shown below, is used to compute a risk value, which is an average of all five categories.</span></li>
+                    <li><span>Risk_DREAD = (DAMAGE + REPRODUCIBILITY + EXPLOITABILITY + AFFECTED USERS + DISCOVERABILITY) / 5</span></li>
+                    <li><span>To understand the practical risks to a system, you might model threats by considering the following:</span></li>
+                        <ul>
+                            <li><span>Individual system components: Exploitable vulnerabilities can exist within infrastructure (e.g., hypervisors, software switches, storage nodes, and load balancers), operating systems, server software, client applications, and end users themselves</span></li>
+                        </ul>
+                        <ul>
+                            <li><span>Goals of the attacker: Data exposure or modification, Elevation of privilege, Arbitrary code execution</span></li>
+                        </ul>
+                        <ul>
+                            <li><span>Denial of service</span></li>
+                        </ul>
+                        <ul>
+                            <li><span>Exposed system components (the available attack surface) remote access / physical access</span></li>
+                        </ul>
+                        <ul>
+                            <li><span>Economic cost and feasibility of each attack vector</span></li>
+                        </ul>
+                    <li><span>Data flow diagrams, showing how data moves through the system</span></li>
+                    <li><span>Draw trust boundaries [browser] - [web server] - [db]</span></li>
+                </ul>
+        </fieldset>
+        <fieldset class="box">
+            <legend>STRIDE</legend>
+                <ul>
+                    <li><span><strong>Spoofing of user identity</strong> Fixed with authentication</span></li>
+                        <ul>
+                            <li><span>For computers IPSec, DNSSEC, TLS, SSH host keys, Kerberos authentication, HTTP Digest or Basic authentication, "Windows authentication" (NTLM), PKI systems, such as SSL or TLS with certificates</span></li>
+                        </ul>
+                        <ul>
+                            <li><span>For data: Digital signatures, Hashes.</span></li>
+                        </ul>
+                        <ul>
+                            <li><span>For people: Something you know (password), something you are (biometrics), something you have (auth key card)</span></li>
+                        </ul>
+                        <ul>
+                            <li><span>For maintaining authentication: cookies.</span></li>
+                        </ul>
+                    <li><span><strong>Tampering</strong> Fixed with integrity</span></li>
+                        <ul>
+                            <li><span>For files: ACLs or permissions, Digital signatures, Hashes, Windows Mandatory Integrity Control (MIC) feature, Unix immutable bits</span></li>
+                        </ul>
+                        <ul>
+                            <li><span>For network traffic: SSL, SSH, IPSec, Digital signatures</span></li>
+                        </ul>
+                    <li><span><strong>Repudiation</strong> Fixed with non-repudiation: Logging, Log analysis tools, Secured log storage, Digital signatures, Secure time stamps, Trusted third parties, Hash trees, and tools for preventing 3rd party frauds (Validation services, Proprietary data/customer history, Multi-merchant data, Purchase device tracing).</span></li>
+                    <li><span><strong>Information disclosure</strong> Fixed with confidentiality</span></li>
+                        <ul>
+                            <li><span>For files: ACLs/permissions, Encryption, Appropriate key management</span></li>
+                        </ul>
+                        <ul>
+                            <li><span>Network data: Encryption, Appropriate key management</span></li>
+                        </ul>
+                        <ul>
+                            <li><span>Protecting communication headers or the fact of communication: Mix networks, Onion routing, Steganography</span></li>
+                        </ul>
+                    <li><span><strong>Denial of service</strong> Fixed with availability: ACLs, Filters, Quotas (rate limiting, thresholding, throttling), High-availability design, Extra bandwidth (rate limiting, throttling), Cloud service.</span></li>
+                    <li><span><strong>Elevation of privilege</strong> Fixed with authorization:  ACLs, Group or role membership, Role based access control, Claims-based access control, Windows privileges (runas), Unix sudo, Chroot, AppArmor or other unix sandboxes,</span></li>
+                </ul>
+        </fieldset>
+        <fieldset class="box">
+            <legend>Mitigating Privacy Threats</legend>
+                <ul>
+                    <li><span><strong>Minimization</strong> Do not store it, do not send it, dispose the data, do not touch it unless you have to.</span></li>
+                    <li><span><strong>Cryptography</strong> hashing or encrypting, split keys systems (multiple keys hold by multiple parties to decrypt), blinding (cryptography technique that allows a party to use a service without the service owner knowing about the input or output even if they have the key or are the CA (used for e-voting etc...)</span></li>
+                </ul>
+        </fieldset>
+        <fieldset class="box">
+            <legend>Risk Choices</legend>
+                <ul>
+                    <li><span>Accept</span></li>
+                    <li><span>Mitigate</span></li>
+                    <li><span>Transfer (insurance)</span></li>
+                    <li><span>Avoiding the risk (not do the project or change the design)</span></li>
+                </ul>
+        </fieldset>
+        <fieldset class="box">
+            <legend>Quantitative and Qualitative Risk Analysis</legend>
+                <ul>
+                    <li><span>Quantitative Risk Analysis uses hard metrics, such as dollars.</span></li>
+                    <li><span>Qualitative Risk Analysis uses simple approximate values.</span></li>
+                    <li><span>Calculating the Annualized Loss Expectancy (ALE) is an example of Quantitative</span></li>
+                </ul>
+        </fieldset>
+        <fieldset class="box">
+            <legend>Risk Analysis.</legend>
+                <ul>
+                </ul>
+        </fieldset>
+        <fieldset class="box">
+            <legend>NIST risk management process</legend>
+                <ul>
+                    <li><span>System Characterization</span></li>
+                    <li><span>Threat Identification</span></li>
+                    <li><span>Vulnerability Identification</span></li>
+                    <li><span>Control Analysis</span></li>
+                    <li><span>Likelihood Determination</span></li>
+                    <li><span>Impact Analysis</span></li>
+                    <li><span>Risk Determination</span></li>
+                    <li><span>Control Recommendations</span></li>
+                    <li><span>Results Documentation</span></li>
+                </ul>
+        </fieldset>
+        <fieldset class="box">
+            <legend>Access control defensive categories and types</legend>
+                <ul>
+                    <li><span>Preventive</span></li>
+                    <li><span>Detective</span></li>
+                    <li><span>Corrective</span></li>
+                    <li><span>Recovery</span></li>
+                    <li><span>Deterrent ("beware of dog")</span></li>
+                    <li><span>Compensating</span></li>
+                </ul>
+        </fieldset>
+        <fieldset class="box">
+            <legend>Authentication Methods</legend>
+                <ul>
+                    <li><span>Something you <strong>Know</strong> (Passwords)</span></li>
+                    <li><span>Something you <strong>Have</strong> (Synchronous Dynamic Token, Asynchronous Dynamic Token)</span></li>
+                    <li><span>Something you <strong>Are</strong> (Biometric Fairness, Psychological Comfort, and Safety, Biometric Enrollment and Throughput)</span></li>
+                </ul>
+        </fieldset>
+        <fieldset class="box">
+            <legend>Defense models</legend>
+                <ul>
+                    <li><span>Lollipop model: Perimeter security, protecting the assets</span></li>
+                    <li><span>Onion model: Defense in depth, multiple layers of defenses (encryption, access control, compartmentalisation, monitoring...)</span></li>
+                    <li><span>Zones of trust: Segregating computers in different networks according to the trust (dev deparment, office, wifi...)</span></li>
+                </ul>
+        </fieldset>
+        <fieldset class="box">
+            <legend>Risk management life cycle</legend>
+                <ul>
+                    <li><span>Monitor</span></li>
+                    <li><span>Identify</span></li>
+                    <li><span>Analyse</span></li>
+                    <li><span>Treat</span></li>
+                    <li><span>(repeat)</span></li>
+                </ul>
+        </fieldset>
+        <fieldset class="box">
+            <legend>Treating risk</legend>
+                <ul>
+                    <li><span>Mitigate</span></li>
+                    <li><span>Accept</span></li>
+                    <li><span>Reduce</span></li>
+                    <li><span>Transfer</span></li>
+                </ul>
+        </fieldset>
+        <fieldset class="box">
+            <legend>Security incident management</legend>
+                <ul>
+                    <li><span>Reporting</span></li>
+                    <li><span>Investigation</span></li>
+                    <li><span>Assessment</span></li>
+                    <li><span>Corrective action</span></li>
+                    <li><span>Employees need security training and awareness</span></li>
+                </ul>
+        </fieldset>
+        <fieldset class="box">
+            <legend>Incident response process</legend>
+                <ul>
+                    <li><span>Identification of the Incident</span></li>
+                    <li><span>Logging it (Details)</span></li>
+                    <li><span>Investigation and root cause analysis (RCA)</span></li>
+                    <li><span>Escalation or keeping the senior management/parties informed</span></li>
+                    <li><span>Remediation steps</span></li>
+                    <li><span>Closure report</span></li>
+                </ul>
+        </fieldset>
+        <fieldset class="box">
+            <legend>Data must be secure when it is</legend>
+                <ul>
+                    <li><span>At Rest</span></li>
+                    <li><span>in Transit</span></li>
+                    <li><span>in Use</span></li>
+                </ul>
+        </fieldset>
+        <fieldset class="box">
+            <legend>Securing a network</legend>
+                <ul>
+                    <li><span>The company needs a security policy (not plugging phone to computer, password length, etc)</span></li>
+                    <li><span>Non-repudiation and accountability: users in the organization can not deny actions carried out and are responsible for those.</span></li>
+                    <li><span>Every job has different responsabilities, duties and access rights.</span></li>
+                    <li><span>Partitioning network in VLANs</span></li>
+                    <li><span>Firewall filter all ports not needed from outside</span></li>
+                    <li><span>Encrypted traffic</span></li>
+                    <li><span>Monitoring and detection (IDS, IPS) such as SNORT</span></li>
+                    <li><span>Network usage policy</span></li>
+                    <li><span>Authentication and authorization policies</span></li>
+                    <li><span>Segment the network into zones of trust and place systems into those zones based their communication needs and Internet exposure.</span></li>
+                    <li><span>Run each service in a different box (or virtual box) (db and web)</span></li>
+                    <li><span>Use a fronted proxy such as cloudflare to mitigate DDOS.</span></li>
+                </ul>
+        </fieldset>
+        <fieldset class="box">
+            <legend>Securing a box</legend>
+                <ul>
+                    <li><span>Password protect the boot process before the OS loads (set is BIOS) (important for laptops)</span></li>
+                    <li><span>Password protect CMOS settings</span></li>
+                    <li><span>Disable booting from USB/CD</span></li>
+                    <li><span>Reduce the attack surface of systems by turning off unneeded services.</span></li>
+                    <li><span>Install secure software.</span></li>
+                    <li><span>Setup your IPTABLES/firewall</span></li>
+                    <li><span>Use an Antivirus Scanner (with Real-Time Scanning)</span></li>
+                    <li><span>Full disk encryption</span></li>
+                    <li><span>SSH with PKI login only, unique per machine per user.</span></li>
+                    <li><span>Configure software settings securely.</span></li>
+                    <li><span>Keep software and OS updated</span></li>
+                    <li><span>Strengthen authentication processes.</span></li>
+                    <li><span>Limit the number (and privileges) of administrators.</span></li>
+                    <li><span>Least privilege principle for daemons</span></li>
+                    <li><span>Install fail2ban and monitor daily logs</span></li>
+                    <li><span>review code running or pentest it.</span></li>
+                    <li><span>web server: security headers (X-Content-Type-Optionsno sniff, X-Frame-Options: DENY, Strict-Transport-Security Cache-Control: no-cache, no-store)</span></li>
+                    <li><span>Remove versions from banners (security by obscurity)</span></li>
+                    <li><span>SELinux with enforcing poly, restricts how apps can interact with kernel, for example file system objects are identified by path name rather tha inode, to prevent symlink attacks to files that would not normally be accessabke</span></li>
+                    <li><span>Disable USB usage</span></li>
+                    <li><span>Lock screen</span></li>
+                </ul>
+        </fieldset>
+        <fieldset class="box">
+            <legend>Software development lifecycle</legend>
+                <ul>
+                    <li><span>Use of certified products and systems</span></li>
+                    <li><span>Code review, vuln assessment, continuous testing methodologies</span></li>
+                    <li><span>Separation of development and live systems</span></li>
+                    <li><span>Use of escrow to reduce risks of loss of source code</span></li>
+                </ul>
+        </fieldset>
+        <fieldset class="box">
+            <legend>Calculating Annualized Loss Expectancy</legend>
+                <ul>
+                    <li><span><strong>Annualized Loss Expectancy (ALE)</strong> calculation allows you to determine the</span></li>
+                    <li><span>annual cost of a loss due to a risk. Once calculated, ALE allows you to make</span></li>
+                    <li><span>informed decisions to mitigate the risk.</span></li>
+                    <li><span><strong>Asset value (AV)</strong> is the value of the asset you are trying to protect. In this</span></li>
+                    <li><span>example, each laptop costs $2500</span></li>
+                    <li><span>The <strong>Exposure Factor (EF)</strong> is the percentage of value an asset lost due to an incident.</span></li>
+                    <li><span>In the case of a stolen laptop with unencrypted PII, the Exposure Factor is</span></li>
+                    <li><span>100%:</span></li>
+                    <li><span>The <strong>Single Loss Expectancy (SLE)</strong> is the cost of a single loss. SLE is the Asset</span></li>
+                    <li><span>Value (AV) times the Exposure Factor (EF). In our case, SLE is $25,000 (Asset</span></li>
+                    <li><span>Value) times 100% (Exposure Factor), or $25,000.</span></li>
+                    <li><span>The <strong>Annual Rate of Occurrence (ARO)</strong> is the number of losses you suffer per year.</span></li>
+                    <li><span>Looking through past events, you discover that you have suffered 11 lost or stolen</span></li>
+                    <li><span>laptops per year on average. Your ARO is 11.</span></li>
+                    <li><span>The <strong>Annualized Loss Expectancy (ALE)</strong> is your yearly cost due to a risk. It is calculated</span></li>
+                    <li><span>by multiplying the Single Loss Expectancy (SLE) times the Annual Rate of</span></li>
+                    <li><span>Occurrence (ARO). In our case, it is $25,000 (SLE) times 11 (ARO), or $275,000.</span></li>
+                    <li><span>The <strong>Total Cost of Ownership (TCO)</strong> is the total cost of a mitigating safeguard.</span></li>
+                    <li><span><strong>Return on Investment (ROI)</strong> is the amount of money saved by implementing a</span></li>
+                    <li><span>safeguard. If your annual Total Cost of Ownership (TCO) is less than your Annualized</span></li>
+                    <li><span>Loss Expectancy (ALE), you have a positive ROI (and have made a good</span></li>
+                    <li><span>choice). If the TCO is higher than your ALE, you have made a poor choice</span></li>
+                </ul>
+        </fieldset>
+    <script>new Highlighter().run(document);</script>
+    <script> (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m = s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) })(window,document,'script','https://www.google-analytics.com/analytics.js','ga'); ga('create', 'UA-106217827-1', 'auto'); ga('send', 'pageview'); </script>
+    
+</body></html>

