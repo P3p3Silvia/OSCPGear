@@ -1,0 +1,9 @@
+smtp-vuln-cve2011-1764.nse
+smtp-vuln-cve2011-1720.nse
+smtp-vuln-cve2010-4344.nse
+smtp-strangeport.nse
+smtp-open-relay.nse
+smtp-ntlm-info.nse
+smtp-enum-users.nse
+smtp-commands.nse
+smtp-brute.nse

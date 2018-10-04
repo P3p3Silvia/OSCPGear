@@ -1,0 +1,7 @@
+/usr/share/nmap/scripts/ssh-auth-methods.nse
+/usr/share/nmap/scripts/ssh-brute.nse
+/usr/share/nmap/scripts/ssh-hostkey.nse
+/usr/share/nmap/scripts/ssh-publickey-acceptance.nse
+/usr/share/nmap/scripts/ssh-run.nse
+/usr/share/nmap/scripts/ssh2-enum-algos.nse
+/usr/share/nmap/scripts/sshv1.nse

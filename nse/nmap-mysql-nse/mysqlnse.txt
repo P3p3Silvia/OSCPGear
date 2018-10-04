@@ -1,0 +1,11 @@
+/usr/share/nmap/scripts/mysql-audit.nse
+/usr/share/nmap/scripts/mysql-brute.nse
+/usr/share/nmap/scripts/mysql-databases.nse
+/usr/share/nmap/scripts/mysql-dump-hashes.nse
+/usr/share/nmap/scripts/mysql-empty-password.nse
+/usr/share/nmap/scripts/mysql-enum.nse
+/usr/share/nmap/scripts/mysql-info.nse
+/usr/share/nmap/scripts/mysql-query.nse
+/usr/share/nmap/scripts/mysql-users.nse
+/usr/share/nmap/scripts/mysql-variables.nse
+/usr/share/nmap/scripts/mysql-vuln-cve2012-2122.nse

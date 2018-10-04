@@ -1,0 +1,3 @@
+/usr/share/nmap/scripts/pop3-brute.nse
+/usr/share/nmap/scripts/pop3-capabilities.nse
+/usr/share/nmap/scripts/pop3-ntlm-info.nse
